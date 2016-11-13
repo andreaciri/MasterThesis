@@ -132,7 +132,7 @@ Balaji et al. proposed Sentinel \cite{Balaji2013}, another WiFi based occupancy 
 
 \begin{figure}[h!tb]
 \centering
-\includegraphics[scale=0.3]{sentinel.pdf}
+\includegraphics[width=0.6\linewidth]{sentinel.pdf}
 \caption[Occupancy inference of the Sentinel system using WiFi connectivity]{Occupancy inference of the Sentinel system using WiFi connectivity. The occupant is assumed to be in her personal space whenever she is within the associated AP’s zone of detection, as denoted by “Assumed Location”.}
 \label{fig:sentinel}
 \end{figure}
@@ -157,8 +157,9 @@ The thermal sensor array used is able to measure temperatures in an 8x8 grid pat
 \minipage{0.5\textwidth}
   \includegraphics[width=\linewidth]{thermosense1.pdf}
 \endminipage\hfill
-\minipage{0.5\textwidth}%
-  \includegraphics[width=\linewidth]{thermosense2.pdf}
+\minipage{0.5\textwidth}
+\center
+  \includegraphics[width=0.8\linewidth]{thermosense2.pdf}
 \endminipage
 \caption{Thermal sensor array employed in the Thermosense system and its occupancy detection outcome.}\label{fig:thermosense}
 \end{figure*}
@@ -292,7 +293,7 @@ Geometric algorithms are based on geometric properties of triangles. They achiev
 In figure \ref{fig:trilateration}, this condition is represented by a target node T localized by means of distances $d1, d2, d3$.
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.5]{trilateration.pdf}
+\centering\includegraphics[scale=0.48]{trilateration.pdf}
 \caption{Example of a target node $T$ localized with Trilateration by means of distances $d1, d2, d3$.}
 \label{fig:trilateration}
 \end{figure}
@@ -317,7 +318,7 @@ When we extend trilateration to three dimensions, the circles become spheres. In
 The center of this four-sided figure is the estimated position searched. An example of Min-Max estimation is shown in Figure \ref{fig:minmax}.
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.45]{minMax.pdf}
+\centering\includegraphics[scale=0.4]{minMax.pdf}
 \caption[Example of MinMax computation]{Example of MinMax computation where the target node computes the distance $d_i$ from each reference node, draws a square with center in the reference node and edges of length $2d_i$. }
 \label{fig:minmax}
 \end{figure}
@@ -452,9 +453,8 @@ In case of Bluetooth Low Energy, the employment of reference nodes such as beaco
 \section{Comparison}
 \label{sec:comparison}
 
-In this last section, all the occupancy detection monitoring systems from existing literature that have been illustrated during this chapter are summarized and compared in table~\ref{tab:od_soa}. Extra devices for building refers to any hardware installation required in common buildings such as offices or schools. WiFi hotspots are considered already present appliances in the building infrastructure. Installation complexity, as defined by Akkaya et al. in \cite{Akkaya2015}, is represented by three tiers from low to high complexity. User intrusiveness is an indicator of how much the its activity is negatively affected by the system. When battery consumption is high, user intrusiveness is also considered high.
-
-Accuracy of the system has been considered high if the system was able to localize a user within circumscribed area with an accuracy greater than 85\%. 
+In this last section, all the occupancy detection monitoring systems from existing literature that have been illustrated during this chapter are summarized and compared in table~\ref{tab:od_soa}. Extra devices for building refers to any hardware installation required in common buildings such as offices or schools. WiFi hotspots are considered already present appliances in the building infrastructure. Installation complexity, as defined by Akkaya et al. in \cite{Akkaya2015}, is represented by three tiers from low to high complexity. User intrusiveness is an indicator of how much the its activity is negatively affected by the system. When battery consumption is high, user intrusiveness is also considered high.\\
+Accuracy has been considered high if the system was able to localize a user within circumscribed area with an accuracy greater than 85\%. 
 %
 % ------------------------------------------------------------------------ %
 %
