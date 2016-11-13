@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Tesi.aux
+The style file: biblatex.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 10143 items from 5000.
+Database file #1: Tesi-blx.bib
+Database file #2: SmartBuildings.bib
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+Reallocated field_info (elt_size=4) to 15147 items from 10143.
+Biblatex version: 3.0
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+You've used 92 entries,
+            6047 wiz_defined-function locations,
+            1982 strings with 89275 characters,
+and the built_in function-call counts, 295935 in all, are:
+= -- 9516
+> -- 10118
+< -- 2536
++ -- 3044
+- -- 4478
+* -- 26657
+:= -- 17689
+add.period$ -- 0
+call.type$ -- 92
+change.case$ -- 939
+chr.to.int$ -- 34
+cite$ -- 182
+duplicate$ -- 34094
+empty$ -- 31879
+format.name$ -- 7158
+if$ -- 65494
+int.to.chr$ -- 0
+int.to.str$ -- 205
+missing$ -- 0
+newline$ -- 3411
+num.names$ -- 3759
+pop$ -- 29303
+preamble$ -- 1
+purify$ -- 1280
+quote$ -- 0
+skip$ -- 16223
+stack$ -- 0
+substring$ -- 3988
+swap$ -- 12520
+text.length$ -- 2640
+text.prefix$ -- 101
+top$ -- 1
+type$ -- 3483
+warning$ -- 0
+while$ -- 1792
+width$ -- 0
+write$ -- 3318

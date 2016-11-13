@@ -1,0 +1,120 @@
+% ------------------------------------------------------------------------ %
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = pdflatex
+% !TEX root = ../Tesi.tex
+% !TEX spellcheck = it-IT
+% ------------------------------------------------------------------------ %
+%
+% ------------------------------------------------------------------------ %
+% 	INTRODUZIONE
+% ------------------------------------------------------------------------ %
+%
+\cleardoublepage
+%
+\phantomsection
+%
+\addcontentsline{toc}{chapter}{Introduction}
+%
+\chapter*{Introduction}
+%remove * to count from 1
+%
+\markboth{Introduction}{Introduction}	% headings
+%
+\label{cap:intro}
+%
+% ------------------------------------------------------------------------ %
+%
+On average, people spend approximately 70\% of their time indoors \cite{Roulet2001}, such as in offices, schools, and at home.
+In the last years, the advent of sensors networks have enabled buildings to be retrofit for improved monitoring and automation.
+In particular, the use of technology is intended to increment the occupants comfort, their safety and the energy efficiency of the indoor environments.
+Smart Buildings are becoming a reality with the adoption of Building Management Systems (BMS), i.e. control systems that integrate the underlying monitoring infrastructure with a logic decision engine. These decisions are usually based on administrator policies or user-defined rules, other than more complex machine learning algorithms.
+In this context, identifying in real-time the number of occupants in the building, their location and even the identity of each one can be essential to provide the building behavior logic. For instance, Heating, Ventilation and Air Conditioning (HVAC) systems can be modulated according to the number of occupants, increasing thermal comfort while avoiding energy wastes.
+The problem of knowing in every instant the location of users in a building, known as the \emph{Occupancy Detection} problem, is one of the two main targets of this work.
+% Occupancy detection, that at first glance could appear equal to the more conventional indoor localization, is characterized by different requirements, making the implementation and the adoption of such systems even more challenging.
+% Accennare bluetooth low energy?
+
+In order to solve the occupancy detection problem, as well as other smart building systems like thermal comfort or emergency management, it's common to employ several connected devices with sensor, actuator or network capabilities. During the testing phase of our system, but also trying to verify existing approaches from the state of the art, we experienced the difficulty of tedious, error-prone and time consuming tasks like the correct allocation of devices in the environment. During the installation of such systems, the choice of the nodes type and quantity, the proper placement of each one heavily affect the accuracy and the cost of the system. The lack of supporting tools for the design of indoor monitoring systems induced us to develop a CAD based application tailored for the purpose. The development of the mentioned application comprises the second main part of this thesis.
+
+
+
+
+%
+\section{Motivations}
+Energy sustainability is one of the key target of smart (or green) buildings.
+From 1980 to 2010, energy in the United States has increased 53\% \cite{doe}. In 2010, heating, ventilation, and air-conditioning (HVAC) consumed 42\% of the energy used in the United States.
+
+There are two different parts of HVAC systems usage that should be affected by occupancy; temperature and ventilation.
+Temperature control is dependent on whether a space is occupied. However, indoor environments are often conditioned assuming a constant occupancy. This leads to heating or cooling empty rooms. One method of reducing consumption is to condition based on the actual binary state of occupancy.
+Ventilation instead, used to control CO2 levels and air pollutants, depends on the number of people occupying a space. Also in this case, spaces that are only partially occupied could be over-ventilated, leading to loss of conditioned air and thus thermal energy. For this purpose, standards have been issued to recommend ventilation for acceptable indoor air quality depending on occupation (ASHRAE standard 62.1 \cite{ashrae}).
+The usage of energy-hungry appliances like HVAC systems can be improved not only by the real-time occupancy information, but also from occupancy probability profiles built on top of historical data. For instance, the information that in a certain office, every Friday the last employee leaves the room at 5 p.m. with a probability of 90\% can be exploited to reduce energy consumption.
+
+\smallskip
+Another purpose of smart buildings is safety. Automated systems that respond to harmful situations limiting damages and victims have been studied and adopted in commercial and private buildings since many decades. The primary job of these systems is to detect crisis events and provide a suitable response. The ability to detect the position of users inside the building can be crucial to assist evacuations or rescue operations. For example, the safety system could trigger alarm notifications tailored on user's position; escape routes and emergency exits might be highlighted with labels and lighting panels.
+
+\smallskip
+Occupancy detection can be exploited to build indoor location data analytics, that measure time spent by visitors in particular locations and which routes were used. This enables shopping stores find out how many people pass a certain zone during the day or which hours of the week are the least busy. Location monitoring allows shopping malls to provide rewards, discounts and targeted advertisement to their customers. At the same way in which web analytics are used by web managers to optimize their pages, indoor location data analytics can be exploited by store owners to increase profitability of their business.
+
+\section{Challenges}
+The problem of locate users in indoor environments is intrinsically hard, in both the technological and the user interaction sides. For outdoor applications the use of GPS has revealed to be the best solution in terms of cost, accuracy and ease of use, leading to its widespread popularity. For indoor applications, the lack of localization systems in modern buildings is caused exactly by the nonexistence of a low-cost technological solution with sufficient accuracy and good usability. In addition, the specific occupancy detection problem poses additional challenges to the generic Indoor Positioning Systems (IPS). The distinction between occupancy monitoring systems and traditional IPSs will be explained in detail in section \ref{subsec:wips_od}, but intuitively the key difference relies in the execution time. Occupancy monitoring requires to monitor the users for many hours of the day, while the execution of an IPS is typically limited to the orientation or navigation task of the user. 
+
+\smallskip
+First of all, long execution time leads to a huge \textbf{battery consumption} problem for solutions that involve mobile devices in the localization process. Localization applications are typically very battery hungry, and whereas this can be accepted for short usage, it becomes unfeasible for many hours of execution.
+
+\smallskip
+Another issue derived from the long monitoring is the \textbf{intrusiveness} on the occupants activity. Occupancy detection systems based on images coming from cameras can raise privacy issue, even in working spaces like offices or meeting rooms.
+Solutions that relies on the assumption that the occupants are always accompanied by a tag, a smartphone or a wearable device are also intrusive in the sense that a certain level of effort is required to the user. This level of effort can be perceived differently depending on the situations. At work, where the user is used to guarantee phone call and email availability, the effort can be nearly zero; at home instead, where some users are used to empty their pockets as soon as they are inside, the effort can be high.
+Again, battery consumption affect also the system intrusiveness.
+%Smart devices are becoming omnipresent around people and they can be considered as an extension of our-selves.
+%The only actual weak point of every smart device is the battery life, and thus it became an issue also for the user daily activity.
+%For this reasons, occupancy detection systems that rely on smart devices should carefully consider the energy efficiency of the device.
+A system that cause a considerable increase in battery drain directly afflict the user comfort and peace of mind, and can bring the user to leave the application.
+
+\smallskip
+A challenging requirement of some occupancy detection systems, including the proposed one, is to provide the occupancy information in \textbf{real-time}. In order to be considered real-time, the location data should be received from the system back-end with a maximum delay of 2-3 seconds, otherwise the automation will not be perceived as useful or responsive. This means that ambient characteristics like temperature, humidity, light, CO2 and so on, that are related to occupancy, can't be easily exploited for real-time detection due to their slow time response. 
+
+\smallskip
+Other issues that discourage that adoption of occupancy monitoring systems are in common with traditional IPSs. When the system is composed by transmitting nodes or sensor networks, the \textbf{cost} of the hardware purchase and the \textbf{installation} of appliances can be onerous. Even for small buildings, the choice of the nodes quantity and a correct placement able to guarantee space coverage can be cumbersome. Adjust and move devices to tune the system performances is time-consuming and sometimes unfeasible. To address this specific problem, we developed a CAD application for the design of smart building systems based on the installation of hardware nodes across the indoor space. The tool, that provide cost-effective deployment of wireless localization systems, will be described in chapter \ref{cap:cad}.
+
+\section{Scope and Contributions}
+This thesis is about occupancy detection and monitoring in smart buildings.
+The work done in this thesis can be summarized in two main parts.
+
+\medskip
+First, an occupancy monitoring system based on Bluetooth Low Energy (BLE) is proposed. the key aspects of the proposed system are:
+\begin{enumerate*}[label={\textbf{(\arabic*)}}]
+\item extremely low battery consumption allows the system run continuously for many hours;
+\item real-time occupancy detection;
+\item non-intrusive system from the user point of view;
+\item simplified installation and training.
+\end{enumerate*}
+
+\medskip
+The second part of this thesis is about design automation for smart building systems based on sensor and network devices. The rationale of the developed application comes from a real-world necessity that we experienced during the arrangement of wireless indoor localization systems. The key contributions of the proposed application with respect to other existing approaches are:
+\begin{enumerate*}[label={\textbf{(\arabic*)}}]
+\item a CAD interface to specify building floor-plan and functional components of the smart environment;
+\item an algorithm for hardware nodes allocation that provides to designers a cost-effective placement of devices;
+\item a site-specific model for wireless indoor localization accuracy optimization that keeps into account the actual structure of the building;
+\item The integration of the tool within an \mbox{open-source} application framework able to extend the system by means of JavaScript or C++ plug-ins.
+\end{enumerate*}
+
+%\clearpage
+
+\section{Document Organization}
+%
+\par The thesis is structured as follows:
+%
+% ------------------------------------------------------------------------ %
+%
+\begin{description}
+%
+\item[{\hyperref[cap:soa]{The first chapter}}] explains and investigates the occupancy monitoring problem for smart buildings. The state of the art is analyzed reporting the most relevant existing approaches grouped by their respective enabling technologies. A particular attention is directed to wireless-based indoor positioning systems, how they have been exploited for occupancy monitoring and their limitations in this specific context. In this part are also reported some concepts of WiFi and Bluetooth Low Energy protocols useful to understand the limitations of existing approaches and the design choices of the adopted solution.
+%
+\item[{\hyperref[cap:bluesentinel]{The second chapter}}] describes the proposed BLE occupancy monitoring system. First, the feasibility study is reported, explaining also the reasons of the adopted design and the technology employed. Then will be illustrated the architecture of the system, passing through application, sensing and back-end layers. On the application side, will be discussed the potentiality and limitations of the BLE signal advertisement of recent smartphones, one of the key functionalities exploited in our system. Then, at sensors level, will be reported the different methods of synchronization and signal filtering experimented. For the back-end side, are reported the different classification methods employed for users localization, and their performances with respect to the ground truth. Here will be also illustrated how the occupancy information has being visualized in a web application.
+%
+\item[{\hyperref[cap:cad]{The third chapter}}] shows the design challenges of smart building systems based on the installation of several hardware nodes such as sensors or wireless access points. To address this problem, the developed supporting tool is presented. The application, based on a CAD interface for floor-plans specification, implements an heuristic algorithm for an optimal deployment of nodes. Although the heterogeneity and lack of standardization, is explained how we tried to provide a general-purpose tool, offering three different indoor localization techniques and the ability to extend the application with third-party plug-ins.
+%
+\item[{\hyperref[cap:results]{In the fourth chapter}}] will be described our system deployment in a real environment and the experimental results obtained. \lipsum[2]
+%
+\end{description}
+%
+% ------------------------------------------------------------------------ %

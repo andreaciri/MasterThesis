@@ -1,0 +1,4215 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Abedi2013}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Abedi}{A.}%
+     {Naeim}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bhaskar}{B.}%
+     {Ashish}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chung}{C.}%
+     {Edward}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{MAC address}
+  \strng{namehash}{ANBACE1}
+  \strng{fullhash}{ANBACE1}
+  \field{sortinit}{A}
+  \field{abstract}{%
+  This paper firstly presents the benefits and critical challenges on the use
+  of Bluetooth and Wi-Fi for crowd data collection and monitoring. The major
+  challenges include antenna characteristics, environment's complexity and
+  scanning features. Wi-Fi and Bluetooth are compared in this paper in terms of
+  architecture, discovery time, popularity of use and signal strength. Type of
+  antennas used and the environment's complexity such as trees for outdoor and
+  partitions for indoor spaces highly affect the scanning range. The
+  aforementioned challenges are empirically evaluated by “real” experiments
+  using Bluetooth and Wi-Fi Scanners. The issues related to the antenna
+  characteristics are also highlighted by experimenting with different antenna
+  types. Novel scanning approaches including Overlapped Zones and Single Point
+  Multi-Range detection methods will be then presented and verified by
+  real-world tests. These novel techniques will be applied for location
+  identification of the MAC IDs captured that can extract more information
+  about people movement dynamics.%
+  }
+  \field{number}{October}
+  \field{pages}{1\bibrangedash 17}
+  \field{title}{{Bluetooth and Wi-Fi MAC Address Based Crowd Data Collection
+  and Monitoring : Benefits , Challenges and Enhancement}}
+  \verb{url}
+  \verb http://www.patrec.org/atrf.aspx
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/MAC address/2013{\_}abedi{\_}bhaskar{\_}chu
+  \verb ng.pdf:pdf
+  \endverb
+  \field{journaltitle}{Australas. Transp. Res. Forum 2013 Proc. 2}
+  \field{year}{2013}
+\endentry
+
+\entry{Afshari}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Afshari}{A.}%
+     {Sina}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Imam}{I.}%
+     {M~H~Toufiq}{M.~H.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sanderson}{S.}%
+     {Arthur~C}{A.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Radke}{R.}%
+     {Richard~J}{R.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ACM BuildSys 2015,daylight harvesting,occupancy tracking,smart
+  lighting}
+  \strng{namehash}{AS+1}
+  \strng{fullhash}{ASIMHTSACRRJ1}
+  \field{sortinit}{A}
+  \field{isbn}{9781450339810}
+  \field{pages}{245\bibrangedash 248}
+  \field{title}{{Short Paper : The Smart Conference Room : An Integrated System
+  Testbed for Efficient , Occupancy-Aware Lighting Control}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ACM BuildSys 2015/5 - p245-afshari light co
+  \verb ntrol.pdf:pdf
+  \endverb
+\endentry
+
+\entry{Agarwal}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Agarwal}{A.}%
+     {Yuvraj}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gupta}{G.}%
+     {Rajesh}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Komaki}{K.}%
+     {Daisuke}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Weng}{W.}%
+     {Thomas}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{all or part of,api,applications,buildings,data storage,or,or hard
+  copies of,permission to make digital,sensors,this work for personal,web
+  service,wireless sensor networks}
+  \strng{namehash}{AY+1}
+  \strng{fullhash}{AYGRKDWT1}
+  \field{sortinit}{A}
+  \field{isbn}{9781450311700}
+  \field{title}{{BuildingDepot : An Extensible and Distributed Architecture for
+  Building Data Storage , Access and Sharing}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/box-welcomepackage/step1/3 - Smart Home Future
+  \verb Challenges/BuildingDepot - An Extensible and Distributed Architecture f
+  \verb or Building Data Storage, Access and Sharing.pdf:pdf
+  \endverb
+\endentry
+
+\entry{Akkaya2015}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Akkaya}{A.}%
+     {Kemal}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Guvenc}{G.}%
+     {Ismail}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Aygun}{A.}%
+     {Ramazan}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pala}{P.}%
+     {Nezih}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kadri}{K.}%
+     {Abdullah}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Accuracy,Big data,Buildings,Cameras,Data integration,HVAC,IEEE 802.11
+  Standards,Markov chain,Monitoring,Sensors,WLAN,WiFi,data fusion,data
+  mining,energy efficiency,hidden Markov model (HMM),localization,occupancy
+  monitoring,position estimation,positioning,wireless location estimation}
+  \strng{namehash}{AK+1}
+  \strng{fullhash}{AKGIARPNKA1}
+  \field{sortinit}{A}
+  \field{abstract}{%
+  With the proliferation of Internet of Things (IoT) devices such as
+  smartphones, sensors, cameras, and RFIDs, it is possible to collect massive
+  amount of data for localization and tracking of people within commercial
+  buildings. Enabled by such occupancy monitoring capabilities, there are
+  extensive opportunities for improving the energy consumption of buildings via
+  smart HVAC control. In this respect, the major challenges we envision are 1)
+  to achieve occupancy monitoring in a minimally intrusive way, e.g., using the
+  existing infrastructure in the buildings and not requiring installation of
+  any apps in the users??? smart devices, and 2) to develop effective data
+  fusion techniques for improving occupancy monitoring accuracy using a
+  multitude of sources. This paper surveys the existing works on occupancy
+  monitoring and multi-modal data fusion techniques for smart commercial
+  buildings. The goal is to lay down a framework for future research to exploit
+  the spatio-temporal data obtained from one or more of various IoT devices
+  such as temperature sensors, surveillance cameras, and RFID tags that may be
+  already in use in the buildings. A comparative analysis of existing
+  approaches and future predictions for research challenges are also provided.%
+  }
+  \verb{doi}
+  \verb 10.1109/WCNCW.2015.7122529
+  \endverb
+  \field{isbn}{978-1-4799-8760-3}
+  \field{pages}{58\bibrangedash 63}
+  \field{title}{{IoT-based occupancy monitoring techniques for energy-efficient
+  smart buildings}}
+  \verb{url}
+  \verb http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=7122529
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Akk
+  \verb aya et al. - 2015 - IoT-based occupancy monitoring techniques for energ
+  \verb y-efficient smart buildings.pdf:pdf
+  \endverb
+  \field{journaltitle}{2015 IEEE Wirel. Commun. Netw. Conf. Work.}
+  \field{year}{2015}
+\endentry
+
+\entry{Andersson2014}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Andersson}{A.}%
+     {Tim}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Annan data- och informationsvetenskap,Other Computer and Information
+  Science}
+  \strng{namehash}{AT1}
+  \strng{fullhash}{AT1}
+  \field{sortinit}{A}
+  \field{abstract}{%
+  Bluetooth Low Energy is becoming increasingly popular in mobile applications
+  due to the possibility of using it for proximity data. Proximity can be
+  estimated by measuring the strength of the Bluet ...%
+  }
+  \field{title}{{Bluetooth Low Energy and Smartphones for Proximity-Based
+  Automatic Door Locks}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/doorlocks.pdf:pdf
+  \endverb
+  \field{year}{2014}
+\endentry
+
+\entry{AppleInc.2014}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Apple Inc.}}{A.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{A1}
+  \strng{fullhash}{A1}
+  \field{sortinit}{A}
+  \field{pages}{1\bibrangedash 11}
+  \field{title}{{Getting Started with iBeacon}}
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/App
+  \verb le Inc. - 2014 - Getting Started with iBeacon.pdf:pdf
+  \endverb
+  \field{year}{2014}
+\endentry
+
+\entry{Archicad}{misc}{}
+  \field{sortinit}{A}
+  \field{title}{{ArchiCAD - The architectural BIM CAD software}}
+  \verb{url}
+  \verb http://www.graphisoft.com/archicad/
+  \endverb
+\endentry
+
+\entry{ashrae}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {ASHRAE}{A.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ashrae}
+  \strng{namehash}{A2}
+  \strng{fullhash}{A2}
+  \field{sortinit}{A}
+  \field{abstract}{%
+  Approved by the ASHRAE Standards Committee on June 28, 2003; by the ASHRAE
+  Board of Directors on July 3, 2003; and by the American National Standards
+  Institute on January 8, 2004. This standard is under continuous maintenance
+  by a Standing Standard Project Committee (SSPC) for which the Standards
+  Committee has established a documented program for regular publication of
+  addenda or revisions, including procedures for timely, documented, consensus
+  action on requests for change to any part of the standard. The change
+  submittal form, instructions, and deadlines may be obtained in electronic
+  form from the ASHRAE web site, http://www.ashrae.org, or in paper form from
+  the Manager of Standards. The latest edition of an ASHRAE Standard and
+  printed copies of a public review draft may be purchased from ASHRAE Customer
+  Service, 1791 Tullie Circle, NE, Atlanta, GA 30329-2305. E-mail:
+  orders@ashrae.org. Fax: 404-321- 5478. Telephone: 404-636-8400 (worldwide),
+  or toll free 1-800-527- 4723 (for orders in U.S. and Canada).
+  {\textcopyright}Copyright 2003 American Society of Heating, Refrigerating and
+  Air-Conditioning Engineers, Inc.%
+  }
+  \field{booktitle}{Am. Soc. Heating, Refrig. Air-Conditioning Eng.}
+  \verb{doi}
+  \verb ISSN 1041-2336
+  \endverb
+  \field{isbn}{4048368400}
+  \field{issn}{10412336}
+  \field{title}{{ANSI/ASHRAE Standard 62-2001: Ventilation for Acceptable
+  Indoor Air Quality}}
+  \field{year}{2004}
+\endentry
+
+\entry{Aumi2014}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Aumi}{A.}%
+     {Tanvir~Islam}{T.~I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gupta}{G.}%
+     {Sidhant}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pickett}{P.}%
+     {Cameron}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Reynolds}{R.}%
+     {Matt}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Patel}{P.}%
+     {Shwetak}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ATI+1}
+  \strng{fullhash}{ATIGSPCRMPS1}
+  \field{sortinit}{A}
+  \verb{doi}
+  \verb 10.1145/2632048.2636087
+  \endverb
+  \field{isbn}{9781450329682}
+  \field{pages}{361\bibrangedash 371}
+  \field{title}{{A Self - Calibrating Approach to Whole - Home Contactless
+  Power Consumption Sensing}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/ubicomp/p361-aumi.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2014 ACM Int. Jt. Conf. Pervasive Ubiquitous
+  Comput. (UbiComp '14)}
+  \field{year}{2014}
+\endentry
+
+\entry{Balaji2013}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Balaji}{B.}%
+     {Bharathan}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Xu}{X.}%
+     {Jian}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nwokafor}{N.}%
+     {Anthony}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gupta}{G.}%
+     {Rajesh}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Agarwal}{A.}%
+     {Yuvraj}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{HVAC,WiFi,buildings,energy efficiency,hvac,occupancy,sentinel}
+  \strng{namehash}{BB+1}
+  \strng{fullhash}{BBXJNAGRAY1}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1145/2517351.2517370
+  \endverb
+  \field{isbn}{9781450320276}
+  \field{pages}{17}
+  \field{title}{{Sentinel: occupancy based HVAC actuation using existing WiFi
+  infrastructure within commercial buildings}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/wifi/Sentinel.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 11th ACM Conf. Embed. Networked Sens. Syst.}
+  \field{year}{2013}
+\endentry
+
+\entry{Beder2012}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Beder}{B.}%
+     {Christian}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Klepal}{K.}%
+     {Martin}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BCKM1}
+  \strng{fullhash}{BCKM1}
+  \field{sortinit}{B}
+  \field{isbn}{9781467319546}
+  \field{number}{November}
+  \field{pages}{13\bibrangedash 15}
+  \field{title}{{Fingerprinting Based Localisation Revisited}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/wifi/1f2d5493cec8231b234b846a68c57363174b.p
+  \verb df:pdf
+  \endverb
+  \field{year}{2012}
+\endentry
+
+\entry{Beltran}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Beltran}{B.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cerpa}{C.}%
+     {Alberto~E}{A.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ACM BuildSys 2015,building,control,monitoring}
+  \strng{namehash}{BACAE1}
+  \strng{fullhash}{BACAE1}
+  \field{sortinit}{B}
+  \field{isbn}{9781450336314}
+  \field{pages}{437\bibrangedash 438}
+  \field{title}{{Poster Abstract : Model Predictive Control with Real-time
+  Occupancy Detection}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ACM BuildSys 2015/1 - cerpa.pdf:pdf
+  \endverb
+\endentry
+
+\entry{Beltran2013}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Beltran}{B.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Erickson}{E.}%
+     {Vl~Varick~L}{V.~V.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cerpa}{C.}%
+     {Alberto E~Ae}{A.~E.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ACM BuildSys 2015,HVAC Control,Occupancy Sensing,Thermal Sensing,hvac
+  control,occupancy sensing,thermal sensing}
+  \strng{namehash}{BAEVVLCAEA1}
+  \strng{fullhash}{BAEVVLCAEA1}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1145/2528282.2528301
+  \endverb
+  \field{isbn}{978-1-4503-2431-1}
+  \field{pages}{11:1\bibrangedash 11:8}
+  \field{title}{{ThermoSense: Occupancy Thermal Based Sensing for HVAC
+  Control}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ACM BuildSys 2015/2 - Beltran - thermosense
+  \verb .pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 5th ACM Work. Embed. Syst. Energy-Efficient
+  Build.}
+  \field{year}{2013}
+\endentry
+
+\entry{Beltran2013a}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Beltran}{B.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Erickson}{E.}%
+     {Vl~Varick~L}{V.~V.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cerpa}{C.}%
+     {Alberto E~Ae}{A.~E.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{HVAC Control,Occupancy Sensing,Thermal Sensing,hvac control,occupancy
+  sensing,thermal sensing}
+  \strng{namehash}{BAEVVLCAEA1}
+  \strng{fullhash}{BAEVVLCAEA1}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1145/2528282.2528301
+  \endverb
+  \field{isbn}{978-1-4503-2431-1}
+  \field{pages}{11:1\bibrangedash 11:8}
+  \field{title}{{ThermoSense: Occupancy Thermal Based Sensing for HVAC
+  Control}}
+  \verb{url}
+  \verb ACM BuildSys 2015
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ACM BuildSys 2015/related/11{\_}Beltran - t
+  \verb hermosense.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 5th ACM Work. Embed. Syst. Energy-Efficient
+  Build.}
+  \field{year}{2013}
+\endentry
+
+\entry{Berman2010}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Berman}{B.}%
+     {Oded}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Drezner}{D.}%
+     {Zvi}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Krass}{K.}%
+     {Dmitry}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Cooperative cover,Covering models,Gradual cover,Location,Variable
+  radius}
+  \strng{namehash}{BODZKD1}
+  \strng{fullhash}{BODZKD1}
+  \field{sortinit}{B}
+  \field{abstract}{%
+  The goal of the paper is to provide an overview of the following classes of
+  models:. Gradual cover models: These models seek to relax the "all or
+  nothing" assumption by replacing it with a general coverage function which
+  represents the proportion of demand covered at a certain distance from the
+  facility. The cooperative cover model: This recently developed generalization
+  is designed to replace the "individual coverage" assumption with a mechanism
+  where all facilities contribute to the coverage of each demand point. This is
+  accomplished by viewing coverage as the transmission of a "signal" by the
+  facilities. The signal transmitted by each facility dissipates with distance.
+  However, the signal received by each demand point is the aggregation of the
+  transmissions from all the facilities. If the signal strength at the demand
+  point exceeds a certain threshold, the point is covered, otherwise it is not.
+  Variable radius model: This model is primarily designed to relax the "fixed
+  coverage radius" assumption, making the coverage radius an endogenously
+  determined function of the facility cost. Thus, instead of having to locate a
+  certain pre-determined number of facilities, the decision-maker has a certain
+  budget that can be used to construct facilities of different types, with the
+  more expensive facilities having larger coverage radius. ?? 2009 Elsevier
+  Ltd. All rights reserved.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.cor.2009.11.003
+  \endverb
+  \field{isbn}{0305-0548}
+  \field{issn}{03050548}
+  \field{number}{10}
+  \field{pages}{1675\bibrangedash 1687}
+  \field{title}{{Generalized coverage: New developments in covering location
+  models}}
+  \verb{url}
+  \verb http://dx.doi.org/10.1016/j.cor.2009.11.003
+  \endverb
+  \field{volume}{37}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/Generalized cove
+  \verb rage New developments in covering location models.pdf:pdf
+  \endverb
+  \field{journaltitle}{Comput. Oper. Res.}
+  \field{year}{2010}
+\endentry
+
+\entry{Berman2009}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Berman}{B.}%
+     {Oded}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Drezner}{D.}%
+     {Zvi}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Krass}{K.}%
+     {Dmitry}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wesolowsky}{W.}%
+     {George~O.}{G.~O.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier B.V.}%
+  }
+  \keyw{Cover,Discrete,Heuristics,Location,Network,Planar}
+  \strng{namehash}{BO+1}
+  \strng{fullhash}{BODZKDWGO1}
+  \field{sortinit}{B}
+  \field{abstract}{%
+  In this paper we propose a covering problem where the covering radius of a
+  facility is controlled by the decision-maker; the cost of achieving a certain
+  covering distance is assumed to be a monotonically increasing function of the
+  distance (i.e., it costs more to establish a facility with a greater covering
+  radius). The problem is to cover all demand points at a minimum cost by
+  finding optimal number, locations and coverage radii for the facilities.
+  Both, the planar and discrete versions of the model are considered. Heuristic
+  approaches are suggested for solving large problems in the plane. These
+  methods were tested on a set of planar problems. Mathematical programming
+  formulations are proposed for the discrete problem, and a solution approach
+  is suggested and tested. ?? 2008 Elsevier B.V. All rights reserved.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.ejor.2008.03.046
+  \endverb
+  \field{issn}{03772217}
+  \field{number}{2}
+  \field{pages}{516\bibrangedash 525}
+  \field{title}{{The variable radius covering problem}}
+  \verb{url}
+  \verb http://dx.doi.org/10.1016/j.ejor.2008.03.046
+  \endverb
+  \field{volume}{196}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/The variable rad
+  \verb ius covering problem.pdf:pdf
+  \endverb
+  \field{journaltitle}{Eur. J. Oper. Res.}
+  \field{year}{2009}
+\endentry
+
+\entry{Biehl2014}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Biehl}{B.}%
+     {Jacob~T}{J.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cooper}{C.}%
+     {Matthew}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Filby}{F.}%
+     {Gerry}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kratz}{K.}%
+     {Sven}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{context,indoor location,presence,ubiquitous computing,workplace
+  movement}
+  \strng{namehash}{BJT+1}
+  \strng{fullhash}{BJTCMFGKS1}
+  \field{sortinit}{B}
+  \field{abstract}{%
+  In recent years, there has been an explosion of social and collaborative
+  applications that leverage location to provide users novel and engaging
+  experiences. Current location technologies work well outdoors but fare poorly
+  indoors. In this paper we present LoCo, a new framework that can provide
+  highly accurate room-level location using a supervised classification scheme.
+  We provide experiments that show this technique is orders of magnitude more
+  efficient than current state-of-the-art Wi-Fi localization techniques. Low
+  classification overhead and computational footprint make classification
+  practical and efficient even on mobile devices. Our framework has also been
+  designed to be easily deployed and leveraged by developers to help create a
+  new wave of location-driven applications and services.%
+  }
+  \verb{doi}
+  \verb 10.1145/2632048.2636083
+  \endverb
+  \field{isbn}{9781450329682}
+  \field{pages}{183\bibrangedash 187}
+  \field{title}{{LoCo: A Ready-to-Deploy Framework for Efficient Room
+  Localization using Wi-Fi}}
+  \verb{url}
+  \verb http://dl.acm.org/citation.cfm?id=2632048.2636083
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p183-biehl.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2014 ACM Int. Jt. Conf. Pervasive Ubiquitous
+  Comput. - UbiComp '14 Adjun.}
+  \field{year}{2014}
+\endentry
+
+\entry{Biehl2015}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Biehl}{B.}%
+     {Jacob~T}{J.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lee}{L.}%
+     {Adam~J}{A.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Filby}{F.}%
+     {Gerry}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cooper}{C.}%
+     {Matthew}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{indoor location,location services,location-based access control,secure
+  location}
+  \strng{namehash}{BJT+1}
+  \strng{fullhash}{BJTLAJFGCM1}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1145/2750858.2804284
+  \endverb
+  \field{isbn}{978-1-4503-3574-4}
+  \field{pages}{909\bibrangedash 919}
+  \field{title}{{You'Re Where? Prove It!: Towards Trusted Indoor Location
+  Estimation of Mobile Devices}}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/2750858.2804284
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p909-biehl.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2015 ACM Int. Jt. Conf. Pervasive Ubiquitous
+  Comput.}
+  \field{year}{2015}
+\endentry
+
+\entry{Chan2015}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Chan}{C.}%
+     {S.-H.~Gary}{S.-H.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yu}{Y.}%
+     {Lei}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Liu}{L.}%
+     {Ning}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Authors' choice,by semicolons,include commas,of
+  terms,required.,separated,within terms only}
+  \strng{namehash}{CSHGYLLN1}
+  \strng{fullhash}{CSHGYLLN1}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb 10.1145/2750858.2804254
+  \endverb
+  \field{isbn}{9781450335744}
+  \field{pages}{897\bibrangedash 908}
+  \field{title}{{Calibration-free fusion of step counter and wireless
+  fingerprints for indoor localization}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p897-he.pdf:pdf
+  \endverb
+  \field{journaltitle}{UbiComp '15 Proc. 2015 ACM Int. Jt. Conf. Pervasive
+  Ubiquitous Comput.}
+  \field{year}{2015}
+\endentry
+
+\entry{Church1974}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Church}{C.}%
+     {R.L.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {ReVelle}{R.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CRRC1}
+  \strng{fullhash}{CRRC1}
+  \field{sortinit}{C}
+  \field{title}{{The maximal covering location problem}}
+  \field{journaltitle}{Pap. Reg. Sci. Assoc.}
+  \field{year}{1974}
+\endentry
+
+\entry{Collotta2015}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Collotta}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pau}{P.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier Ltd}%
+  }
+  \strng{namehash}{CMPG1}
+  \strng{fullhash}{CMPG1}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb 10.1016/j.compeleceng.2015.01.005
+  \endverb
+  \field{issn}{00457906}
+  \field{pages}{137\bibrangedash 152}
+  \field{title}{{Bluetooth for Internet of Things: A fuzzy approach to improve
+  power management in smart homes}}
+  \verb{url}
+  \verb http://linkinghub.elsevier.com/retrieve/pii/S0045790615000117
+  \endverb
+  \field{volume}{44}
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Col
+  \verb lotta, Pau - 2015 - Bluetooth for Internet of Things A fuzzy approach t
+  \verb o improve power management in smart homes.pdf:pdf
+  \endverb
+  \field{journaltitle}{Comput. Electr. Eng.}
+  \field{year}{2015}
+\endentry
+
+\entry{Colombo2016a}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Colombo}{C.}%
+     {Fabio}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cordone}{C.}%
+     {Roberto}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lulli}{L.}%
+     {Guglielmo}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Heuristic concentration,Maximal covering location problem,Variable
+  neighborhood search,Very large scale neighborhood search}
+  \strng{namehash}{CFCRLG1}
+  \strng{fullhash}{CFCRLG1}
+  \field{sortinit}{C}
+  \field{abstract}{%
+  In this paper we introduce the Multimode Covering Location Problem. This is a
+  generalization of the Maximal Covering Location Problem that consists in
+  locating a given number of facilities of different types with a limitation on
+  the number of facilities sharing the same site. The problem is challenging
+  and intrinsically much harder than its basic version. Nevertheless, it admits
+  a constant factor approximation guarantee, which can be achieved combining
+  two greedy algorithms. To improve the greedy solutions, we have developed a
+  Variable Neighborhood Search approach, based on an exponential-size
+  neighborhood. This algorithm computes good quality solutions in short
+  computational time. The viability of the approach here proposed is also
+  corroborated by a comparison with a Heuristic Concentration algorithm, which
+  is presently the most effective approach to solve large instances of the
+  Maximal Covering Location Problem.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.cor.2015.09.003
+  \endverb
+  \field{issn}{03050548}
+  \field{pages}{25\bibrangedash 33}
+  \field{title}{{The multimode covering location problem}}
+  \verb{url}
+  \verb http://dx.doi.org/10.1016/j.cor.2015.09.003
+  \endverb
+  \field{volume}{67}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/1-s2.0-S03050548
+  \verb 15002130-main.pdf:pdf
+  \endverb
+  \field{journaltitle}{Comput. Oper. Res.}
+  \field{year}{2016}
+\endentry
+
+\entry{Colombo2016}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Colombo}{C.}%
+     {Fabio}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cordone}{C.}%
+     {Roberto}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lulli}{L.}%
+     {Guglielmo}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Heuristic concentration,Maximal covering location problem,Variable
+  neighborhood search,Very large scale neighborhood search}
+  \strng{namehash}{CFCRLG1}
+  \strng{fullhash}{CFCRLG1}
+  \field{sortinit}{C}
+  \field{abstract}{%
+  In this paper we introduce the Multimode Covering Location Problem. This is a
+  generalization of the Maximal Covering Location Problem that consists in
+  locating a given number of facilities of different types with a limitation on
+  the number of facilities sharing the same site. The problem is challenging
+  and intrinsically much harder than its basic version. Nevertheless, it admits
+  a constant factor approximation guarantee, which can be achieved combining
+  two greedy algorithms. To improve the greedy solutions, we have developed a
+  Variable Neighborhood Search approach, based on an exponential-size
+  neighborhood. This algorithm computes good quality solutions in short
+  computational time. The viability of the approach here proposed is also
+  corroborated by a comparison with a Heuristic Concentration algorithm, which
+  is presently the most effective approach to solve large instances of the
+  Maximal Covering Location Problem.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.cor.2015.09.003
+  \endverb
+  \field{issn}{03050548}
+  \field{pages}{25\bibrangedash 33}
+  \field{title}{{The multimode covering location problem}}
+  \verb{url}
+  \verb http://dx.doi.org/10.1016/j.cor.2015.09.003
+  \endverb
+  \field{volume}{67}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/1-s2.0-S03050548
+  \verb 15002130-main.pdf:pdf
+  \endverb
+  \field{journaltitle}{Comput. Oper. Res.}
+  \field{year}{2016}
+\endentry
+
+\entry{Conte2014}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Conte}{C.}%
+     {Giorgio}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Milano}{M.}%
+     {Politecnico}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Leonardo}{L.}%
+     {P}{P}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vinci}{V.}%
+     {Da}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Marchi}{M.}%
+     {Massimo~De}{M.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nacci}{N.}%
+     {Alessandro~a}{A.~a.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rana}{R.}%
+     {Vincenzo}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{bluetooth,classification algorithms,ibeacon,indoor localization,low
+  energy,positioning systems}
+  \strng{namehash}{CG+1}
+  \strng{fullhash}{CGMPLPVDMMDNAaRV1}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb 10.1145/2676061.2674078
+  \endverb
+  \field{isbn}{9781450331432}
+  \field{pages}{11\bibrangedash 19}
+  \field{title}{{BlueSentinel : a first approach using iBeacon for an energy
+  efficient occupancy detection system}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/p11-conte first BlueSentinel.pdf:pdf
+  \endverb
+  \field{journaltitle}{1st ACM Conf. Embed. Syst. Energy-Efficient Build.}
+  \field{year}{2014}
+\endentry
+
+\entry{Nacci2015}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Corna}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fontana}{F.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nacci}{N.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sciuto}{S.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{energy,ibeacon,indoor location,smart buildings}
+  \strng{namehash}{CA+1}
+  \strng{fullhash}{CAFLNASD1}
+  \field{sortinit}{C}
+  \field{abstract}{%
+  Building heating, ventilation, and air conditioning (HVAC) systems are
+  considered to be the main target for energy reduction due to their
+  significant contribution to commercial buildings' energy consumption. Knowing
+  a building's occupancy plays a crucial role in implementing demand-response
+  HVAC. In this paper we propose a new solution based on the iBeacon
+  technology. This solution is different from the previous ones because it
+  leverages on the Bluetooth Low Energy standard, which provides lower power
+  consumption. Moreover, the iBeacon protocol can be used both on iOs systems
+  and Android ones, making this new approach portable. Differently from our
+  previous work based on iOS devices, in this paper we focus on an Android
+  based solution with the aim of increasing the accuracy of the location and
+  the energy efficiency of the entire system. We increased the accuracy by
+  10{\%} and the energy efficiency by 15{\%}.%
+  }
+  \field{isbn}{9783981537048}
+  \field{number}{1}
+  \field{pages}{629\bibrangedash 632}
+  \field{title}{{Occupancy Detection via iBeacon on Android Devices for Smart
+  Building Management}}
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Mil
+  \verb ano - 2015 - Occupancy Detection via iBeacon on Android Devices for Sma
+  \verb rt Building Management.pdf:pdf
+  \endverb
+  \field{journaltitle}{Des. Autom. Test Eur. Conf. Exhib.}
+  \field{year}{2015}
+\endentry
+
+\entry{Cruz2011}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Cruz}{C.}%
+     {Omar}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ramos}{R.}%
+     {Erik}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ramirez}{R.}%
+     {Moises}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{3d models,bt,high degree of,indoor environments,j2me due to its,mobile
+  devices,platform independence and development,radio
+  navigation,standardization,used on java and}
+  \strng{namehash}{CORERM1}
+  \strng{fullhash}{CORERM1}
+  \field{sortinit}{C}
+  \field{abstract}{%
+  Over last years, Indoor Positioning and Navigation Systems (IPNS) has been
+  subject of intense study and research ought to it has become a blind spot
+  with regard to Positioning and Navigation Software. None of proposed indoor
+  solutions has been as successful as outdoor systems like Global Position
+  System (GPS). Our proposal presents the design and implementation on mobile
+  device(the most common), of a 3D positioning and navigation system for indoor
+  based on the use of Bluetooth (BT) radio technology and implemented using
+  Java and J2ME, this implementation is adaptable to whatever indoor
+  environment (commercial centers, offices, museums, etc.) previously modeled
+  and loaded. This 3D model can be build using the most common 3D design tools
+  with M3G formats support. Location is implemented on BT with distributed
+  estimation (the mobile device performs it).%
+  }
+  \verb{doi}
+  \verb 10.1109/CONIELECOMP.2011.5749373
+  \endverb
+  \field{isbn}{978-1-4244-9558-0}
+  \field{pages}{271\bibrangedash 277}
+  \field{title}{{3D indoor location and navigation system based on Bluetooth}}
+  \verb{url}
+  \verb http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5749373
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/5 - 3D Indoor Location w Bluetooth.pdf:pdf
+  \endverb
+  \field{journaltitle}{CONIELECOMP 2011, 21st Int. Conf. Electr. Commun.
+  Comput.}
+  \field{year}{2011}
+\endentry
+
+\entry{Daskin1997}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Daskin}{D.}%
+     {M}{M}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DM1}
+  \strng{fullhash}{DM1}
+  \field{sortinit}{D}
+  \field{abstract}{%
+  The comprehensive introduction to the art and science of locating facilities
+  to make your organization more efficient, effective, and profitable. For the
+  professional siting facilities, the task of translating organizational goals
+  and objectives into concrete facilities requires a working familiarity with
+  the theoretical and practical fundamentals of facility location planning and
+  modeling. The first hands-on guide to using and developing facility location
+  models, Network and Discrete Location offers a practiceoriented introduction
+  to model-building methods and solution algorithms, complete with software to
+  solve classical problems of realistic size and end-of-chapter exercises to
+  enhance the reader's understanding. The text introduces the reader to the key
+  classical location problems (covering, center, median, and fixed charge)
+  which form the nucleus of facility location modeling. It also discusses
+  real-life extensions of the basic models used in locating: production and
+  distribution facilities, interacting services and facilities, and undesirable
+  facilities. The book outlines a host of methodological tools for solving
+  location models and provides insights into when each approach is useful and
+  what information it provides. Designed to give readers a working familiarity
+  with the basic facility location model types as well as an intuitive
+  knowledge of the uses and limits of modeling techniques, Network and Discrete
+  Location brings students and professionals alike swiftly from basic theory to
+  technical fluency.%
+  }
+  \field{booktitle}{J. Oper. Res. Soc.}
+  \verb{doi}
+  \verb 10.1057/palgrave.jors.2600828
+  \endverb
+  \field{isbn}{047101897X}
+  \field{issn}{0160-5682}
+  \field{pages}{763\bibrangedash 764}
+  \field{title}{{Network and Discrete Location: Models, Algorithms and
+  Applications}}
+  \field{volume}{48}
+  \field{year}{1997}
+\endentry
+
+\entry{Daskin1982}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Daskin}{D.}%
+     {Mark~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{and queu-,location models,mathematical programming,networks}
+  \strng{namehash}{DMS1}
+  \strng{fullhash}{DMS1}
+  \field{sortinit}{D}
+  \field{abstract}{%
+  The Emergency Medical Service (EMS) Act specifies the fraction of all demands
+  for service that must be reached in a given amount of time for urban and
+  rural areas. The conditions have traditionally been interpreted to apply to
+  the case in which all EMS vehicles are available to respond to demands. A
+  model that considers the probability of a vehicle being busy is formulated
+  and model properties are briefly discussed. The model is then applied to two
+  problems: a 55-node test case and a 33-node census tract representation of
+  Austin, Texas. The implications of the new model for EMS system design are
+  discussed as are the limitations of the modeling approach.%
+  }
+  \verb{doi}
+  \verb 10.1111/j.1540-5915.1982.tb00159.x
+  \endverb
+  \field{isbn}{1540-5915}
+  \field{issn}{0011-7315}
+  \field{number}{3}
+  \field{pages}{416\bibrangedash 439}
+  \field{title}{{Application of an Expected Covering Model To Emergency Medical
+  Service System Design}}
+  \verb{url}
+  \verb http://doi.wiley.com/10.1111/j.1540-5915.1982.tb00159.x
+  \endverb
+  \field{volume}{13}
+  \field{journaltitle}{Decis. Sci.}
+  \field{year}{1982}
+\endentry
+
+\entry{Daskin1983}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Daskin}{D.}%
+     {Mark~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DMS1}
+  \strng{fullhash}{DMS1}
+  \field{sortinit}{D}
+  \field{abstract}{%
+  The maximum covering location model is extended to account for the chance
+  that when a demand arrives at the system it will not be covered since all
+  facilities capable of covering the demand are engaged serving other demands.
+  An integer programming formulation of the new problem is presented. Several
+  properties of the formulation are proven. A heuristic solution algorithm is
+  presented and computational results with the algorithm are discussed.
+  Directions for future study are also discussed.%
+  }
+  \verb{doi}
+  \verb 10.1287/trsc.17.1.48
+  \endverb
+  \field{isbn}{0041-1655}
+  \field{issn}{00411655}
+  \field{number}{1}
+  \field{pages}{48\bibrangedash 70}
+  \field{title}{{Maximum Expected Covering Location Model: Formulation,
+  Properties and Heuristic Solution.}}
+  \field{volume}{17}
+  \field{journaltitle}{Transp. Sci.}
+  \field{year}{1983}
+\endentry
+
+\entry{Daskin1981}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Daskin}{D.}%
+     {Mark~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Stern}{S.}%
+     {Edmund~H.}{E.~H.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DMSSEH1}
+  \strng{fullhash}{DMSSEH1}
+  \field{sortinit}{D}
+  \field{abstract}{%
+  The use of hierarchical and multiobjective programming in public decision
+  making is reviewed. The conventional set covering (CSC) problem is formulated
+  for locating emergency medical service vehicles. Its computational and
+  practical limitations are discussed. The formulation of a hierarchical
+  objective set covering (HOSC) problem is accounted for. Several important
+  properties of the HOSC problem are derived, including the fact that for
+  certain values of the relative weights associated with the two objectives, no
+  dominated zones are included in the solution. The CSC and HOSC formulations
+  are applied to a 33-zone problem for Austin, Texas, and computational
+  experiences are indicated.%
+  }
+  \verb{doi}
+  \verb 0041-1655/81/1502-0137
+  \endverb
+  \field{issn}{00411655}
+  \field{number}{2}
+  \field{pages}{137\bibrangedash 152}
+  \field{title}{{Hierarchical Objective Set Covering Model For Emergency
+  Medical Service Vehicle Deployment.}}
+  \verb{url}
+  \verb http://www.scopus.com/inward/record.url?eid=2-s2.0-0019565514{\&}partne
+  \verb rID=tZOtx3y1
+  \endverb
+  \field{volume}{15}
+  \field{journaltitle}{Transp. Sci.}
+  \field{year}{1981}
+\endentry
+
+\entry{doe}{report}{}
+  \name{author}{1}{}{%
+    {{}%
+     {DOE}{D.}%
+     {Department of~Energy}{D.~o.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DDoE1}
+  \strng{fullhash}{DDoE1}
+  \field{sortinit}{D}
+  \field{abstract}{%
+  The Data Book includes statistics on residential and commercial building
+  energy consumption. Data tables contain statistics related to construction,
+  building technologies, energy consumption, and building characteristics. The
+  Building Technologies Program within the U.S. Department of Energy's Office
+  of Energy Efficiency and Renewable Energy developed this resource to provide
+  a current and accurate set of comprehensive buildings- and energy-related
+  data. The Data Book is an evolving document and is updated periodically.%
+  }
+  \field{booktitle}{Energy Effic. Renew. Energy Dep.}
+  \field{pages}{1\bibrangedash 271}
+  \field{title}{{Buildings Energy Data Book}}
+  \field{type}{techreport}
+  \field{year}{2011}
+\endentry
+
+\entry{Drezner2006}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Drezner}{D.}%
+     {Zvi}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Drezner}{D.}%
+     {Tammy}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DZDT1}
+  \strng{fullhash}{DZDT1}
+  \field{sortinit}{D}
+  \field{abstract}{%
+  Two problems are considered in this article. Both problems seek the location
+  of p facilities. The first problem is the p median where the total distance
+  traveled by customers is minimized. The second problem focuses on equalizing
+  demand across facilities by minimizing the variance of total demand attracted
+  to each facility. These models are unique in that the gravity rule is used
+  for the allocation of demand among facilities rather than assuming that each
+  customer selects the closest facility. In addition, we also consider a
+  multiobjective approach, which combines the two objectives. We propose
+  heuristic solution procedures for the problem in the plane. Extensive
+  computational results are presented. {\textcopyright} 2006 The Ohio State
+  University.%
+  }
+  \verb{doi}
+  \verb 10.1111/j.1538-4632.2006.00692.x
+  \endverb
+  \field{isbn}{1538-4632}
+  \field{issn}{00167363}
+  \field{number}{4}
+  \field{pages}{391\bibrangedash 406}
+  \field{title}{{Multiple facilities location in the plane using the gravity
+  model}}
+  \field{volume}{38}
+  \field{journaltitle}{Geogr. Anal.}
+  \field{year}{2006}
+\endentry
+
+\entry{Erickson2011}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Erickson}{E.}%
+     {Varick~L.}{V.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Carreira-Perpinan}{C.-P.}%
+     {Miguel~a.}{M.~a.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cerpa}{C.}%
+     {Alberto~E.}{A.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Energy savings,HVAC,Occupancy,Ventilation}
+  \strng{namehash}{EVLCPMaCAE1}
+  \strng{fullhash}{EVLCPMaCAE1}
+  \field{sortinit}{E}
+  \field{abstract}{%
+  Heating, cooling and ventilation accounts for 35{\%} energy usage in the
+  United States. Currently, most modern buildings still condition rooms
+  assuming maximum occupancy rather than actual usage. As a result, rooms are
+  often over-conditioned needlessly. Thus, in order to achieve efficient
+  conditioning, we require knowledge of occupancy. This paper shows how real
+  time occupancy data from a wireless sensor network can be used to create
+  occupancy models which in turn can be integrated into building conditioning
+  system for usage based demand control conditioning strategies. Using
+  strategies based on sensor network occupancy model predictions, we show that
+  it is possible to achieve 42{\%} annual energy savings while still
+  maintaining American Society of Heating, Refrigerating and Air-Conditioning
+  (ASHRAE) comfort standards.%
+  }
+  \field{isbn}{978-1-4503-0512-9}
+  \field{pages}{258\bibrangedash 269}
+  \field{title}{{OBSERVE: Occupancy-based system for efficient reduction of
+  HVAC energy}}
+  \verb{url}
+  \verb ACM BuildSys 2015
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ACM BuildSys 2015/related/Erickson - OBSERV
+  \verb E.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 10th ACM/IEEE Int. Conf. Inf. Process. Sens.
+  Networks}
+  \field{year}{2011}
+\endentry
+
+\entry{Erickson2013}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Erickson}{E.}%
+     {Vl}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Achleitner}{A.}%
+     {S}{S}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cerpa}{C.}%
+     {Ae}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{energy savings,hvac,occupancy,ventilation}
+  \strng{namehash}{EVASCA1}
+  \strng{fullhash}{EVASCA1}
+  \field{sortinit}{E}
+  \field{abstract}{%
+  Buildings account for 40{\%} of US primary energy consump- tion and 72{\%} of
+  electricity. Of this total, 50{\%} of the energy consumed in buildings is
+  used for Heating Ventilation and Air-Conditioning (HVAC) systems. Current
+  HVAC systems only condition based on static schedules; rooms are condi-
+  tioned regardless of occupancy. By conditioning rooms only when necessary,
+  greater efficiency can be achieved. This paper describes POEM, a complete
+  closed-loop system for optimally controlling HVAC systems in buildings based
+  on actual occupancy levels. POEM is comprised of multiple parts. A wireless
+  network of cameras called OPTNet is de- veloped that functions as an optical
+  turnstile to measure area/zone occupancies. Another wireless sensor network
+  of passive infrared (PIR) sensors called BONet functions along- side OPTNet.
+  This sensed occupancy data from both sys- tems are then fused with an
+  occupancy prediction model us- ing a particle filter in order to determine
+  the most accurate current occupancy in each zone in the building. Finally,
+  the information from occupancy prediction models and current occupancy is
+  combined in order to find the optimal condi- tioning strategy required to
+  reach target temperatures and minimize ventilation requirements. Based on
+  live tests of the system, we estimate 30.0{\%} energy saving can be achieved
+  while still maintaining thermal comfort.%
+  }
+  \verb{doi}
+  \verb 10.1145/2461381.2461407
+  \endverb
+  \field{isbn}{9781450319591}
+  \field{pages}{203\bibrangedash 216}
+  \field{title}{{POEM: power-efficient occupancy-based energy management
+  system}}
+  \field{journaltitle}{Proc. 12th}
+  \field{year}{2013}
+\endentry
+
+\entry{Fang2010}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Fang}{F.}%
+     {Shih~Hau}{S.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lin}{L.}%
+     {Tsung~Nan}{T.~N.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{AP placement,Deployment algorithms,Fingerprinting,Indoor
+  positioning,WLAN}
+  \strng{namehash}{FSHLTN1}
+  \strng{fullhash}{FSHLTN1}
+  \field{sortinit}{F}
+  \field{abstract}{%
+  This paper presents a novel approach to placing access points (APs) in
+  wireless local area networks (WLAN). Unlike the traditional methods focusing
+  on coverage maximization, we investigate how to place APs from the
+  perspective of an indoor location system. We present a framework for linking
+  the placement of APs and the positioning performance. Our algorithm, namely
+  maximizing SNR (signal-to-noise ratio), aims at choosing a proper set of APs'
+  locations so that the signal is maximized and the noise is minimized
+  simultaneously. The proposed algorithm regards the location discriminant
+  information as the signal and the degree of unstable measurements as the
+  noise. Such numerical values provide a good theoretical formulation to
+  measure the influence of the AP deployment. In our location system, we
+  utilize such SNR ratio to deploy APs so as to reduce the positioning errors.
+  Our location system is developed in a real-world WLAN environment, where the
+  realistic measurements were collected. The experimental results show that the
+  positioning accuracy is improved based on our deployment approach in
+  different scenarios.%
+  }
+  \verb{doi}
+  \verb 10.1109/WCNC.2010.5506586
+  \endverb
+  \field{isbn}{9781424463985}
+  \field{issn}{15253511}
+  \field{pages}{1\bibrangedash 4}
+  \field{title}{{A novel access point placement approach for WLAN-based
+  location systems}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/ap 3.pdf:pdf
+  \endverb
+  \field{journaltitle}{IEEE Wirel. Commun. Netw. Conf. WCNC}
+  \field{year}{2010}
+\endentry
+
+\entry{Farkas2015}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Farkas}{F.}%
+     {K??roly}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Indoor localization,MATLAB,Simulated annealing,Triangulation,ZigBee}
+  \strng{namehash}{FK1}
+  \strng{fullhash}{FK1}
+  \field{sortinit}{F}
+  \field{issn}{17858860}
+  \field{number}{2}
+  \field{pages}{123\bibrangedash 139}
+  \field{title}{{Placement optimization of reference sensors for indoor
+  tracking}}
+  \field{volume}{12}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/Farkas{\_}58.pdf
+  \verb :pdf
+  \endverb
+  \field{journaltitle}{Acta Polytech. Hungarica}
+  \field{year}{2015}
+\endentry
+
+\entry{Goldoni2010}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Goldoni}{G.}%
+     {Emanuele}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Savioli}{S.}%
+     {Alberto}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Risi}{R.}%
+     {Marco}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gamba}{G.}%
+     {Paolo}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GE+1}
+  \strng{fullhash}{GESARMGP1}
+  \field{sortinit}{G}
+  \field{abstract}{%
+  This paper presents a comparison between some of the most used ranging
+  localization methods based on the Received Signal Strength Indicator (RSSI)
+  in low-power IEEE 802.15.4 wireless sensor networks. In particular, the
+  Trilateration, the Min-Max and the Maximum-Likelihood algorithms have been
+  compared using only a limited number of reference nodes. In order to perform
+  an exhaustive comparison we carried out tests in an indoor environment:
+  dozens of RSSI values for every estimation have been gathered and cleaned
+  from outliers values. Our results show that it is possible to some extent to
+  obtain positioning information from nodes equipped with IEEE 802.15.4 radio
+  modules, given the position and the number of reference nodes.%
+  }
+  \verb{doi}
+  \verb 10.1109/EW.2010.5483396
+  \endverb
+  \field{isbn}{9781424459995}
+  \field{issn}{978-1-4244-5999-5}
+  \field{pages}{71\bibrangedash 77}
+  \field{title}{{Experimental analysis of RSSI-based indoor localization with
+  IEEE 802.15.4}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/rssi indoor/05483396.pdf:pdf
+  \endverb
+  \field{journaltitle}{2010 Eur. Wirel. Conf. EW 2010}
+  \field{year}{2010}
+\endentry
+
+\entry{Gwon2004}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Gwon}{G.}%
+     {Youngjune Gwon~Youngjune}{Y.~G.~Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jain}{J.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kawahara}{K.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GYGYJRKT1}
+  \strng{fullhash}{GYGYJRKT1}
+  \field{sortinit}{G}
+  \field{abstract}{%
+  We present algorithms for estimating the location of stationary and mobile
+  users based on heterogeneous indoor RF technologies. We propose two location
+  algorithms, selective fusion location estimation (SELFLOC) and region of
+  confidence (RoC), which can be used in conjunction with classical location
+  algorithms such as triangulation, or with third-party commercial location
+  estimation systems. The SELFLOC algorithm infers the user location by
+  selectively fusing location information from multiple wireless technologies
+  and/or multiple classical location algorithms in a theoretically optimal
+  manner. The RoC algorithm attempts to overcome the problem of aliasing in the
+  signal domain, where different physical locations have similar RF
+  characteristics, which is particularly acute when users are mobile. We have
+  empirically validated the proposed algorithms using wireless LAN and
+  Bluetooth technology. Our experimental results show that applying SELFLOC for
+  stationary users when using multiple wireless technologies and multiple
+  classical location algorithms can improve location accuracy significantly,
+  with mean distance errors as low as 1.6 m. For mobile users we find that
+  using RoC can allow us to obtain mean errors as low as 3.7 m. Both algorithms
+  can be used in conjunction with a commercial location estimation system and
+  improve its accuracy further.%
+  }
+  \verb{doi}
+  \verb 10.1109/INFCOM.2004.1356990
+  \endverb
+  \field{isbn}{0-7803-8355-9}
+  \field{issn}{0743-166X}
+  \field{pages}{1032\bibrangedash 1043}
+  \field{title}{{Robust indoor location estimation of stationary and mobile
+  users}}
+  \field{volume}{2}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/01356990 - 2004.pdf:pdf
+  \endverb
+  \field{journaltitle}{Ieee Infocom 2004}
+  \field{year}{2004}
+\endentry
+
+\entry{He2011}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {He}{H.}%
+     {Ying}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Meng}{M.}%
+     {Weixiao}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ma}{M.}%
+     {Lin}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Deng}{D.}%
+     {Zhian}{Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{APs deployment,location accuracy,mathematical model}
+  \strng{namehash}{HY+1}
+  \strng{fullhash}{HYMWMLDZ1}
+  \field{sortinit}{H}
+  \field{abstract}{%
+  With the increasing needs of people for indoor location based service,
+  wireless indoor location technology has made a great development. In order to
+  improve indoor positioning accuracy, how to find appropriate number of access
+  points and how to deploy them are key issues. In this paper, we present an
+  optimal algorithm for access points deployment in WLAN indoor localization
+  system. First, we demonstrate the theoretical foundation of this algorithm
+  and then mathematical model and process of the optimal algorithm are
+  described in detail. The final results of simulation show that the optimal
+  algorithm proposed in this paper can give the reasonable number and
+  deployment of APs which provide higher location accuracy for users.%
+  }
+  \verb{doi}
+  \verb 10.1109/ChinaCom.2011.6158161
+  \endverb
+  \field{isbn}{9781457701016}
+  \field{pages}{268\bibrangedash 273}
+  \field{title}{{Rapid deployment of APs in WLAN indoor positioning system}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/ap rapid.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2011 6th Int. ICST Conf. Commun. Netw. China,
+  CHINACOM 2011}
+  \field{year}{2011}
+\endentry
+
+\entry{Heydon2012}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Heydon}{H.}%
+     {R}{R}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hunn}{H.}%
+     {N}{N}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HRHN1}
+  \strng{fullhash}{HRHN1}
+  \field{sortinit}{H}
+  \field{abstract}{%
+  Bluetooth Low Energy is an incredibly exciting technology with the promise of
+  unlocking a myriad of use cases. This session will focus on new Bluetooth Low
+  Energy features, including improved scanning and newly added support for
+  peripheral mode, in Android.%
+  }
+  \field{isbn}{9780132888363}
+  \field{title}{{Bluetooth Low Energy}}
+  \verb{url}
+  \verb https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Hey
+  \verb don, Hunn - 2012 - Bluetooth Low Energy.pdf:pdf
+  \endverb
+  \field{journaltitle}{CSR Present.}
+  \field{year}{2012}
+\endentry
+
+\entry{Hilsenbeck2014}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Hilsenbeck}{H.}%
+     {Sebastian}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bobkov}{B.}%
+     {Dmytro}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schroth}{S.}%
+     {Georg}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Huitl}{H.}%
+     {Robert}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Steinbach}{S.}%
+     {Eckehard}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Graph-based Sensor Fusion,Indoor Navigation,Indoor
+  Positioning,Location-based Services,Mobile Computing,Particle
+  Filter,Ubiquitous Localization}
+  \strng{namehash}{HS+1}
+  \strng{fullhash}{HSBDSGHRSE1}
+  \field{sortinit}{H}
+  \field{abstract}{%
+  We propose a graph-based, low-complexity sensor fusion approach for
+  ubiquitous pedestrian indoor positioning using mobile devices. We employ our
+  fusion technique to combine relative motion information based on step
+  detection with WiFi signal strength measurements. The method is based on the
+  well-known particle filter methodology. In contrast to previous work, we
+  provide a probabilistic model for location estimation that is formulated
+  directly on a fully discretized, graph-based representation of the indoor
+  environment. We generate this graph by adaptive quantization of the indoor
+  space, removing irrelevant degrees of freedom from the estimation problem. We
+  evaluate the proposed method in two realistic indoor environments using real
+  data collected from smartphones. In total, our dataset spans about 20
+  kilometers in distance walked and includes 13 users and four different mobile
+  device types. Our results demonstrate that the filter requires an order of
+  magnitude less particles than state-of-the-art approaches while maintaining
+  an accuracy of a few meters. The proposed low-complexity solution not only
+  enables indoor positioning on less powerful mobile devices, but also saves
+  much-needed resources for location-based end-user applications which run on
+  top of a localization service.%
+  }
+  \verb{doi}
+  \verb 10.1145/2632048.2636079
+  \endverb
+  \field{isbn}{9781450329682}
+  \field{pages}{147\bibrangedash 158}
+  \field{title}{{Graph-based Data Fusion of Pedometer and WiFi Measurements for
+  Mobile Indoor Positioning}}
+  \verb{url}
+  \verb http://www.lmt.ei.tum.de/forschung/publikationen/dateien/Hilsenbeck2014
+  \verb Graph-basedDataFusionof.pdf$\backslash$nhttp://dl.acm.org/citation.cfm?
+  \verb id=2636079$\backslash$nhttp://dl.acm.org/citation.cfm?doid=2632048.2636
+  \verb 079
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p147-hilsenbeck.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2014 ACM Int. Jt. Conf. Pervasive Ubiquitous
+  Comput. - UbiComp '14 Adjun.}
+  \field{year}{2014}
+\endentry
+
+\entry{Huang2015}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Huang}{H.}%
+     {Chuan-che~Jeff}{C.-c.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yang}{Y.}%
+     {Rayoung}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Newman}{N.}%
+     {Mark~W}{M.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{11,15,2015,at home using commodity,challenges of inferring
+  thermal,chuan-che,comfort,comp,huang,japan,jeff,mark w,newman,osaka,rayoung
+  yang,sensors,september 7,t he potential and}
+  \strng{namehash}{HCcJYRNMW1}
+  \strng{fullhash}{HCcJYRNMW1}
+  \field{sortinit}{H}
+  \field{isbn}{9781450335744}
+  \field{pages}{1089\bibrangedash 1100}
+  \field{title}{{The Potential and Challenges of Inferring Thermal Comfort at
+  Home Using Commodity Sensors}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/ubicomp/p1089-huang.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2015 ACM Int. Jt. Conf. Pervasive Ubiquitous
+  Comput.}
+  \field{year}{2015}
+\endentry
+
+\entry{Jiang2012}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Jiang}{J.}%
+     {Yifei}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pan}{P.}%
+     {Xin}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Li}{L.}%
+     {Kun}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lv}{L.}%
+     {Qin}{Q.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{JY+1}
+  \strng{fullhash}{JYPXLKLQ1}
+  \field{sortinit}{J}
+  \field{abstract}{%
+  People spend the majority of their time indoors, and human
+  indoor$\backslash$nactivities are strongly correlated with the rooms they are
+  in. Room$\backslash$nlocalization, which identifies the room a person or
+  mobile phone$\backslash$nis in, provides a powerful tool for characterizing
+  human indoor activities$\backslash$nand helping address challenges in public
+  health, productivity, building$\backslash$nmanagement, etc. Existing room
+  localization methods, however, require$\backslash$nlabor-intensive manual
+  annotation of individual rooms. We present$\backslash$nARIEL, a room
+  localization system that automatically learns room$\backslash$nfingerprints
+  based on occupants' indoor movements. ARIEL consists$\backslash$nof (1) a
+  zone-based clustering algorithm that accurately
+  identifies$\backslash$nin-room occupancy "hotspot(s)" using Wi-Fi signatures;
+  (2) a motion-based$\backslash$nclustering algorithm to identify inter-zone
+  correlation, thereby$\backslash$ndistinguishing different rooms; and (3) an
+  energy-efficient motion$\backslash$ndetection algorithm to minimize the noise
+  of Wi-Fi signatures. ARIEL$\backslash$nhas been implemented and deployed for
+  real-world testing with 21$\backslash$nusers over a 10-month period. Our
+  studies show that it supports room$\backslash$nlocalization with higher than
+  95{\%} accuracy without requiring labor-intensive$\backslash$nmanual
+  annotation. Copyright 2012 ACM.%
+  }
+  \verb{doi}
+  \verb 10.1145/2370216.2370282
+  \endverb
+  \field{isbn}{9781450312240}
+  \field{pages}{441\bibrangedash 450}
+  \field{title}{{Ariel: Automatic wi-fi based room fingerprinting for indoor
+  localization}}
+  \verb{url}
+  \verb http://dl.acm.org/citation.cfm?id=2370282
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/ariel.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. UbiComp 2012, ACM Conf. Ubiquitous Comput.}
+  \field{year}{2012}
+\endentry
+
+\entry{Jiang2013}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Jiang}{J.}%
+     {Yifei}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Xiang}{X.}%
+     {Yun}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pan}{P.}%
+     {Xin}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lv}{L.}%
+     {Kun Li~Qin}{K.~L.~Q.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dick}{D.}%
+     {Robert~P}{R.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Shang}{S.}%
+     {Li}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hannigan}{H.}%
+     {Michael}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{JY+1}
+  \strng{fullhash}{JYXYPXLKLQDRPSLHM1}
+  \field{sortinit}{J}
+  \field{abstract}{%
+  People spend approximately 70{\%} of their time indoors. Understanding the
+  indoor environments is therefore important for a wide range of emerging
+  mobile per- sonal and social applications. Knowledge of indoor floorplans is
+  often required by these applications. How- ever, indoor floorplans are either
+  unavailable or obtain- ing them requires slow, tedious, and error-prone man-
+  ual labor.$\backslash$nThis paper describes an automatic indoor floorplan
+  construction system. Leveraging Wi-Fi fingerprints and user motion
+  information, this system automatically constructs floorplan via three key
+  steps: (1) room adja- cency graph construction to determine which rooms are
+  adjacent; (2) hallway layout learning to estimate room sizes and order rooms
+  along each hallway, and (3) force directed dilation to adjust room sizes and
+  optimize the overall floorplan accuracy. Deployment study in three buildings
+  with 189 rooms demonstrates high floorplan accuracy. The system has been
+  implemented as a mo- bile middleware, which allows emerging mobile appli-
+  cations to generate, leverage, and share indoor floor- plans.%
+  }
+  \verb{doi}
+  \verb 10.1145/2493432.2493470
+  \endverb
+  \field{isbn}{9781450317702}
+  \field{pages}{315\bibrangedash 324}
+  \field{title}{{Hallway based Automatic Indoor Floorplan Construction using
+  Room Fingerprints }}
+  \verb{url}
+  \verb papers2://publication/doi/10.1145/2493432.2493470
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/ubicomp/p315-jiang.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. Int. Conf. Ubiquitous Comput.}
+  \field{year}{2013}
+\endentry
+
+\entry{Kang2009}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kang}{K.}%
+     {Chih-Wei}{C.-W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chen}{C.}%
+     {Jian-Hung}{J.-H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{algorithms,design,genetic,multi-objective
+  optimization,performance,wireless sensor network}
+  \strng{namehash}{KCWCJH1}
+  \strng{fullhash}{KCWCJH1}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1145/1570256.1570276
+  \endverb
+  \field{isbn}{9781605585055}
+  \field{pages}{2059}
+  \field{title}{{Multi-objective evolutionary optimization of 3D differentiated
+  sensor network deployment}}
+  \verb{url}
+  \verb http://portal.acm.org/citation.cfm?doid=1570256.1570276
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Kan
+  \verb g, Chen - 2009 - Multi-objective evolutionary optimization of 3D differ
+  \verb entiated sensor network deployment.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 11th Annu. Conf. companion Genet. Evol. Comput.
+  Conf. - GECCO '09}
+  \field{year}{2009}
+\endentry
+
+\entry{Kim2015}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Kim}{K.}%
+     {Dae-Yeob}{D.-Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kim}{K.}%
+     {Soo-Hyung}{S.-H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Choi}{C.}%
+     {Daeseon}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jin}{J.}%
+     {Seung-Hun}{S.-H.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier Masson SAS}%
+  }
+  \keyw{BLE,Beacon,Bluetooth Low Energy,Proximity Detection,RSSI ;}
+  \strng{namehash}{KDY+1}
+  \strng{fullhash}{KDYKSHCDJSH1}
+  \field{sortinit}{K}
+  \field{abstract}{%
+  The information of user's proximity to micro-location in an indoor space
+  allow us to infer the user's interest and intention. With help of this
+  information, it is possible to realize important real world tasks, for
+  instance, context aware service, automation of common tasks and so on.
+  Recently, there have been many studies on the indoor proximity detection with
+  BLE(Bluetooth Low Energy) and various techniques such as filtering and curve
+  fitting have been suggested for the improvement of accuracy. However, those
+  techniques are not adequate for the accurate indoor proximity detection,
+  which limit the usable space and increase the error detection rate. In this
+  study, we proposed the accurate indoor proximity zone detection technique
+  based on time window, frequency of RSSI(Received Signal Strength Indicator)
+  and user's walking.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.procs.2015.07.199
+  \endverb
+  \field{issn}{18770509}
+  \field{number}{MobiSPC}
+  \field{pages}{88\bibrangedash 95}
+  \field{title}{{Accurate Indoor Proximity Zone Detection Based on Time Window
+  and Frequency with Bluetooth Low Energy}}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/S1877050915016804
+  \endverb
+  \field{volume}{56}
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Kim
+  \verb  et al. - 2015 - Accurate Indoor Proximity Zone Detection Based on Time
+  \verb  Window and Frequency with Bluetooth Low Energy.pdf:pdf
+  \endverb
+  \field{journaltitle}{Procedia Comput. Sci.}
+  \field{year}{2015}
+\endentry
+
+\entry{Kim2015a}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Kim}{K.}%
+     {Dae-Yeob}{D.-Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kim}{K.}%
+     {Soo-Hyung}{S.-H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Choi}{C.}%
+     {Daeseon}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jin}{J.}%
+     {Seung-Hun}{S.-H.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier Masson SAS}%
+  }
+  \keyw{BLE,Beacon,Bluetooth Low Energy,Proximity Detection,RSSI ;}
+  \strng{namehash}{KDY+1}
+  \strng{fullhash}{KDYKSHCDJSH1}
+  \field{sortinit}{K}
+  \field{abstract}{%
+  The information of user's proximity to micro-location in an indoor space
+  allow us to infer the user's interest and intention. With help of this
+  information, it is possible to realize important real world tasks, for
+  instance, context aware service, automation of common tasks and so on.
+  Recently, there have been many studies on the indoor proximity detection with
+  BLE(Bluetooth Low Energy) and various techniques such as filtering and curve
+  fitting have been suggested for the improvement of accuracy. However, those
+  techniques are not adequate for the accurate indoor proximity detection,
+  which limit the usable space and increase the error detection rate. In this
+  study, we proposed the accurate indoor proximity zone detection technique
+  based on time window, frequency of RSSI(Received Signal Strength Indicator)
+  and user's walking.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.procs.2015.07.199
+  \endverb
+  \field{issn}{18770509}
+  \field{number}{MobiSPC}
+  \field{pages}{88\bibrangedash 95}
+  \field{title}{{Accurate Indoor Proximity Zone Detection Based on Time Window
+  and Frequency with Bluetooth Low Energy}}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/S1877050915016804
+  \endverb
+  \field{volume}{56}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/1 - behavior of RSSI in BLE proximity detec
+  \verb tion.pdf:pdf
+  \endverb
+  \field{journaltitle}{Procedia Comput. Sci.}
+  \field{year}{2015}
+\endentry
+
+\entry{Kleiminger2015}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kleiminger}{K.}%
+     {Wilhelm}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Beckel}{B.}%
+     {Christian}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Santini}{S.}%
+     {Silvia}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KWBCSS1}
+  \strng{fullhash}{KWBCSS1}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1145/2750858.2807538
+  \endverb
+  \field{isbn}{9781450335744}
+  \field{pages}{975\bibrangedash 986}
+  \field{title}{{Household Occupancy Monitoring Using Electricity Meters}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/kleiminger{\_}ubicomp2015.pdf:pdf
+  \endverb
+  \field{journaltitle}{UbiComp}
+  \field{year}{2015}
+\endentry
+
+\entry{Kouakou2010a}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kouakou}{K.}%
+     {Mt}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yamamoto}{Y.}%
+     {Shinya}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yasumoto}{Y.}%
+     {K}{K}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KMYSYK1}
+  \strng{fullhash}{KMYSYK1}
+  \field{sortinit}{K}
+  \field{title}{{Cost-Efficient Deployment for Full-Coverage and Connectivity
+  in Indoor 3D WSNs}}
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Kou
+  \verb akou, Yamamoto, Yasumoto - 2010 - Cost-Efficient Deployment for Full-Co
+  \verb verage and Connectivity in Indoor 3D WSNs.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 12th ACM Int. Conf. Adjun. Pap. Ubiquitous
+  Comput.}
+  \field{year}{2010}
+\endentry
+
+\entry{Kouakou2010}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Kouakou}{K.}%
+     {M.T.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yamamoto}{Y.}%
+     {Shinya}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yasumoto}{Y.}%
+     {Keiichi}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ito}{I.}%
+     {Minoru}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{3D wireless sensor network,Sensor,connectivity,coverage,deployment
+  planning tool}
+  \strng{namehash}{KM+1}
+  \strng{fullhash}{KMYSYKIM1}
+  \field{sortinit}{K}
+  \field{abstract}{%
+  When deploying an indoor 3D WSN, it is important to be able to determine
+  positions of the sensor nodes that achieve the full-coverage of the target
+  space and the connectivity between the sensor nodes with the minimum
+  deployment cost. The sensor node deployment problem for 3D coverage and
+  connectivity is NP-hard even without obstacles in the target field.
+  Furthermore, no study has systematically examined the optimal 3D WSN
+  deployment considering both obstacles and deployment cost. We have developed
+  a heuristic algorithm for computing a near optimal solution that minimizes
+  the cost for achieving the full coverage and node connectivity in a 3D target
+  space with obstacles. We have implemented the algorithm in the smartspace
+  simulator UbiREAL so that the designers can interactively determine the
+  near-optimal sensor node positions thorough visualization of the achievable
+  coverage and the sensor positions on a 3D virtual space. In this
+  demonstration, we show, for different configurations of the target space and
+  WSN parameters, how the tool computes the sensor positions and visualizes the
+  results such as achievable covered area, sensor positions, and the total
+  cost.%
+  }
+  \verb{doi}
+  \verb 10.1145/1864431.1864440
+  \endverb
+  \field{isbn}{9781450302838}
+  \field{number}{1}
+  \field{pages}{369\bibrangedash 370}
+  \field{title}{{Deployment planning tool for indoor 3D-WSNs}}
+  \verb{url}
+  \verb http://portal.acm.org/citation.cfm?id=1864431.1864440
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Kou
+  \verb akou et al. - 2010 - Deployment planning tool for indoor 3D-WSNs.pdf:pd
+  \verb f
+  \endverb
+  \field{journaltitle}{Proc. 12th ACM Int. Conf. Adjun. Pap. Ubiquitous
+  Comput.}
+  \field{year}{2010}
+\endentry
+
+\entry{Kyosti2008}{article}{}
+  \name{author}{15}{}{%
+    {{}%
+     {Ky{\"{o}}sti}{K.}%
+     {Pekka}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Meinil{\"{a}}}{M.}%
+     {Juha}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hentil{\"{a}}}{H.}%
+     {Lassi}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhao}{Z.}%
+     {Xiongwen}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {J{\"{a}}ms{\"{a}}}{J.}%
+     {Tommi}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schneider}{S.}%
+     {Christian}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Narandzi}{N.}%
+     {Milan}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Milojevi}{M.}%
+     {Marko}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hong}{H.}%
+     {Aihua}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ylitalo}{Y.}%
+     {Juha}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Holappa}{H.}%
+     {Veli-Matti}{V.-M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Alatossava}{A.}%
+     {Mikko}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bultitude}{B.}%
+     {Robert}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jong}{J.}%
+     {Yvo~De}{Y.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rautiainen}{R.}%
+     {Terhi}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{angle spread,channel modelling,channel sounder,cluster,delay
+  spread,fading,measurements,mimo,polarisation,propagation scenario,radio
+  channel}
+  \strng{namehash}{KP+1}
+  \strng{fullhash}{KPMJHLZXJTSCNMMMHAYJHVMAMBRJYDRT1}
+  \field{sortinit}{K}
+  \field{abstract}{%
+  This deliverable describes WINNER II channel models for link and system level
+  simulations. Both generic and clustered delay line models are defined for
+  selected propagation scenarios.%
+  }
+  \verb{doi}
+  \verb 10.1002/9780470748077.ch3
+  \endverb
+  \field{number}{82}
+  \field{pages}{82}
+  \field{title}{{IST-4-027756 WINNER II D1. 1.2 V1. 2 WINNER II Channel
+  Models.pdf}}
+  \verb{url}
+  \verb http://projects.celtic-initiative.org/winner+/WINNER2-Deliverables/D1.1
+  \verb .2v1.2.pdf
+  \endverb
+  \field{volume}{1}
+  \field{journaltitle}{Projectscelticinitiativeorg}
+  \field{year}{2008}
+\endentry
+
+\entry{Lee2015}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Lee}{L.}%
+     {Seungwoo}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kim}{K.}%
+     {Yungeun}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ahn}{A.}%
+     {Daye}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ha}{H.}%
+     {Rhan}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lee}{L.}%
+     {Kyoungwoo}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cha}{C.}%
+     {Hojung}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{In-home locating system,context-aware computing,machine learning,mobile
+  sensing,occupant tracking}
+  \strng{namehash}{LS+1}
+  \strng{fullhash}{LSKYADHRLKCH1}
+  \field{sortinit}{L}
+  \field{abstract}{%
+  Many smart home applications, such as monitoring for the elderly and home
+  automation, require location information for individual occupants. Several
+  techniques have been proposed for tracking occupants in a home environment.
+  However, the current techniques do not provide a seamless in-home locating
+  system owing to the occupants' device- free movement and the lack of
+  cost-effective infrastructure for home location tracking. In this paper, we
+  propose a home occupant tracking system that uses a smartphone and an
+  off-the-shelf smartwatch without additional infrastructure. In our system,
+  activity fingerprints are automatically generated from the microphone and the
+  inertial sensors of the smartwatch, and location information is periodically
+  obtained from the smartphone. We designed a hidden Markov model using the
+  relationship between home activities and the room's location. Extensive
+  experiments showed that our system tracks the location of users with 87{\%}
+  accuracy, even when there is no manual training for activities. Author%
+  }
+  \verb{doi}
+  \verb 10.1145/2750858.2804272
+  \endverb
+  \field{isbn}{9781450335744}
+  \field{title}{{Non-obstructive Room-level Locating System in Home E
+  nvironment s using Activity Fingerprint s from Smartwatch}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p939-lee.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. UbiComp 2015}
+  \field{year}{2015}
+\endentry
+
+\entry{Li2012a}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Li}{L.}%
+     {Fan}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhao}{Z.}%
+     {Chunshui}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ding}{D.}%
+     {Guanzhong}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gong}{G.}%
+     {Jian}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Liu}{L.}%
+     {Chenxing}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhao}{Z.}%
+     {Feng}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Indoor Localization,Inertial Tracking,Pedestrian Model}
+  \strng{namehash}{LF+1}
+  \strng{fullhash}{LFZCDGGJLCZF1}
+  \field{sortinit}{L}
+  \field{abstract}{%
+  This paper addresses reliable and accurate indoor localiza- tion using
+  inertial sensors commonly found on commodity smartphones. We believe indoor
+  positioning is an impor- tant primitive that can enable many ubiquitous
+  computing applications. To tackle the challenges of drifting in estima- tion,
+  sensitivity to phone position, as well as variability in user walking
+  profiles, we have developed algorithms for re- liable detection of steps and
+  heading directions, and accurate estimation and personalization of step
+  length. We've built an end-to-end localization system integrating these
+  modules and an indoor floor map, without the need for infrastruc- ture
+  assistance. We demonstrated for the first time a meter- level indoor
+  positioning system that is infrastructure free, phone position independent,
+  user adaptive, and easy to de- ploy. We have conducted extensive experiments
+  on users with smartphone devices, with over 50 subjectswalking over an
+  aggregate distance of over 40 kilometers. Evaluation re- sults showed our
+  system can achieve a mean accuracy of 1.5m for the in-hand case and 2m for
+  the in-pocket case in a 31m×15m testing area.%
+  }
+  \verb{doi}
+  \verb 10.1145/2370216.2370280
+  \endverb
+  \field{isbn}{9781450312240}
+  \field{pages}{421\bibrangedash 430}
+  \field{title}{{A reliable and accurate indoor localization method using phone
+  inertial sensors}}
+  \verb{url}
+  \verb http://dl.acm.org/citation.cfm?doid=2370216.2370280
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p421-li.pdf:pdf
+  \endverb
+  \field{journaltitle}{ACM Conf. Ubiquitous Comput.}
+  \field{year}{2012}
+\endentry
+
+\entry{Li2012}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Li}{L.}%
+     {Nan}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Calis}{C.}%
+     {Gulben}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Becerik-Gerber}{B.-G.}%
+     {Burcin}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier B.V.}%
+  }
+  \keyw{Energy management,HVAC operations,Occupancy detection,RFID,Stationary
+  and mobile occupant}
+  \strng{namehash}{LNCGBGB1}
+  \strng{fullhash}{LNCGBGB1}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1016/j.autcon.2012.02.013
+  \endverb
+  \field{issn}{09265805}
+  \field{pages}{89\bibrangedash 99}
+  \field{title}{{Measuring and monitoring occupancy with an RFID based system
+  for demand-driven HVAC operations}}
+  \verb{url}
+  \verb http://linkinghub.elsevier.com/retrieve/pii/S0926580512000283
+  \endverb
+  \field{volume}{24}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/RFID.pdf:pdf
+  \endverb
+  \field{journaltitle}{Autom. Constr.}
+  \field{year}{2012}
+\endentry
+
+\entry{Lymberopoulos2014}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Lymberopoulos}{L.}%
+     {Dimitrios}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Choudhury}{C.}%
+     {Romit~Roy}{R.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Liu}{L.}%
+     {Jie}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{evaluation,fingerprinting,indoor localization,ranging}
+  \strng{namehash}{LDCRRLJ1}
+  \strng{fullhash}{LDCRRLJ1}
+  \field{sortinit}{L}
+  \field{isbn}{9781450334754}
+  \field{number}{Table 1}
+  \field{pages}{178\bibrangedash 189}
+  \field{title}{{A Realistic Evaluation and Comparison of Indoor Location
+  Technologies : Experiences and Lessons Learned}}
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Lym
+  \verb beropoulos, Choudhury, Liu - 2014 - A Realistic Evaluation and Comparis
+  \verb on of Indoor Location Technologies Experiences and Lessons Le.pdf:pdf
+  \endverb
+  \field{year}{2014}
+\endentry
+
+\entry{Man2014}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Man}{M.}%
+     {Yemao}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ngai}{N.}%
+     {Edith C.-H.}{E.~C.-H.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier B.V.}%
+  }
+  \keyw{Data collection,Energy-efficiency,Location-based services,Mobile
+  applications}
+  \strng{namehash}{MYNECH1}
+  \strng{fullhash}{MYNECH1}
+  \field{sortinit}{M}
+  \field{abstract}{%
+  With the prevalence of localization techniques in smartphones, location-based
+  applications on mobiles have become increasingly popular. However, only
+  minorities of applications can be triggered automatically by the predefined
+  locations of interest without any human interaction. One reason is that the
+  inevitable operation of location detection by GPS is power-intensive. While
+  existing work has focused on energy efficiency in continuous location
+  tracking, energy-efficient location detection for matching predefined
+  location of interest remains to be further explored. This paper proposes a
+  unified framework that supports energy-efficient location detection for
+  automatic location-triggered applications. Our framework triggers desired
+  events only when the user is approaching the predefined locations of
+  interest. Besides the efforts we make to reduce the number of GPS updates by
+  cooperating with other types of on-device sensors, the framework also aims to
+  coordinate multiple location-triggered applications to further reduce energy
+  consumption on location updates. We implemented our framework as a middleware
+  in the Android operating system and conducted extensive real experiments. The
+  experimental results demonstrate that our framework can reduce the number of
+  GPS requests and low the energy consumption of the smartphones
+  significantly.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.comcom.2014.03.023
+  \endverb
+  \field{issn}{01403664}
+  \field{pages}{29\bibrangedash 40}
+  \field{title}{{Energy-efficient automatic location-triggered applications on
+  smartphones}}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/S0140366414001200
+  \endverb
+  \field{volume}{50}
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Man
+  \verb , Ngai - 2014 - Energy-efficient automatic location-triggered applicati
+  \verb ons on smartphones.pdf:pdf
+  \endverb
+  \field{journaltitle}{Comput. Commun.}
+  \field{year}{2014}
+\endentry
+
+\entry{Matteucci2013}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Matteucci}{M.}%
+     {Mattei}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MM1}
+  \strng{fullhash}{MM1}
+  \field{sortinit}{M}
+  \field{pages}{147}
+  \field{title}{{An adaptive indoor positioning system based on bluetooth low
+  energy RSSI}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/An{\_}adaptive{\_}indoor{\_}positioning{\_}
+  \verb system{\_}BLE.pdf:pdf
+  \endverb
+  \field{year}{2013}
+\endentry
+
+\entry{Melfi2011}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Melfi}{M.}%
+     {Ryan}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rosenblum}{R.}%
+     {Ben}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nordman}{N.}%
+     {Bruce}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Christensen}{C.}%
+     {Ken}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Buildings,Energy conserva,Information technology,WiFi}
+  \strng{namehash}{MR+1}
+  \strng{fullhash}{MRRBNBCK1}
+  \field{sortinit}{M}
+  \field{abstract}{%
+  The primary focus of Green IT has been on reducing energy use of the IT
+  infrastructure itself. Additional significant energy savings can be achieved
+  by using the IT infrastructure to enable energy savings in both the IT and
+  non-IT infrastructure. Our premise is that energy can be saved by driving
+  building operation on information gleaned from existing IT infrastructure
+  already installed for non-energy purposes. We call our idea implicit
+  occupancy sensing where existing IT infrastructure can be used to replace
+  and/or supplement traditional dedicated sensors to determine building
+  occupancy. Our implicit sensing methods are largely based on monitoring MAC
+  and IP addresses in routers and wireless access points, and then correlating
+  these addresses to the occupancy of a building, zone, and/or room. Occupancy
+  data can be used to control lighting, HVAC, and other building functions to
+  improve building functionality and reduce energy use. We experimentally
+  evaluate the feasibility of this dual-use of IT infrastructure and assess the
+  accuracy of implicit sensing. Our findings, based on data collected from two
+  facilities, show that there is significant promise in implicit sensing using
+  the existing IT infrastructure present in most modern non-residential
+  buildings. 2011 IEEE.%
+  }
+  \field{isbn}{9781457712210}
+  \field{title}{{Measuring building occupancy using existing network
+  infrastructure BT - 2011 International Green Computing Conference, IGCC 2011,
+  July 25, 2011 - July 28, 2011}}
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Mel
+  \verb fi et al. - 2011 - Measuring building occupancy using existing network
+  \verb infrastructure BT - 2011 International Green Computing Confere.pdf:pdf
+  \endverb
+  \field{year}{2011}
+\endentry
+
+\entry{Choperena2013}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Mikel Choperena}}{M.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{M1}
+  \strng{fullhash}{M1}
+  \field{sortinit}{M}
+  \field{abstract}{%
+  While energy-harvesting and battery-powered devices can be the right choice
+  for certain applications, passive RFID sensor tags offer a number of
+  advantages.%
+  }
+  \field{pages}{3}
+  \field{title}{{RFID-powered Sensors Can Play a Big Role in the Internet of
+  Things}}
+  \verb{url}
+  \verb http://www.rfidjournal.com/articles/view?11062/
+  \endverb
+  \field{year}{2013}
+\endentry
+
+\entry{N2015}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {N}{N}%
+     {Akshay Uttama Nambi~S}{A.~U. N.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lua}{L.}%
+     {Antonio~Reyes}{A.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Prasad}{P.}%
+     {R~Venkatesha}{R.~V.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{NAUNSLARPRV1}
+  \strng{fullhash}{NAUNSLARPRV1}
+  \field{sortinit}{N}
+  \field{isbn}{9781450339810}
+  \field{title}{{LocED: Location-aware Energy Disaggregation Framework}}
+  \verb{url}
+  \verb ACM BuildSys 2015
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ACM BuildSys 2015/related/LocED Tech{\_}rep
+  \verb ort{\_}2015{\_}01{\_}july{\_}TUD1.pdf:pdf
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{N2015a}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {N}{N}%
+     {Akshay Uttama Nambi~S}{A.~U. N.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lua}{L.}%
+     {Antonio~Reyes}{A.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Prasad}{P.}%
+     {R~Venkatesha}{R.~V.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ACM BuildSys 2015,energy disaggregation,localization,nilm,public
+  dataset}
+  \strng{namehash}{NAUNSLARPRV1}
+  \strng{fullhash}{NAUNSLARPRV1}
+  \field{sortinit}{N}
+  \field{isbn}{9781450339810}
+  \field{number}{ii}
+  \field{pages}{45\bibrangedash 54}
+  \field{title}{{LocED: Location-aware Energy Disaggregation Framework}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ACM BuildSys 2015/3 - LocED - p45-uttama-na
+  \verb mbi.pdf:pdf
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{Nebro2007}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Nebro}{N.}%
+     {Antonio~J.}{A.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Alba}{A.}%
+     {Enrique}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Molina}{M.}%
+     {Guillermo}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chicano}{C.}%
+     {Francisco}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Luna}{L.}%
+     {Francisco}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Durillo}{D.}%
+     {Juan~J.}{J.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{CHC,multi-objective optimization,radio network design}
+  \strng{namehash}{NAJ+1}
+  \strng{fullhash}{NAJAEMGCFLFDJJ1}
+  \field{sortinit}{N}
+  \field{abstract}{%
+  Radio network design (RND) is a fundamental problem in cellular networks for
+  telecommunications. In these networks, the terrain must be covered by a set
+  of base stations (or antennae), each of which defines a covered area called
+  cell. The problem may be reduced to figure out the optimal placement of
+  antennae out of a list of candidate sites trying to satisfy two objectives:
+  to maximize the area covered by the radio signal and to reduce the number of
+  used antennae. Consequently, RND is a bi-objective optimization problem.
+  Previous works have solved the problem by using single-objective techniques
+  which combine the values of both objectives. The used techniques have allowed
+  to find optimal solutions according to the defined objective, thus yielding a
+  unique solution instead of the set of Pareto optimal solutions. In this
+  paper, we solve the RND problem using a multi-objective version of the
+  algorithm CHC, which is the metaheuristic having reported the best results
+  when solving the single-objective formulation of RND. This new algorithm,
+  called MOCHC, is compared against a binary-coded NSGA-II algorithm and also
+  against the provided results in the literature. Our experiments indicate that
+  MOCHC outperfoms NSGA-II and, more importantly, it is more efficient finding
+  the optimal solutions than single-objectives techniques.%
+  }
+  \verb{doi}
+  \verb 10.1145/1276958.1277128
+  \endverb
+  \field{isbn}{9781595936974}
+  \field{pages}{876\bibrangedash 883}
+  \field{title}{{Optimal antenna placement using a new multi-objective chc
+  algorithm}}
+  \verb{url}
+  \verb http://portal.acm.org/citation.cfm?doid=1276958.1277128
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/MOCHC.pdf:pdf
+  \endverb
+  \field{journaltitle}{9th Annu. Conf. Genet. Evol. Comput. (GECCO '07)}
+  \field{year}{2007}
+\endentry
+
+\entry{NECSTboxAndroid}{misc}{}
+  \field{sortinit}{N}
+  \field{abstract}{%
+  Box makes your indoor environments smart. The app is intendend to be a main
+  tool for controlling your ambient, home, office, etc...%
+  }
+  \field{title}{{NECSTbox - Android application for ThermoSense and
+  BlueSentinel users}}
+  \verb{url}
+  \verb https://play.google.com/store/apps/details?id=polimi.necst.box
+  \endverb
+  \field{year}{2016}
+\endentry
+
+\entry{NECSTboxIos}{misc}{}
+  \field{sortinit}{N}
+  \field{abstract}{%
+  Box makes your indoor environments smart. The app is intendend to be a main
+  tool for controlling your ambient, home, office, etc...%
+  }
+  \field{title}{{NECSTbox - iOS application for ThermoSense and BlueSentinel
+  users}}
+  \verb{url}
+  \verb https://itunes.apple.com/us/app/necstbox/id1125348130
+  \endverb
+  \field{year}{2016}
+\endentry
+
+\entry{Paul2014}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Paul}{P.}%
+     {Anindya~S}{A.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wan}{W.}%
+     {Eric~A}{E.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Adenwala}{A.}%
+     {Fatema}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schafermeyer}{S.}%
+     {Erich}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Preiser}{P.}%
+     {Nick}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kaye}{K.}%
+     {Jeffrey}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jacobs}{J.}%
+     {Peter~G}{P.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{device-free passive localization,health care,indoor localization,indoor
+  tracking,machine learning,mobility,neural network,tag-free tracking}
+  \strng{namehash}{PAS+1}
+  \strng{fullhash}{PASWEAAFSEPNKJJPG1}
+  \field{sortinit}{P}
+  \verb{doi}
+  \verb 10.1145/2632048.2632097
+  \endverb
+  \field{isbn}{978-1-4503-2968-2}
+  \field{pages}{159\bibrangedash 170}
+  \field{title}{{MobileRF: A Robust Device-free Tracking System Based on a
+  Hybrid Neural Network HMM Classifier}}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/2632048.2632097
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/ubicomp/p159-paul.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2014 ACM Int. Jt. Conf. Pervasive Ubiquitous
+  Comput.}
+  \field{year}{2014}
+\endentry
+
+\entry{Piffer2014}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Piffer}{P.}%
+     {Stefano}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dorigatti}{D.}%
+     {Nicola}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Conti}{C.}%
+     {Giuseppe}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PSDNCG1}
+  \strng{fullhash}{PSDNCG1}
+  \field{sortinit}{P}
+  \field{title}{{I-Locate - Indoor/Outdoor Location and Asset Management
+  Through Open Geodata}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/iLocate.pdf:pdf
+  \endverb
+  \field{year}{2014}
+\endentry
+
+\entry{Pirkl2013}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Pirkl}{P.}%
+     {Gerald}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lukowicz}{L.}%
+     {Paul}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{magnetic field, resonant coupling, indoor localiza}
+  \strng{namehash}{PGLP1}
+  \strng{fullhash}{PGLP1}
+  \field{sortinit}{P}
+  \verb{doi}
+  \verb 10.1145/2494091.2494108
+  \endverb
+  \field{isbn}{9781450322157}
+  \field{pages}{59\bibrangedash 62}
+  \field{title}{{Resonant magnetic coupling indoor localization system}}
+  \verb{url}
+  \verb http://dl.acm.org/citation.cfm?doid=2494091.2494108
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/ubicomp/p59.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2013 ACM Conf. Pervasive ubiquitous Comput. Adjun.
+  Publ. - UbiComp '13 Adjun.}
+  \field{year}{2013}
+\endentry
+
+\entry{Pirkl2012}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Pirkl}{P.}%
+     {Gerald}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lukowicz}{L.}%
+     {Paul}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PGLP1}
+  \strng{fullhash}{PGLP1}
+  \field{sortinit}{P}
+  \verb{doi}
+  \verb 10.1145/2370216.2370281
+  \endverb
+  \field{isbn}{9781450312240}
+  \field{pages}{431}
+  \field{title}{{Robust, low cost indoor positioning using magnetic resonant
+  coupling}}
+  \verb{url}
+  \verb http://dl.acm.org/citation.cfm?doid=2370216.2370281
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/ubicomp/p431-pirkl.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2012 ACM Conf. Ubiquitous Comput. - UbiComp '12}
+  \field{year}{2012}
+\endentry
+
+\entry{Piscitello2015}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Piscitello}{P.}%
+     {Andrea}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Paduano}{P.}%
+     {Francesco}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nacci}{N.}%
+     {Alessandro~A}{A.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Noferi}{N.}%
+     {Danny}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Santambrogio}{S.}%
+     {Marco~D}{M.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sciuto}{S.}%
+     {Donatella}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PA+1}
+  \strng{fullhash}{PAPFNAANDSMDSD1}
+  \field{sortinit}{P}
+  \field{isbn}{9781509003662}
+  \field{pages}{1\bibrangedash 6}
+  \field{title}{{Danger-System : Exploring New Ways to Manage Occupants Safety
+  in Smart Building}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/box-welcomepackage/step1/07389135.pdf:pdf
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{Poosamani2015}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Poosamani}{P.}%
+     {Nithyananthan}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rhee}{R.}%
+     {Injong}{I.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Accuracy,Base stations,Bayesian Networks,Cellular
+  Signals,Databases,Energy Efficiency,Fingerprinting,IEEE 802.11
+  Standards,Prediction algorithms,Sensors,Smart phones}
+  \strng{namehash}{PNRI1}
+  \strng{fullhash}{PNRI1}
+  \field{sortinit}{P}
+  \field{abstract}{%
+  Predicting the location of a user in indoor settings in a practical and
+  energy-efficient manner is (still) a very non-trivial task. The latest
+  challenge in indoor localization is not to design specialized sensors but to
+  design and implement practical data fusion methods using the already
+  available technologies. Current state-of-the-art indoor localization
+  techniques utilize Wi-Fi and a variety of sensors inside smart phones to
+  predict user location. Some also require site-specific input such as indoor
+  floor plans or the location of Wi-Fi access points. In this paper, we propose
+  to use physical (PHY) layer information from 4G cellular network signals such
+  as Reference Signal Received Power (RSRP) and Reference Signal Received
+  Quality (RSRQ) to logically predict user location. Since the cellular signals
+  are received by the smart phones at no additional cost, our methodology is
+  very energy-efficient. We implement a prototype system in Android and
+  evaluated it over 60 indoor locations. The prediction accuracy ranged up to
+  91{\%} with an average localization error of less than 2.3m for any
+  combination of 4G PHY layer information. The results show promise for
+  improvements in current indoor localization systems using cellular signals.%
+  }
+  \verb{doi}
+  \verb 10.1109/PERCOMW.2015.7134048
+  \endverb
+  \field{isbn}{978-1-4799-8425-1}
+  \field{pages}{284\bibrangedash 287}
+  \field{title}{{Towards a practical indoor location matching system using 4G
+  LTE PHY layer information}}
+  \verb{url}
+  \verb http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=7134048
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/4g lte indoor.pdf:pdf
+  \endverb
+  \field{journaltitle}{2015 IEEE Int. Conf. Pervasive Comput. Commun. Work.
+  (PerCom Work.}
+  \field{year}{2015}
+\endentry
+
+\entry{Qcad}{misc}{}
+  \field{sortinit}{Q}
+  \field{title}{{QCAD - The Open Source CAD System For Everyone -
+  http://www.qcad.org/}}
+  \verb{url}
+  \verb http://www.qcad.org/
+  \endverb
+\endentry
+
+\entry{RadiusNetwork2016}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Radius Networks}}{R.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{R1}
+  \strng{fullhash}{R1}
+  \field{sortinit}{R}
+  \field{abstract}{%
+  The list below identifies the Android device builds that are able to transmit
+  as beacons. The ability to transmit as a beacon requires Bluetooth LE
+  advertisement capability, which may or may not be supported by a device's
+  firmware. This list was last updated on March 29, 2016 and is based on
+  success/failure reports from the Locate app for Android.%
+  }
+  \field{pages}{1}
+  \field{title}{{Device Support For Beacon Transmission with Android 5 and 6}}
+  \verb{url}
+  \verb https://altbeacon.github.io/android-beacon-library/beacon-transmitter-d
+  \verb evices.html
+  \endverb
+  \field{year}{2016}
+\endentry
+
+\entry{Ranjan2013}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Ranjan}{R.}%
+     {Juhi}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yao}{Y.}%
+     {Yu}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Whitehouse}{W.}%
+     {Kamin}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{RFID, Indoor tracking}
+  \strng{namehash}{RJYYWK1}
+  \strng{fullhash}{RJYYWK1}
+  \field{sortinit}{R}
+  \field{abstract}{%
+  Many occupant-oriented smarthome applications such as automated lighting,
+  heating and cooling, and activity recognition need room location information
+  of residents within a building. Surveillance based tracking systems used to
+  track people in commercial buildings, are privacy invasive in homes. In this
+  paper, we present the RF Doormat - a RF threshold system that can accurately
+  track people's room locations by monitoring their movement through the
+  doorways in the home. We also present a set of guidelines and a visualization
+  to easily and rapidly setup the RF-Doormat system on any doorway. To evaluate
+  our system, we perform 580 doorway crossings across 11 different doorways in
+  a home. Results indicate that our system can detect doorway crossings made by
+  people with an average accuracy of 98{\%}. To our knowledge, the RF Doormat
+  is the first highly accurate room location tracking system that can be used
+  for long time periods without the need for privacy invasive cameras.%
+  }
+  \verb{doi}
+  \verb 10.1145/2493432.2493514
+  \endverb
+  \field{isbn}{9781450317702}
+  \field{pages}{797\bibrangedash 800}
+  \field{title}{{An RF doormat for tracking people's room locations}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p797-ranjan.pdf:pdf
+  \endverb
+  \field{journaltitle}{Mobiquitous}
+  \field{year}{2013}
+\endentry
+
+\entry{Rida2015}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Rida}{R.}%
+     {Mohamed~Er}{M.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Liu}{L.}%
+     {Fuqiang}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jadi}{J.}%
+     {Yassine}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Algawhari}{A.}%
+     {Amgad Ali~Abdullah}{A.~A.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Askourih}{A.}%
+     {Ahmed}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Accuracy,Bluetooth,Bluetooth4.0,Broadcasting,Global Positioning
+  System,Hardware,IEEE 802.11 Standards,Indoor environments,Nodes,Signal
+  strength,Trilateration,indoor location}
+  \strng{namehash}{RME+1}
+  \strng{fullhash}{RMELFJYAAAAAA1}
+  \field{sortinit}{R}
+  \field{abstract}{%
+  Nowadays many systems with diverse technologies such as (GPS, Wi-Fi,
+  Bluetooth, ZigBee, Ultra Wide Band, Ultrasounds, Infrared, etc) can be used
+  for indoor location. One of the biggest challenges in indoor location systems
+  is to determine the actual indoor position of the user using a smart device
+  (Phone, PC, etc), due to their instability, cost, high-power consumption, low
+  accuracy and low precision. To overcome those problems, we have designed,
+  implemented and emulated an indoor location system based on RSSI (Receive
+  Signal Strength indicator) of the Bluetooth low energy 4.0 (BLE). BLE 4.0
+  technology is more advantageous in terms of long life expectancy, our
+  approach is based on the deployment of equidistant nodes on the ceiling. The
+  nodes are programmed to broadcast a periodic beacon at a time pace of 400ms
+  and then to enter sleep mode. When a smart device enters within the
+  broadcasting range, it locates the three access points (nodes) with the
+  highest signal strength. This information can be calculated using one of the
+  several localization algorithms (Dilatation). The proposed Dilatation
+  algorithm can be easily implemented in the hardware due to its low
+  complexity, the method can be successful even when using a few numbers of
+  nodes. In average the system has about 0.5 {\~{}} 1 meters of error.%
+  }
+  \verb{doi}
+  \verb 10.1109/ICISCE.2015.177
+  \endverb
+  \field{isbn}{978-1-4673-6850-6}
+  \field{pages}{769\bibrangedash 773}
+  \field{title}{{Indoor Location Position Based on Bluetooth Signal Strength}}
+  \verb{url}
+  \verb http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=7120717
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Library/Application Support/Mendeley Desktop/Downloaded/Rid
+  \verb a et al. - 2015 - Indoor Location Position Based on Bluetooth Signal St
+  \verb rength.pdf:pdf
+  \endverb
+  \field{journaltitle}{2015 2nd Int. Conf. Inf. Sci. Control Eng.}
+  \field{year}{2015}
+\endentry
+
+\entry{Roulet2001}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Roulet}{R.}%
+     {Claude~Alain}{C.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RCA1}
+  \strng{fullhash}{RCA1}
+  \field{sortinit}{R}
+  \field{abstract}{%
+  The main purpose of buildings is to provide a comfortable living environment
+  for their occupants. This includes, among others, thermal, visual and
+  acoustic comfort as well as indoor air quality. Except during the 1950's and
+  1960's, it has always been considered important that an excess use of energy
+  should be avoided in the construction and the management of a building,
+  sometimes even at the cost of user comfort. Energy saving is, however, not
+  the main purpose of the building. Indeed, if it were really so, the largest
+  energy savings would be obtained by not erecting the building in the first
+  place. Since the Rio conference, there have been more and more incentives to
+  save energy and lower the impact of buildings on the environment. Therefore,
+  there is no excuse for the building sector not to adopt a sustainable
+  development policy. Some energy is required to control the indoor climate and
+  indoor air quality. Therefore, it is often suspected that energy savings
+  result in poorer indoor environment quality, or, on the contrary, that a high
+  comfort level is the result of high technology and high energy consumption.
+  This is not true. It is now generally admitted among building scientists that
+  high quality energy services do not necessarily incur a high energy use, and
+  that good environment quality can be obtained with a reasonable amount of
+  energy and power, and with a low environmental impact. The presentation
+  brings some evidence from past and current research to support this
+  assertion.%
+  }
+  \verb{doi}
+  \verb 10.1016/S0378-7788(00)00080-3
+  \endverb
+  \field{isbn}{4121693272}
+  \field{issn}{03787788}
+  \field{number}{3}
+  \field{pages}{183\bibrangedash 191}
+  \field{title}{{Indoor environment quality in buildings and its impact on
+  outdoor environment}}
+  \field{volume}{33}
+  \field{journaltitle}{Energy Build.}
+  \field{year}{2001}
+\endentry
+
+\entry{Shao}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Shao}{S.}%
+     {Chong}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nirjon}{N.}%
+     {Shahriar}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Frahm}{F.}%
+     {Jan-michael}{J.-m.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SCNSFJm1}
+  \strng{fullhash}{SCNSFJm1}
+  \field{sortinit}{S}
+  \field{title}{{Years-Long Binary Image Broadcast using Bluetooth Low Energy
+  Beacons}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/advertising/PID4191747-copy.pdf:pdf
+  \endverb
+\endentry
+
+\entry{So2005}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {So}{S.}%
+     {a.~M~C}{a.~M.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ye}{Y.}%
+     {Yinyu}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SaMCYY1}
+  \strng{fullhash}{SaMCYY1}
+  \field{sortinit}{S}
+  \field{abstract}{%
+  Owing to numerous potential applications, wireless sensor networks have been
+  the focus of a lot of research efforts lately. In this note we study one
+  fundamental issue in such networks, namely the coverage problem, in which we
+  would like to determine whether a region of interest is sufficiently covered
+  by a given set of sensors. This problem is motivated by monitoring
+  applications in sensor networks, as well as robustness concerns and protocol
+  requirements. We show that the coverage problem and some of its variants can
+  be treated in a unified manner using suitable generalizations of the Voronoi
+  diagram. As a result, we are able to give algorithms that have better
+  runtimes than those proposed in previous works (see, e.g., [5, 6]). Our
+  approach also yields efficient algorithms for coverage problems where the
+  sensing region of a sensor is an ellipse or an Lp–ball, where p≥1.%
+  }
+  \verb{doi}
+  \verb 10.1007/11600930_58
+  \endverb
+  \field{isbn}{3540309004}
+  \field{issn}{03029743}
+  \field{pages}{584\bibrangedash 593}
+  \field{title}{{On solving coverage problems in a wireless sensor network
+  using voronoi diagrams}}
+  \field{volume}{3828 LNCS}
+  \field{journaltitle}{Lect. Notes Comput. Sci. (including Subser. Lect. Notes
+  Artif. Intell. Lect. Notes Bioinformatics)}
+  \field{year}{2005}
+\endentry
+
+\entry{Sun2013}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Sun}{S.}%
+     {Zheng}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pan}{P.}%
+     {Shijia}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Su}{S.}%
+     {Yu-Chi}{Y.-C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhang}{Z.}%
+     {Pei}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SZ+1}
+  \strng{fullhash}{SZPSSYCZP1}
+  \field{sortinit}{S}
+  \field{abstract}{%
+  Heading information becomes widely used in ubiquitous computing applications
+  for mobile devices. Digital mag- netometers, also known as geomagnetic field
+  sensors, pro- vide absolute device headings relative to the earth's magnetic
+  north. However, magnetometer readings are prone to sig- nificant errors in
+  indoor environments due to the existence of magnetic interferences, such as
+  from printers, walls, or metallic shelves. These errors adversely affect the
+  perfor- mance and quality of user experience of the applications re- quiring
+  device headings. In this paper, we propose Headio, a novel approach to
+  provide reliable device headings in in- door environments. Headio achieves
+  this by aggregating ceil- ing images of an indoor environment, and by using
+  computer vision-based pattern detection techniques to provide direc- tional
+  references. To achieve zero-configured and energy- efficient heading sensing,
+  Headio also utilizes multimodal sensing techniques to dynamically schedule
+  sensing tasks. To fully evaluate the system, we implemented Headio on both
+  Android and iOS mobile platforms, and performed compre- hensive experiments
+  in both small-scale controlled and large- scale public indoor environments.
+  Evaluation results show that Headio constantly provides accurate heading
+  detection performance in diverse situations, achieving better than 1 average
+  heading accuracy, up to 33X improvement over ex- isting techniques.%
+  }
+  \verb{doi}
+  \verb 10.1145/2493432.2493434
+  \endverb
+  \field{isbn}{9781450317702}
+  \field{title}{{Headio: Zero-Configured Heading Acquisition for Indoor Mobile
+  Devices Through Multimodal Context Sensing}}
+  \verb{url}
+  \verb papers2://publication/uuid/D025A187-CA4F-4849-88B4-3E86C4274B7D
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p33-sun.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. Int. Conf. Ubiquitous Comput.}
+  \field{year}{2013}
+\endentry
+
+\entry{Teixeira2007}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Teixeira}{T.}%
+     {Thiago}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Savvides}{S.}%
+     {Andreas}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{TTSA1}
+  \strng{fullhash}{TTSA1}
+  \field{sortinit}{T}
+  \field{abstract}{%
+  This paper presents a lightweight method for localizing and counting people
+  in indoor spaces using motion and size criteria. A histogram designed to
+  filter moving objects within a specified size range, can operate directly on
+  frame difference output to localize human-sized moving entities in the field
+  of view of each camera node. Our method targets a custom, ultra-low power
+  imager architecture operating on address-event representation, aiming to
+  implement the proposed algorithm on silicon. In this paper we describe the
+  details of our design and experimentally determine suitable parameters for
+  the proposed histogram. The resulting histogram and counting algorithm are
+  implemented and tested on a set of iMote2 camera sensor nodes deployed in our
+  lab.%
+  }
+  \field{booktitle}{2007 1st ACM/IEEE Int. Conf. Distrib. Smart Cameras, ICDSC}
+  \verb{doi}
+  \verb 10.1109/ICDSC.2007.4357503
+  \endverb
+  \field{isbn}{1424413540}
+  \field{pages}{36\bibrangedash 43}
+  \field{title}{{Lightweight people counting and localizing in indoor spaces
+  using camera sensor nodes}}
+  \field{year}{2007}
+\endentry
+
+\entry{VinhTranQuang}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Vinh Tran}}{V.}%
+     {Quang; Takumi~MIYOSHI}{Q.~T.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{algorithm,energy-efficiency,routing protocol,sensing coverage,wireless
+  sensor networks}
+  \strng{namehash}{VQTM1}
+  \strng{fullhash}{VQTM1}
+  \field{sortinit}{V}
+  \field{title}{{An Algorithm for Sensing Coverage Problem in Wireless Sensor
+  Networks}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/04520056.pdf:pdf
+  \endverb
+\endentry
+
+\entry{Vlugt2013}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Vlugt}{V.}%
+     {Erik}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VE1}
+  \strng{fullhash}{VE1}
+  \field{sortinit}{V}
+  \field{pages}{1\bibrangedash 12}
+  \field{title}{{Bluetooth Low Energy, Beacons and Retail}}
+  \verb{url}
+  \verb http://www.verifone.com/media/3603729/bluetooth-low-energy-beacons-reta
+  \verb il-wp.pdf
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/bluetooth-low-energy-beacons-retail-wp.pdf:
+  \verb pdf
+  \endverb
+  \field{journaltitle}{Verifone.com}
+  \field{year}{2013}
+\endentry
+
+\entry{Weng2013}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Weng}{W.}%
+     {Thomas}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nwokafor}{N.}%
+     {Anthony}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Agarwal}{A.}%
+     {Yuvraj}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Building Energy Management}
+  \strng{namehash}{WTNAAY1}
+  \strng{fullhash}{WTNAAY1}
+  \field{sortinit}{W}
+  \field{abstract}{%
+  Improving energy efficiency in buildings is a key objec-tive for sensor
+  researchers and promises significant reduc-tions in energy usage across the
+  world. The key technolog-ical driver for these gains are the novel sensor
+  network de-ployments and the large amounts of data that they generate. The
+  challenge however is making sense of this data, and us-ing it effectively to
+  design smarter building control schemes. Several recent research efforts have
+  sought to address the challenge of data access and building control. However,
+  while these systems have made progress in specific areas, many unanswered
+  questions still revolve around data man-agement and what exactly it means to
+  develop building ap-plications. Critically, how would such a solution work in
+  a real building setting and how can applications be written such that they
+  can be re-used in other settings? To resolve these issues we have developed
+  BuildingDepot 2.0, a build-ing management control platform that significantly
+  updates on our first iteration of the system for data analysis and high level
+  supervisory control.%
+  }
+  \verb{doi}
+  \verb 10.1145/2528282.2528285
+  \endverb
+  \field{isbn}{9781450324311}
+  \field{pages}{1\bibrangedash 8}
+  \field{title}{{BuildingDepot 2.0}}
+  \verb{url}
+  \verb http://dl.acm.org/citation.cfm?id=2528282.2528285
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/box-welcomepackage/step1/3 - Smart Home Future
+  \verb Challenges/BuildingDepot 2.0 - An Integrated Management System for Buil
+  \verb ding Analysis and Control.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 5th ACM Work. Embed. Syst. Energy-Efficient Build.
+  - BuildSys'13}
+  \field{year}{2013}
+\endentry
+
+\entry{Xie2014}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Xie}{X.}%
+     {Hongwei}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gu}{G.}%
+     {Tao}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tao}{T.}%
+     {Xianping}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ye}{Y.}%
+     {Haibo}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lv}{L.}%
+     {Jian}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{XH+1}
+  \strng{fullhash}{XHGTTXYHLJ1}
+  \field{sortinit}{X}
+  \verb{doi}
+  \verb 10.1145/2632048.2632057
+  \endverb
+  \field{isbn}{9781450329682}
+  \field{pages}{243\bibrangedash 253}
+  \field{title}{{MaLoc: A practical magnetic fingerprinting approach to indoor
+  localization using smartphones}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p243-xie.pdf:pdf
+  \endverb
+  \field{journaltitle}{UbiComp '14 Proc. 2014 ACM Int. Jt. Conf. Pervasive
+  Ubiquitous Comput.}
+  \field{year}{2014}
+\endentry
+
+\entry{Xu2013}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Xu}{X.}%
+     {Chenren}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{XC1}
+  \strng{fullhash}{XC1}
+  \field{sortinit}{X}
+  \verb{doi}
+  \verb 10.1145/2494091.2501091
+  \endverb
+  \field{isbn}{9781450322157}
+  \field{pages}{367\bibrangedash 372}
+  \field{title}{{Device-free people counting and localization}}
+  \verb{url}
+  \verb http://dl.acm.org/citation.cfm?id=2501091
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/ubicomp/p367-xu.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2013 ACM Conf. {\ldots}}
+  \field{year}{2013}
+\endentry
+
+\entry{Xu2015}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Xu}{X.}%
+     {Han}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yang}{Y.}%
+     {Zheng}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhou}{Z.}%
+     {Zimu}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Shangguan}{S.}%
+     {Longfei}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yi}{Y.}%
+     {Ke}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Liu}{L.}%
+     {Yunhao}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ACM,Indoor Localization,Photogrammetry,Smart Phone}
+  \strng{namehash}{XH+2}
+  \strng{fullhash}{XHYZZZSLYKLY1}
+  \field{sortinit}{X}
+  \field{abstract}{%
+  Indoor localization is of great importance to a wide range of applications in
+  the era of mobile computing. Current main- stream solutions rely on Received
+  Signal Strength (RSS) of wireless signals as fingerprints to distinguish and
+  infer loca- tions. However, those methods suffer from fingerprint am- biguity
+  that roots in multipath fading and temporal dynam- ics of wireless signals.
+  Though pioneer efforts have resorted to motion-assisted or peer-assisted
+  localization, they neither work in real time nor work without the help of
+  peer users, which introduces extra costs and constraints, and thus de- grades
+  their practicality. To get over these limitations, we propose Argus, an
+  image-assisted localization system for mo- bile devices. The basic idea of
+  Argus is to extract geometric constraints from crowdsourced photos, and to
+  reduce finger- print ambiguity by mapping the constraints jointly against the
+  fingerprint space. We devise techniques for photo selection, geometric
+  constraint extraction, joint location estimation, and build a prototype that
+  runs on commodity phones. Extensive experiments show that Argus triples the
+  localization accuracy of classic RSS-based method, in time no longer than
+  normal WiFi scanning, with negligible energy consumption. Author%
+  }
+  \verb{doi}
+  \verb 10.1145/2750858.2807516
+  \endverb
+  \field{isbn}{9781450335744}
+  \field{pages}{963\bibrangedash 974}
+  \field{title}{{Enhancing WiFi-based Localization with Visual Clues}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ubicomp/p963-xu.pdf:pdf
+  \endverb
+  \field{journaltitle}{ACM Int. Jt. Conf. Pervasive Ubiquitous Comput.}
+  \field{year}{2015}
+\endentry
+
+\entry{Xu2014}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Xu}{X.}%
+     {Y~G}{Y.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Qian}{Q.}%
+     {C}{C}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sung}{S.}%
+     {W~P}{W.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kao}{K.}%
+     {J~C~M}{J.~C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chen}{C.}%
+     {R}{R}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Building Information Modeling (BIM),Lean construction concept,Lean
+  cost}
+  \strng{namehash}{XYG+1}
+  \strng{fullhash}{XYGQCSWPKJCMCR1}
+  \field{sortinit}{X}
+  \field{abstract}{%
+  With the development of information technology, both Building Information
+  Modelling (BIM) technology and lean construction concept became more and more
+  widely applied in the engineering field in our country, meanwhile resulting
+  in their prominent synergies with each other. BIM technology and lean
+  construction concept are designed aimed at reducing wastes, saving costs,
+  increasing productivity, and creating maximum value at the same time.
+  Therefore, it will be more effective on value creation for their
+  collaboration compared to their separate utilization from engineer
+  perspective. This paper reports the combined technique between BIM technology
+  and lean construction concept for its application in the cost management of
+  engineering project of the building throughout the life-cycle among BIM mode,
+  the lean cost analysis and control research. This combined technology is
+  shown to be not only the main characteristic of construction enterprises but
+  also the reference on improvement of production efficiency as well as
+  competitiveness.%
+  }
+  \verb{doi}
+  \verb 10.4028/www.scientific.net/AMM.457-458.1444
+  \endverb
+  \field{isbn}{1660-9336}
+  \field{issn}{1662-7482}
+  \field{pages}{1444\bibrangedash 1447}
+  \field{title}{{Lean Cost Analysis Based on BIM Modeling for Construction
+  Project}}
+  \verb{url}
+  \verb http://www.scientific.net/AMM.457-458.1444.pdf
+  \endverb
+  \field{volume}{457-458}
+  \field{journaltitle}{Front. Mech. Eng. Mater. Eng. Ii, Pts 1 2}
+  \field{year}{2014}
+\endentry
+
+\entry{Zhang2011}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {J.~P.}{J.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hu}{H.}%
+     {Z.~Z.}{Z.~Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ZJPHZZ1}
+  \strng{fullhash}{ZJPHZZ1}
+  \field{sortinit}{Z}
+  \field{abstract}{%
+  Strengthening construction safety analysis and management is of great social
+  and economic significance. For a long time, however, there has been a lack of
+  effective management tools in this important area that involves people's
+  lives and property. Based on new developments in the Building Information
+  Model (BIM), four-dimensional (4D) technology, time-dependent structural
+  analysis, collision detection, and so on, a 4D structural information model
+  is presented and established according to the overall solution of analysis
+  and management for conflict and safety problems during construction. Based on
+  this sub-BIM, the integration of dynamic safety analysis of time-dependent
+  structures, conflict analysis and management of schedule/resource/cost, and
+  dynamic collision detection of site facilities is studied, and theories and
+  key technologies are discussed in detail. The results of this research
+  provide a feasible theory and methodology for integrated applications of BIM.
+  Furthermore, this study proposes a new approach for conflict and safety
+  analysis during construction through the integration of construction
+  simulation, 4D construction management, and safety analysis. The approach
+  lays a foundation for the popularization of complicated theories and
+  methodologies, and has theoretical significance and application prospects in
+  meeting the needs of improving the safety level during construction. ?? 2010
+  Elsevier B.V.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.autcon.2010.09.014
+  \endverb
+  \field{isbn}{0926-5805}
+  \field{issn}{09265805}
+  \field{number}{2}
+  \field{pages}{167\bibrangedash 180}
+  \field{title}{{BIM- and 4D-based integrated solution of analysis and
+  management for conflicts and structural safety problems during construction:
+  1. Principles and methodologies}}
+  \field{volume}{20}
+  \field{journaltitle}{Autom. Constr.}
+  \field{year}{2011}
+\endentry
+
+\entry{Zhao2014}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhao}{Z.}%
+     {Yi}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {LaMarca}{L.}%
+     {Anthony}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Smith}{S.}%
+     {Joshua~R}{J.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{RFID}
+  \strng{namehash}{ZYLASJR1}
+  \strng{fullhash}{ZYLASJR1}
+  \field{sortinit}{Z}
+  \verb{doi}
+  \verb 10.1145/2632048.2632078
+  \endverb
+  \field{isbn}{9781450329682}
+  \field{pages}{255\bibrangedash 259}
+  \field{title}{{A battery-free object localization and motion sensing
+  platform}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/ubicomp/p255-zhao.pdf:pdf
+  \endverb
+  \field{journaltitle}{Proc. 2014 ACM Int. Jt. Conf. Pervasive Ubiquitous
+  Comput. - UbiComp '14 Adjun.}
+  \field{year}{2014}
+\endentry
+
+\entry{Zhao2008}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhao}{Z.}%
+     {Yongxiang}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhou}{Z.}%
+     {Huaibei}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Li}{L.}%
+     {Meifang}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE}%
+  }
+  \keyw{- access points,differential,evolution,indoor positioning,location
+  fingerprinting,location optimization}
+  \strng{namehash}{ZYZHLM1}
+  \strng{fullhash}{ZYZHLM1}
+  \field{sortinit}{Z}
+  \field{abstract}{%
+  Wireless indoor positioning systems have become very popular and attractive
+  in recent years. These systems have been successfully used in many fields
+  such as asset tracking and inventory management, and location fingerprinting
+  schemes are the most promising technique because of technical restrictions.
+  However, how to optimize the location of access points to improve the
+  positioning accuracy is still a challenging and difficult problem because of
+  the complexity of indoor radio propagation environments. In this paper, we
+  firstly discussed the indoor radio propagation model and proposed a novel
+  optimization model for access points location optimization in which the
+  Euclidean distance of received signal strength array among all the sampling
+  points should be maximize in order to increase the differentia and diversity
+  of the signal strength array, and thus improve the positioning accuracy of
+  location fingerprinting schemes. Then we presented the Differential Evolution
+  algorithm which was used to optimize the proposed problem, and the
+  experimental testbed, experimental results and analysis were discussed.
+  Experimental results show that the proposed model for access points location
+  optimization can improve the positioning accuracy remarkably. Finally, we
+  summarized the paper and gave possible future directions for research on
+  access points location optimization for indoor environments. Keywords-%
+  }
+  \field{booktitle}{2008 Int. Conf. Comput. Sci. Softw. Eng.}
+  \verb{doi}
+  \verb 10.1109/CSSE.2008.1539
+  \endverb
+  \field{isbn}{978-0-7695-3336-0}
+  \field{pages}{382\bibrangedash 385}
+  \field{title}{{Indoor Access Points Location Optimization Using Differential
+  Evolution}}
+  \verb{url}
+  \verb http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4721767
+  \endverb
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/Antenna coverage/placement soa/ap differential.
+  \verb pdf:pdf
+  \endverb
+  \field{year}{2008}
+\endentry
+
+\entry{Cossio2012}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Zheng, Yang; Burcin}}{Z.}%
+     {Becerik-Gerber}{B.-G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ACM BuildSys 2015,Adolescence,Adolescencia,Adolescent,Adolescent
+  Behavior,Adolescent Behavior: psychology,Adult,Agresiones al
+  cuerpo,Attachment to the body,Attaque au corps,Autolesiones
+  deliberadas,Automutilation d{\'{e}}lib{\'{e}}r{\'{e}}e,Body Piercing,Body
+  Piercing: psychology,Body Piercing: statistics {\&} numerical data,Body
+  image,CUERPO,Chile,Chile: epidemiology,Cosmetic Techniques,Deliberate
+  self-harm,Epidemiologic Methods,Female,Humans,Image corporelle,Imagen
+  corporal,JUVENTUD,MODIFICACIONES
+  CORPORALES,Male,Motivation,Movement,Risk-Taking,Self Mutilation,Self
+  Mutilation: physiopathology,Self Mutilation: ultrasonography,Sex
+  Distribution,Speech Articulation Tests,Speech
+  Intelligibility,Tattooing,Tattooing: psychology,Tattooing: statistics {\&}
+  numerical data,Tongue,Tongue: injuries,Tongue: physiopathology,Tongue:
+  ultrasonography,aesthetics,and on cor-,as none were found,autoinjury and
+  health,body,complications did not,complications from inserting
+  a,constituci{\'{o}}n del yo,control postural- estabilizaci{\'{o}}n-
+  v{\'{i}}as,corporal modifications,corps,cuerpo,culturas juveniles,cultures
+  juv{\'{e}}niles,epidural,esth{\'{e}}tique,est{\'{e}}tica,find any reports
+  of,high resolution images,if neuraxial anes-,ing with neuraxial
+  anesthesia,jeunesse,juvenile cultures,juventud,mecanismos de
+  anteroalimentaci{\'{o}}n y,modificacio -,needle through a,nes
+  corporales,perforaci{\'{o}}n corporal,piel,pr{\'{a}}ctica
+  autolesiva,psicoan{\'{a}}lisis,research,retroalimentaci{\'{o}}n,risks
+  management,segunda piel,sensitivas y motoras,spinal,sustainable
+  reconstruction,tattoo,tattooing,tattoos,tatuaje,the literature on tattoos,was
+  reviewed to see,youth}
+  \strng{namehash}{ZBG1}
+  \strng{fullhash}{ZBG1}
+  \field{sortinit}{Z}
+  \field{abstract}{%
+  The objective of this case study was to obtain some first-hand information
+  about the functional consequences of a cosmetic tongue split operation for
+  speech and tongue motility. One male patient who had performed the operation
+  on himself was interviewed and underwent a tongue motility assessment, as
+  well as an ultrasound examination. Tongue motility was mildly reduced as a
+  result of tissue scarring. Speech was rated to be fully intelligible and
+  highly acceptable by 4 raters, although 2 raters noticed slight distortions
+  of the sibilants /s/ and /z/. The 3-dimensional ultrasound demonstrated that
+  the synergy of the 2 sides of the tongue was preserved. A notably deep
+  posterior genioglossus furrow indicated compensation for the reduced length
+  of the tongue blade. It is concluded that the tongue split procedure did not
+  significantly affect the participant's speech intelligibility and tongue
+  motility.%
+  }
+  \verb{doi}
+  \verb 10.1007/s13398-014-0173-7.2
+  \endverb
+  \verb{eprint}
+  \verb 9809069v1
+  \endverb
+  \field{isbn}{9780874216561}
+  \field{issn}{0717-6163}
+  \field{number}{2}
+  \field{pages}{81\bibrangedash 87}
+  \field{title}{{Cross-Space Building Modeling by Contextual Information Based
+  Learning}}
+  \field{volume}{XXXIII}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/ACM BuildSys 2015/4 - cross space p177-yang
+  \verb .pdf:pdf
+  \endverb
+  \field{journaltitle}{Uma {\'{e}}tica para quantos?}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{arXiv:gr-qc}
+  \field{year}{2012}
+\endentry
+
+\entry{Zhu2014}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Zhu}{Z.}%
+     {Jianyong}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chen}{C.}%
+     {Zili}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Luo}{L.}%
+     {Haiyong}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Li}{L.}%
+     {Zhaohui}{Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{BLE,active learning,bluetooth low energy,filter,gaussian,taylor
+  series,triangle trilateral relations theorem,triangulation}
+  \strng{namehash}{ZJ+1}
+  \strng{fullhash}{ZJCZLHLZ1}
+  \field{sortinit}{Z}
+  \field{isbn}{9781467380546}
+  \field{number}{October 27-30, 2014}
+  \field{pages}{8}
+  \field{title}{{RSSI Based Bluetooth Low Energy Indoor Positioning}}
+  \verb{file}
+  \verb :Users/ciri/Dropbox/BOX/SoA/BLE triangulation.pdf:pdf
+  \endverb
+  \field{journaltitle}{Int. Conf. Indoor Position. Indoor Navig.}
+  \field{year}{2014}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

@@ -1,0 +1,49 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\select@language {english}
+\select@language {italian}
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Occupancy Monitoring systems resolution.\relax }}{9}{figure.caption.13}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Occupancy Monitoring systems intrusiveness.\relax }}{9}{figure.caption.13}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Occupancy inference of the Sentinel system using WiFi connectivity}}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Thermal sensor array employed in the Thermosense system and its occupancy detection outcome.\relax }}{15}{figure.caption.15}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces The deployed OPTNet system.}}{16}{figure.caption.16}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Time of Flight computation exploiting a double packet transmission.\relax }}{20}{figure.caption.17}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Example of a target node $T$ localized with Trilateration by means of distances $d1, d2, d3$.\relax }}{22}{figure.caption.18}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Example of Triangulation of a target node $T$}}{23}{figure.caption.19}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Example of MinMax computation}}{24}{figure.caption.20}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Example of KNN classification of a position between the target sub-areas}}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces \relax }}{27}{figure.caption.22}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Common WiFi based IPS applied for real-time occupancy monitoring.\relax }}{32}{figure.caption.27}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Common Bluetooth based IPS applied for real-time occupancy monitoring.\relax }}{32}{figure.caption.27}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Central and Peripheral devices in BLE specification and the implemented system.}}{37}{figure.caption.29}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces BLE advertisement packet contents.}}{38}{figure.caption.30}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Overview of the BlueSentinel occupancy monitoring system.}}{39}{figure.caption.31}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Mobile application developed for Android and iOS devices.\relax }}{40}{figure.caption.32}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Detail of the BLE packet advertised by each BlueSentinel user.}}{42}{figure.caption.33}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Prototype of BlueSentinel sensor nodes using Raspberry Pi 3 boards.}}{43}{figure.caption.34}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Platforms employed for the system back-end and the external components.}}{45}{figure.caption.35}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of the application stack. The script interpreter features standard ECMAScript functionality and on top of that provides additional classes from the Qt API, QCAD API and the \emph {SmartBuilding} module.\relax }}{52}{figure.caption.38}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Functional overview of the system components. Drawing tools and algorithms for systems deployment and simulation are extensible through ECMAScript or C++ plug-ins.\relax }}{53}{figure.caption.39}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Floor-plan design tool. User can specify the layout of the rooms and a possible set of candidate sites for the node placement.\relax }}{54}{figure.caption.40}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces System Process. After the design of the floor plan, different parameters are used to define the search for an optimal allocation of nodes.\relax }}{56}{figure.caption.41}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sample floor-plans with a location $l$ covered (a) in single mode, (b) for trilateration, and (c) for fingerprinting where $rss_{l,1} < rss_{l,2}$.\relax }}{57}{figure.caption.42}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Relation between localization accuracy and RSS samples Euclidean distance}}{58}{figure.caption.43}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Regular grid showing how the mean Euclidean distance between the received $rss$ vectors in a certain location \(l\), and the surrounding locations $s$ within a certain distance \(d\).\relax }}{62}{figure.caption.46}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Location Algorithm. The solution found by the \emph {Greedy} algorithm is improved applying iteratively a \emph {Local Search} for an optimal solution and a \emph {Shaking} procedure that perturbs the current solution.\relax }}{66}{figure.caption.47}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Shaking procedure: the parameter $s$ is increased when the solution does not improve (dashed line) and restarts when a new optimum is found (continuous line).\relax }}{67}{figure.caption.48}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Improvement Graph: colored nodes represent current allocations, while empty nodes are possible allocations. All active nodes are labeled with their corresponding type. Each arc is a change (move) on the allocations.\relax }}{68}{figure.caption.49}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Execution time of the tool with floor plans of different areas, for each covering technique ($R_{max} = 20$, $target = 95\%$, $r_t=8$).\relax }}{70}{figure.caption.50}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Average signal space Euclidean distance ($z$) obtained with the Greedy execution and compared with the $z$ value after the VNS optimization. $z$ values expressed as a function of the threshold $S$. Floor-plan area $=2500~m^2$, $R_{max} = 20$, $target = 100\%$, $r_t=12$\relax }}{70}{figure.caption.51}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Signal space Euclidean distance variance obtained with the Greedy execution and compared with the $z$ value after the VNS optimization. Values expressed as a function of the threshold $S$. Floor-plan area $=2500~m^2$, $R_{max} = 20$, $target = 100\%$, $r_t=12$\relax }}{71}{figure.caption.52}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces NECST Lab floor-plan used as indoor environment testbed for deployments evaluation.}}{72}{figure.caption.53}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Cumulative error distribution function experienced by our approach ad compared with two different solutions from the state-of-the-art.\relax }}{73}{figure.caption.54}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Mean positioning accuracy of the proposed allocation algorithm divided into different error ranges.\relax }}{73}{figure.caption.55}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Irregularity of the floorplan perimeter summarized by the minimum number of rectangles.\relax }}{75}{figure.caption.57}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

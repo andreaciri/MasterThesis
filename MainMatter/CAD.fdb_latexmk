@@ -1,0 +1,15 @@
+# Fdb version 3
+["pdflatex"] 1478782411 "CAD.tex" "CAD.pdf" "CAD" 1478782415
+  "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd" 1428932888 2256 09a793cb810c26c97ed035dcd724a0d0 ""
+  "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
+  "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
+  "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1448093193 3849860 8f501ae412e53b400e6b1b20b011e517 ""
+  "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
+  "CAD.aux" 1477034339 8 a94a2480d3289e625eea47cd1b285758 ""
+  "CAD.tex" 1478782410 63615 77d04ff9c1e8288d3f9f150e15ebbdc7 ""
+  (generated)
+  "CAD.pdf"
+  "CAD.log"
