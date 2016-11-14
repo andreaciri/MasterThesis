@@ -9,14 +9,29 @@
 % 	NOME CAPITOLO
 % ------------------------------------------------------------------------ %
 %
-\chapter{BlueSentinel: the Occupancy Monitoring System}
+\chapter[BlueSentinel: the Occupancy Monitoring System]{BlueSentinel: the Proposed Occupancy Monitoring System}
 \chaptermark{The BlueSentinel System}
 %\markboth{The BlueSentinel System}{The BlueSentinel System}	% headings
 %
 \label{cap:bluesentinel}
-%
-\section{Intro}
-\lipsum[5]
+
+\section{Introduction}
+\label{sec:intro}
+
+Smart buildings are environments like offices or schools able to exploit sensors, devices and appliances to observe users activity and adapt autonomously to achieve comfort, safety and energy efficiency. Considering the fast development of technologies for connected sensor and actuator (the so called \emph{Internet of Things}), since few years smart buildings are becoming a reality from a technological point of view.
+
+\medskip
+One of the main components of a smart building is the \textbf{Occupancy Monitoring system}, i.e. a system able to detect the number (or even the identity) of the occupants in every room or zone of the building. Occupants play a key role in the objectives of smart buildings. User comfort can be improved controlling automatically the environment temperature, humidity, and brightness, setting all the parameters exploiting user defined preferences. In this scenario, user identification and localization inside the building is fundamental.\\
+In order to guarantee the building safety, the knowledge of the occupants position in real-time can be precious. In case of emergencies like fires, escape routes and emergency exits might be highlighted with notifications targeted to the specific user's location.\\
+Probably, the main purpose of smart buildings, or in this case also called green buildings, is energy sustainability.
+In 2010, heating, ventilation, and air-conditioning (HVAC) consumed 42\% of the energy used in the United States.
+At this purpose, in the last few years plenty of methods have been proposed to control HVAC systems based on real-time occupancy information or learning the occupants habits to forecast the energy consumption.
+
+\medskip
+The expected outcome of an occupancy monitoring system is the detection in real-time (or with a tolerable delay) of every user inside the building, with their position. Usually, the occupant needs to be localized in a zone or room of the building, since this information is sufficient to automatize HVAC and lighting systems. In cases of automation based on user-defined preferences also the identification of each user is required by the system.
+
+\smallskip
+As explained in chapter \ref{cap:soa}, a lot of effort has been put both from the industry and the academia in terms of research and product industrialization. However, some intrinsically hard challenges of the occupancy monitoring problem bring to the lack of an accessible solution with broad adoption.
 
 \section{Choosing the Enabling Technology}
 \label{sec:technology}
@@ -93,11 +108,13 @@ During BLE advertisement the application is free from any localization algorithm
 
 \begin{figure*}
 \center
-\minipage{0.40\textwidth}
-  \includegraphics[width=0.85\linewidth]{bsscreen1.pdf}
-\endminipage\hfill
-\minipage{0.40\textwidth}%
-  \includegraphics[width=0.85\linewidth]{bsscreen2.pdf}
+\minipage{0.50\textwidth}
+\center
+  \includegraphics[width=0.8\linewidth]{bsscreen1.pdf}
+\endminipage
+\minipage{0.50\textwidth}
+\center
+  \includegraphics[width=0.8\linewidth]{bsscreen2.pdf}
 \endminipage
   \caption{Mobile application developed for Android and iOS devices.}\label{fig:bsscreen}
 \end{figure*}
@@ -183,7 +200,7 @@ Raspberry boards support a Debian-based Linux distribution, that has been used f
 V_t = \alpha \cdot RSS_t + (1 - \alpha) \cdot RSS_{t-1}
 \end{equation}
 
-The weighting for each older datum decreases exponentially, never reaching zero. The $\alpha$ coefficient has been fixed to 0.75.
+The weighting for each older datum decreases exponentially, never reaching zero. The $\alpha$ coefficient has been fixed to 0.85.
 \item \textbf{Data push}: the third thread is is in charge of pushing RSS values periodically to the server at regular intervals. In particular, in each cycle and for each user detected, this thread send the user id, the filtered RSS values, and the most recent timestamp within the sliding window of the EWMA filter.
 The choice of the timestamp is given by the weighting factor that emphasizes exponentially the more recent sample. The server is contacted with a HTTP request.
 After that data is pushed to the server, the thread empty the samples queue, so that new signals coming from BLE scan will be evaluated in a new filtering window.
@@ -194,7 +211,7 @@ Every nodes has been connected to the building LAN infrastructure and set up to 
 
 \section{Back-end}
 \label{sec:back-end}
-The system back-end has been set up using Parse-Server, an open-source API server based on the Express web application framework. The REST API has been exploited to interact with Parse Server from the mobile applications, sensor nodes, and a web page. The JavaScript SDK provided by Parse Server (called Cloud Code) has been used to manage the creation of database objects and the localization algorithm. The system back-end has been structured to provide the building occupancy information through the REST API to any third party components of the Building Management System able to send HTTP requests.
+The system back-end has been set up using Parse-Server, an open-source API server based on the Express web application framework. The REST API has been exploited to interact with Parse Server from the mobile applications, sensor nodes, and a web page. The JavaScript SDK provided by Parse Server (called Cloud Code) has been used to manage the creation of database objects and the localization algorithm. The system back-end has been structured to provide the building occupancy information through the REST API to any third party components of the Building Management System able to send HTTP requests. All the platforms used to develop the back-end and the external components are represented in figure~\ref{fig:platforms}.
 
 \begin{figure}[h!tb]
 \centering
@@ -209,7 +226,7 @@ The system back-end has been set up using Parse-Server, an open-source API serve
 The database that supports the system has been implemented using MongoDB. The database contains user objects created during registration. Each zone (or room) of the building has its own instance, created during the training phase by the administrator application. The ReceivedSignal object is created directly by the sensor nodes. It represents the reception of a BLE signal, by a given node. The object is created with the user id founded in the signal, and the received signal strength. The ReceivedSignal data is used by the fingerprinting algorithm to compute each user position. Whenever this happens, the outcome is stored using the UserPosition object.
 
 \begin{table}
-\caption{BlueSentinel back-end database}
+\caption[BlueSentinel back-end database.]{BlueSentinel back-end database. Underlined fields represent keys of the table.}
 \label{multiprogram}
 \begin{tabular}{c | c c c c c}
 %\cline{2-9}
@@ -220,7 +237,7 @@ Table & \multicolumn{5}{c}{Fields} \\
 \multicolumn{1}{c|}{Node} & \underline{nodeId} & zoneId & floor & label & createdAt\\
 \multicolumn{1}{c|}{ReceivedSignal} & \underline{userId} & \underline{nodeId} & RSS & \underline{timestamp} & createdAt\\
 \multicolumn{1}{c|}{UserPosition} & \underline{positionId} & \underline{userId} & RSS & \underline{timestamp} & createdAt\\
-\multicolumn{1}{c|}{TrainingSet} & zoneId & RSS[~] & timestamp[~] & createdAt\\
+\multicolumn{1}{c|}{TrainingSet} & zoneId & zoneLabel & RSS[~] & timestamp[~] & createdAt\\
 \hline
 \end{tabular}
 \end{table}
@@ -228,9 +245,66 @@ Table & \multicolumn{5}{c}{Fields} \\
 
 \subsection{Fingerprinting Algorithms}
 \label{subsec:algorithms}
+The localization algorithm in charge of estimating the position of each detected user has been implemented on the back-end using the JavaScript SDK provided by Parse Server. The fingerprinting technique is based on a preliminary offline phase in which the building administrator create the training set for the algorithm. More specifically, the training procedure provide the creation of a label for each building zone (For example, \verb|OFFICE_1| or \verb|MEETING_ROOM|). Then the administrator needs to travel across each building zone, stop for some seconds and declare the correct room label. Meanwhile, on the server side, the RSS samples coming from the admin application are collected and stored in the training set together with the corresponding ground truth location.
+
+The simplest training set schema (represented by the TrainingSet database table) is those used in the following example:
+
+\definecolor{darkblue}{rgb}{0.47, 0.62, 0.8}
+\newcolumntype{a}{>{\columncolor{darkblue}}c}
+
+\begin{table}[h!tb]
+\caption[Example of RSS samples captured during a training phase.]{Example of RSS samples captured during a training phase. Blue cells represents classification features.}
+\label{tab:sample-simple}
+\begin{center}
+  \begin{tabular}{ | c | a | a | a | a | a |}
+    \hline
+    zoneId & zoneLabel & RSS1 & RSS2 & RSS3 & RSS4\\ \hline
+    COFFEE\_ROOM & \verb|WTbiGlRdxu| & -87 & -45 & -27 & -92\\
+    \hline
+  \end{tabular}
+\end{center}
+\end{table}
+
+Using this schema, the zone identifier and the RSS values represent the feature of the classification algorithm.
+The reported training samples have been collected with the configuration depicted in figure \ref{fig:necst-sketch}:
+
+\begin{figure}[h!tb]
+\centering
+\includegraphics[width=0.8\linewidth]{necst-sketch.pdf}
+\caption[Configuration of the system during collection of samples reported in table \ref{tab:sample-simple}.]{Configuration of the system during collection of samples reported in table \ref{tab:sample-simple}.}
+\label{fig:necst-sketch}
+\end{figure}
+
+Observing the configuration, and thinking on what is the aim of the training phase, raises up the following issue. The features of the training set are strictly dependent on the particular mobile device where the learning procedure is executed. More specifically, the system will store batches of RSS values that depend not only on the current position, but also on the transmission power of the onboard BLE antenna.
+The presence of a hardware dependent classification feature makes the system unreliable when the mobile device to localize at runtime is different from the device used for the training procedure.\\
+For this reason, the classification algorithm has been trained using differential RSS samples. In order to make the fingerprinting as more as possible independent from the hardware, the algorithm classify based on the difference between RSS values captured at the same time from different nodes. 
+
+\begin{table}[h!tb]
+\caption[Example of differential RSS values captured during a training phase.]{Example of differential RSS values captured during a training phase. Blue cells represents classification features. DiffXY represents the difference between the signal strength received at node X and those received by node Y.}
+\label{tab:sample-diff}
+\begin{center}
+  \begin{tabular}{ | c | a | a | a | a | a | a | a |}
+    \hline
+    zoneId & zoneLabel & Diff12 & Diff13 & Diff14 & Diff23 & Diff24 & Diff34\\ \hline
+    COFFEE\_ROOM & \verb|WTbiGlRdxu| & -87 & -45 & -27 & -92 & -27 & -92\\
+    \hline
+  \end{tabular}
+\end{center}
+\end{table}
+
 
 \section{Integration with a Thermal Comfort System}
 \label{sec:thermosense}
+\begin{minipage}{.4\textwidth}
+\includegraphics[width=0.9\linewidth]{tsscreenshot.pdf}
+\captionof{figure}[ThermoSense mobile application user interface.]{ThermoSense mobile application user interface.}
+\label{fig:thermoUI}
+\end{minipage}
+\begin{minipage}{.6\textwidth}
+BlueSentinel has been integrated with \emph{ThermoSense}
+\footnote{ThermoSense project \url{http://box.necst.it/thermosense.html}}, a thermal comfort system developed in our laboratory. The mobile application described in section \ref{sec:app} has been used in conjunction with BlueSentinel and ThermoSense. In particular, while the Bluetooth functionality manage the advertising, users are able to provide a thermal comfort feedback (a complaint) that quantifies the amount of cold or hot perceived. The feedback information, together with the user position provided by BlueSentinel, is used by ThermoSense to compute the best possible HVAC set point to satisfy the occupants comfort while minimizing the building consumption.
+\end{minipage}
+
 
 \section{Real-World Deployed System}
 \label{sec:lab}
