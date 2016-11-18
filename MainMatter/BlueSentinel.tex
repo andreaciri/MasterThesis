@@ -33,6 +33,8 @@ The expected outcome of an occupancy monitoring system is the detection in real-
 \smallskip
 As explained in chapter \ref{cap:soa}, a lot of effort has been put both from the industry and the academia in terms of research and product industrialization. However, some intrinsically hard challenges of the occupancy monitoring problem bring to the lack of an accessible solution with broad adoption.
 
+In this chapter is presented BlueSentinel, an occupancy monitoring system developed with the aim to improve the shortcomings identified in the state of the art.
+
 \section{Choosing the Enabling Technology}
 \label{sec:technology}
 In the {\hyperref[cap:soa]{previous chapter}}, many possible technological solutions to build indoor location monitoring systems have been reviewed. During the preliminary analysis of our work, all the available technologies have been considered in order to satisfy the occupancy monitoring requirements and a feasible solution for both users and infrastructures.
@@ -84,7 +86,7 @@ BLE advertisement on mobile devices requires a specific hardware, the BLE periph
 
 The proposed system has been developed using smartphones as advertising devices. However, The same advertising task can be easily implemented on wearable devices like smart-watch, that are natively build as BLE peripheral devices. The employment of wearable devices for occupancy monitoring would be even more effective, since they never separate from their users.
 
-\section{System overview}
+\section{System Overview}
 \label{sec:overview}
 In this section, the architecture of the proposed system will be over-viewed, while in the next three sections every components will be explained in detail.
 
@@ -225,19 +227,20 @@ The system back-end has been set up using Parse-Server, an open-source API serve
 
 The database that supports the system has been implemented using MongoDB. The database contains user objects created during registration. Each zone (or room) of the building has its own instance, created during the training phase by the administrator application. The ReceivedSignal object is created directly by the sensor nodes. It represents the reception of a BLE signal, by a given node. The object is created with the user id founded in the signal, and the received signal strength. The ReceivedSignal data is used by the fingerprinting algorithm to compute each user position. Whenever this happens, the outcome is stored using the UserPosition object.
 
-\begin{table}
+\begin{table}[h!tb]
 \caption[BlueSentinel back-end database.]{BlueSentinel back-end database. Underlined fields represent keys of the table.}
-\label{multiprogram}
-\begin{tabular}{c | c c c c c}
-%\cline{2-9}
-Table & \multicolumn{5}{c}{Fields} \\
+\label{tab:db}
+\begin{tabular}{c | c c c c}
+%\hline
+Table & \multicolumn{4}{c}{Fields} \\
 \hline
-\multicolumn{1}{c|}{User} & userId & email & username & hashedPwd & createdAt\\
-\multicolumn{1}{c|}{Zone} & \underline{zoneId} & floor & maxCapacity & label & createdAt\\
-\multicolumn{1}{c|}{Node} & \underline{nodeId} & zoneId & floor & label & createdAt\\
-\multicolumn{1}{c|}{ReceivedSignal} & \underline{userId} & \underline{nodeId} & RSS & \underline{timestamp} & createdAt\\
-\multicolumn{1}{c|}{UserPosition} & \underline{positionId} & \underline{userId} & RSS & \underline{timestamp} & createdAt\\
-\multicolumn{1}{c|}{TrainingSet} & zoneId & zoneLabel & RSS[~] & timestamp[~] & createdAt\\
+\multicolumn{1}{c|}{User} & \underline{userId} & email & username & hashedPwd\\
+\multicolumn{1}{c|}{Zone} & \underline{zoneId} & floor & maxCapacity & label\\
+\multicolumn{1}{c|}{Node} & \underline{nodeId} & zoneId & floor & label\\
+\multicolumn{1}{c|}{ReceivedSignal} & \underline{userId} & \underline{nodeId} & RSS & \underline{timestamp}\\
+\multicolumn{1}{c|}{UserPosition} & \underline{positionId} & \underline{userId} & RSS & \underline{timestamp}\\
+\multicolumn{1}{c|}{TrainingSet} & zoneId & zoneLabel & RSS[~] & timestamp[~]\\
+\multicolumn{1}{c|}{TrainingSetDiff} & zoneId & zoneLabel & DiffRSS[~] & timestamp[~]\\
 \hline
 \end{tabular}
 \end{table}
@@ -245,28 +248,31 @@ Table & \multicolumn{5}{c}{Fields} \\
 
 \subsection{Fingerprinting Algorithms}
 \label{subsec:algorithms}
-The localization algorithm in charge of estimating the position of each detected user has been implemented on the back-end using the JavaScript SDK provided by Parse Server. The fingerprinting technique is based on a preliminary offline phase in which the building administrator create the training set for the algorithm. More specifically, the training procedure provide the creation of a label for each building zone (For example, \verb|OFFICE_1| or \verb|MEETING_ROOM|). Then the administrator needs to travel across each building zone, stop for some seconds and declare the correct room label. Meanwhile, on the server side, the RSS samples coming from the admin application are collected and stored in the training set together with the corresponding ground truth location.
+The localization algorithm in charge of estimating the position of each detected user has been implemented on the back-end using the JavaScript SDK provided by Parse Server. The fingerprinting technique is based on a preliminary offline phase in which the building administrator create the training set for the algorithm. More specifically, the training procedure provides the creation of a label for each building zone (For example, \verb|OFFICE_1| or \verb|MEETING_ROOM|). Then the administrator needs to visit each building zone and declare the correct room label. During ground truth collection, the application asks to the administrator to remain stationary if the zone is tiny ($< 15 - 20m^2$) or walk around slowly if the zone is bigger. Meanwhile, on the server side, the RSS samples coming from the admin application are collected and stored in the training set together with the corresponding ground truth location. For each location, the number of vector collected must be at least 4; otherwise the fingerprinting for that location is considered incomplete.
 
-The simplest training set schema (represented by the TrainingSet database table) is those used in the following example:
+The simplest, or \emph{baseline}, training set schema (represented by the TrainingSet entry in database \ref{tab:db}) is those illustrated in the following example (table \ref{tab:sample-simple}):
 
 \definecolor{darkblue}{rgb}{0.47, 0.62, 0.8}
 \newcolumntype{a}{>{\columncolor{darkblue}}c}
 
 \begin{table}[h!tb]
-\caption[Example of RSS samples captured during a training phase.]{Example of RSS samples captured during a training phase. Blue cells represents classification features.}
+\caption[Example of RSS samples captured during a training phase.]{Example of RSS samples captured during a training phase (baseline training set). Blue cells represent classification features.}
 \label{tab:sample-simple}
 \begin{center}
   \begin{tabular}{ | c | a | a | a | a | a |}
     \hline
     zoneId & zoneLabel & RSS1 & RSS2 & RSS3 & RSS4\\ \hline
-    COFFEE\_ROOM & \verb|WTbiGlRdxu| & -87 & -45 & -27 & -92\\
+    COFFEE ROOM & \verb|WTbiGlRdxu| & -60 & -81 & -85 & -95\\
+    COFFEE ROOM & \verb|WTbiGlRdxu| & -62 & -80 & -86 & -89\\
+    COFFEE ROOM & \verb|WTbiGlRdxu| & -70 & -82 & -91 & -96\\
+    COFFEE ROOM & \verb|WTbiGlRdxu| & -63 & -81 & -87 & -93\\
     \hline
   \end{tabular}
 \end{center}
 \end{table}
 
-Using this schema, the zone identifier and the RSS values represent the feature of the classification algorithm.
-The reported training samples have been collected with the configuration depicted in figure \ref{fig:necst-sketch}:
+Using this schema, the zone identifier and the RSS values represent the features of the classification algorithm.
+The training samples reported above have been collected with the configuration depicted in figure \ref{fig:necst-sketch}.
 
 \begin{figure}[h!tb]
 \centering
@@ -275,35 +281,65 @@ The reported training samples have been collected with the configuration depicte
 \label{fig:necst-sketch}
 \end{figure}
 
-Observing the configuration, and thinking on what is the aim of the training phase, raises up the following issue. The features of the training set are strictly dependent on the particular mobile device where the learning procedure is executed. More specifically, the system will store batches of RSS values that depend not only on the current position, but also on the transmission power of the onboard BLE antenna.
-The presence of a hardware dependent classification feature makes the system unreliable when the mobile device to localize at runtime is different from the device used for the training procedure.\\
-For this reason, the classification algorithm has been trained using differential RSS samples. In order to make the fingerprinting as more as possible independent from the hardware, the algorithm classify based on the difference between RSS values captured at the same time from different nodes. 
+%TODO: riempire immagine
+
+Observing the configuration, and thinking on what is the aim of the training phase, a critical issue raises up. The features of the training set are strictly dependent on the particular mobile device where the learning procedure is executed. More specifically, the system will store batches of RSS values that depend not only on the current position, but also on the transmission power of the onboard BLE antenna.
+The presence of a hardware dependent classification feature makes the system unreliable when the mobile device that need to be localized at runtime is different from the device used for the training procedure.\\
+For this reason, a training set that differs from the \textbf{baseline} has been investigated. The classification algorithm has been trained using \textbf{differential} RSS samples, as shown in table \ref{tab:sample-simple}. In order to make the fingerprinting as more as possible independent from the mobile hardware, the algorithm performs classification based on the difference between RSS values captured at the same time from different nodes. 
+The purpose of the differential training set is to reduce the correlation of each vector with the transmission power of the training device, while emphasize the proportions of the RSS vector elements.
 
 \begin{table}[h!tb]
 \caption[Example of differential RSS values captured during a training phase.]{Example of differential RSS values captured during a training phase. Blue cells represents classification features. DiffXY represents the difference between the signal strength received at node X and those received by node Y.}
 \label{tab:sample-diff}
 \begin{center}
-  \begin{tabular}{ | c | a | a | a | a | a | a | a |}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\setlength{\tabcolsep}{.35em}
+  \begin{tabularx}{\textwidth}{ | Y | a | a | a | a | a | a | a |}
     \hline
     zoneId & zoneLabel & Diff12 & Diff13 & Diff14 & Diff23 & Diff24 & Diff34\\ \hline
-    COFFEE\_ROOM & \verb|WTbiGlRdxu| & -87 & -45 & -27 & -92 & -27 & -92\\
+    COFFEE ROOM & \verb|WTbiGlRdxu| & 21 & 25 & 35 & 4 & 14 & 10\\
+    COFFEE ROOM & \verb|WTbiGlRdxu| & 18 & 24 & 27 & 6 & 9 & 3\\
+    COFFEE ROOM & \verb|WTbiGlRdxu| & 12 & 21 & 26 & 9 & 14 & 5\\
+    COFFEE ROOM & \verb|WTbiGlRdxu| & 12 & 21 & 26 & 9 & 14 & 5\\
     \hline
-  \end{tabular}
+  \end{tabularx}
 \end{center}
 \end{table}
 
+The training set has been used to train the following classification algorithms.
+
+\subsection{K Nearest Neighbor}
+\label{subsec:knn}
+For the KNN algorithm, each vector of the training set is virtually positioned in a D-dimensional graph, where D is the dimension of the vector. Since in our testbed there have been employed 4 sensor nodes, the graph has dimension 4 for the baseline training set, and dimension 6 for the differential set.
+At run time, the algorithm builds the RSS vector using the user ID and the timestamps of the samples that fall within a short sliding window (1 - 2 seconds). This guarantees that each sample of the vector comes from the same location in the building, since the user can't change position a short window of time.
+Whenever a new unlabeled vector is constructed, the algorithm put the element on the virtual graph. At this point, a number of K training points that are the K closest points to the runtime point are selected. From the K labeled observations, a majority vote determines the position label of the runtime sample. The implemented algorithm selects $K=5$ training observations.
+The distance between two points $a$ and $b$ (where for instance $a$ is labeled and $b$ is unlabeled) is computed using the Euclidean distance:
+
+\begin{equation}\label{eq:E-baseline}
+E(a,b)=\sqrt{(rss_{a,1} - rss_{b,1})^2 + ... + (rss_{a,k} - rss_{b,k})^2}
+\end{equation}
+\begin{equation}\label{eq:E-differential}
+E'(a,b)=\sqrt{(diff_{a,12} - diff_{b,12})^2 + ... + (diff_{a,jk} - diff_{b,jk})^2}
+\end{equation}
+
+In equation \ref{eq:E-baseline}, $rss_{a,1}$ represents the RSS value captured by node 1 and stored in the training vector $a$. In equation \ref{eq:E-differential}, $Diff_{a,12}$ represents the difference between training RSS sample of node 1 and node 2, and stored in the training vector $a$.
+The implemented algorithm computes the distance $E(a,b)$ for every vector $a$ belonging to the training set, sorts in increasing order the resulting list of distances and select the firsts 5 elements for the majority vote. Defining $N$ as the dimension of the training set, and $d$ the dimension of each sample the resulting time complexity is $O(dN + NlogN)$.
+
+%TODO: parlare dei dati mancanti
 
 \section{Integration with a Thermal Comfort System}
 \label{sec:thermosense}
-\begin{minipage}{.4\textwidth}
-\includegraphics[width=0.9\linewidth]{tsscreenshot.pdf}
-\captionof{figure}[ThermoSense mobile application user interface.]{ThermoSense mobile application user interface.}
+
+\begin{figure}[h!tb]
+\center
+\includegraphics[width=0.3\linewidth]{tsscreenshot.pdf}
+\captionof{figure}[ThermoSense user interface that collects thermal complaints from building occupants.]{ThermoSense mobile application user interface.}
 \label{fig:thermoUI}
-\end{minipage}
-\begin{minipage}{.6\textwidth}
+\end{figure}
+
 BlueSentinel has been integrated with \emph{ThermoSense}
-\footnote{ThermoSense project \url{http://box.necst.it/thermosense.html}}, a thermal comfort system developed in our laboratory. The mobile application described in section \ref{sec:app} has been used in conjunction with BlueSentinel and ThermoSense. In particular, while the Bluetooth functionality manage the advertising, users are able to provide a thermal comfort feedback (a complaint) that quantifies the amount of cold or hot perceived. The feedback information, together with the user position provided by BlueSentinel, is used by ThermoSense to compute the best possible HVAC set point to satisfy the occupants comfort while minimizing the building consumption.
-\end{minipage}
+\footnote{ThermoSense project: \url{http://box.necst.it/thermosense.html}}, a thermal comfort system developed in our laboratory. The mobile application described in section \ref{sec:app} has been used in conjunction with BlueSentinel and ThermoSense. In particular, while the BlueSentinel module manages all the Bluetooth functionalities, ThermoSense module collects information on the current thermal comfort of the tenants. Users are able to provide a thermal comfort feedback (a complaint) that quantifies the amount of cold or hot perceived through a gradient interface. The feedback information, together with the user position detected by BlueSentinel, is used by ThermoSense to compute the best possible HVAC set point to satisfy the occupants comfort while minimizing the building consumption.
+The position information is retrieved by the decisional engine of ThermoSense directly on the backend level. However, any other smart building application developed as a third-party components can retrieve the building occupancy information using the REST interface explained in section \ref{sec:back-end}.
 
 
 \section{Real-World Deployed System}
@@ -311,11 +347,20 @@ BlueSentinel has been integrated with \emph{ThermoSense}
 
 \section{Web-Based Monitoring Dashboard}
 \label{sec:webmonitor}
+The occupancy information computed by BlueSentinel has been visualized in a web monitoring page. The page shows location data in three forms.\\
+First a text table reports the current number of occupants for each zone or room. Together with the occupants number, is available the time instant in which the last user has been seen in the zone.\\
+The real-time occupancy is also reported in a heat-map that represents the population distribution inside the indoor environment. The heat-map shows in dark red the more populated zones, while in yellow and white semi-empty or empty rooms.\\
+Another chart has been used to visualized the occupancy history of each building zone. Each line represent the number of people in a room as a function of the time.
 
-\section{implementation Decisions}
+In all the dashboard elements, users identity has never been showed to guarantee the occupants privacy.
+
+
+\section{Implementation Decisions}
 \label{sec:decisions}
+
 \section{Limitations}
 \label{sec:limitations}
-
+%advertising background for ios. backwards compatibility android. --> detection delays
+%
 %
 % -----------------------------END------------------------------------- %
