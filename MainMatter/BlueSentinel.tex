@@ -43,8 +43,12 @@ Considering the comparison summarized in table \ref{tab:od_soa}, it can be deduc
 Camera based systems require a high computational effort to perform real-time body recognition on indoor video (or images) streams. The compute-intensive peculiarity makes the approach not suitable to scale up for large buildings, with tens or thousand rooms and users.
 Wireless based solutions tend to provide easily an outcome in real-time, or with a tolerable delay. Raw data produced by wireless systems is usually far more lightweight to process (for example compared to images), making the solution attractive for large indoor areas.
 
-Inside the wireless scope, the choice is restricted to technologies that all users have already available in their mobile devices, so to avoid the employment of additional objects. The first one is certainly WiFi. WiFi based localization solutions have been deeply investigated, also because of WiFi infrastructure is already present in almost all buildings. However, for monitoring purposes, they are not able to provide real-time location data for long execution periods. This issue is explained in detail in section \ref{subsec:wips_od} and summarized here. There exist two ways to localize a mobile device using WiFi connectivity, an \emph{active} and a \emph{passive} method. The active method requires an application installed on mobile device that keeps an active connection with all the surrounding hotspots, and continuously notify collected data using an Internet connection. However, battery consumption related to WiFi operations is too high to reach many hours of execution. The passive method instead doesn't require any installed application on mobile device, but simply exploits WiFi packets sent from devices during their usual activity. Unfortunately, using this approach, is nearly impossible to obtain real-time detection since mobile operating systems apply aggressive sleep policies to WiFi module in order to limit consumptions. A WiFi connected smartphone during sleep can spend several minutes without emits any signal, making the system unresponsive to users movements \cite{Balaji2013}.
+\smallskip
+Inside the wireless scope, the choice is restricted to technologies that all users have already available in their mobile devices, so to avoid the employment of additional objects. The first one is certainly WiFi. WiFi based localization solutions have been deeply investigated, also because of WiFi infrastructure is already present in almost all buildings. However, for monitoring purposes, they are not able to provide real-time location data for long execution periods. This issue is explained in detail in section \ref{subsec:wips_od} and summarized here.\\
+There exist two ways to localize a mobile device using WiFi connectivity, an \emph{active} and a \emph{passive} method. The active method requires an application installed on mobile device that keeps an active connection with all the surrounding hotspots, and continuously notify collected data using an Internet connection. However, battery consumption related to WiFi operations is too high to reach many hours of execution.\\
+The passive method instead doesn't require any installed application on mobile device, but simply exploits WiFi packets sent from devices during their usual activity. Unfortunately, using this approach, is nearly impossible to obtain real-time detection since mobile operating systems apply aggressive sleep policies to WiFi module in order to limit consumptions. A WiFi connected smartphone during sleep can spend several minutes without emits any signal, making the system unresponsive to users movements \cite{Balaji2013}.
 
+\smallskip
 The remaining available wireless technology is Bluetooth, and in particular Bluetooth Low Energy. Since 2010, BLE chips (able to work with classic and Low Energy enabled Bluetooth) have been built into in an increasing number of smartphones, tablets or wearables (as instance, Apple has incorporated them in its products since the iPhone 4S in 2011).
 Devices using BLE consume ten times less then WiFi and a fraction of the power of classic Bluetooth \cite{Choperena2013}.
 However, at the best of our knowledge, BLE has been employed for localization only through passive appliances (like beacons) that leave the burden on the mobile device, forcing it to run positioning algorithms continuously and notify the result through energy-hungry connectivities.
@@ -81,9 +85,11 @@ The key idea behind the proposed system is to use smartphones as BLE peripheral 
 As shown in figure \ref{fig:payload}, advertisement packets contain the Bluetooth MAC address of the device and a very limited custom payload of 31 bytes. Since we need to identify the user, a straightforward solution would be to associate each MAC address with a registered user. However this is no longer possible on recent versions of Android and iOS since they hide MAC addresses to developers in order to increase user's privacy. For this reason, a Universally Unique IDentifier (UUID) has been employed to recognize each user advertisement.
 At the same way in which UUIDs have been used to advertise regions through BLE beacons (like the Apple iBeacon), occupants of a building can be localized and identified in real-time associating each UUID with a building user.
 
+\smallskip
 BLE advertisement on mobile devices requires a specific hardware, the BLE peripheral mode chipset. Fortunately, almost all current devices have built-in peripheral chipset: all Apple devices since iPhone 4S and iPad 3, about 80\% of all Android devices released in 2014 and about 90\% in 2015 \cite{RadiusNetwork2016}.
 %A Central device can't send any data to the Peripheral device without a connection. But a single peripheral can advertise to multiple masters in the area.
 
+\medskip
 The proposed system has been developed using smartphones as advertising devices. However, The same advertising task can be easily implemented on wearable devices like smart-watch, that are natively build as BLE peripheral devices. The employment of wearable devices for occupancy monitoring would be even more effective, since they never separate from their users.
 
 \section{System Overview}
@@ -182,7 +188,7 @@ The application has been implemented exploiting the CoreBluetooth framework, tha
 In addition to the application for building users, a separate application has been developed for the building administrator in order to perform the training of the classification algorithm. The training requires the creation of a label for each building zone; then the administrator needs to travel across each building zone, stop for some seconds and declare the correct room label. Meanwhile, on the server side, the training phase creates a set of RSS samples, each one of them labeled with the corresponding ground truth location.
 
 \section{Wireless Sensor Network}
-\label{sec:network}
+\label{sec:wsn}
 On the building side, the system requires a set of hardware nodes deployed in the indoor environment able to collect BLE packets and contact a centralized server. The node prototype has been developed using Raspberry Pi 3, one of the most cheapest board that supports all the necessary connections. In particular, the mentioned single-board computer provide a BLE module, and both WiFi and Ethernet for Internet connections.
 
 \begin{figure}[h!tb]
@@ -213,7 +219,10 @@ Every nodes has been connected to the building LAN infrastructure and set up to 
 
 \section{Back-end}
 \label{sec:back-end}
-The system back-end has been set up using Parse-Server, an open-source API server based on the Express web application framework. The REST API has been exploited to interact with Parse Server from the mobile applications, sensor nodes, and a web page. The JavaScript SDK provided by Parse Server (called Cloud Code) has been used to manage the creation of database objects and the localization algorithm. The system back-end has been structured to provide the building occupancy information through the REST API to any third party components of the Building Management System able to send HTTP requests. All the platforms used to develop the back-end and the external components are represented in figure~\ref{fig:platforms}.
+The system back-end has been set up using Parse-Server, an open-source API server based on the Express web application framework. The REST API has been exploited to interact with Parse Server from the mobile applications, sensor nodes, and a web page. The JavaScript SDK provided by Parse Server (called Cloud Code) has been used to manage the creation of database objects and the localization algorithm.\\
+The system back-end has been structured to provide the building occupancy information through the REST API to any third party components of the Building Management System able to send HTTP requests.
+
+All the platforms used to develop the back-end and the external components are represented in figure~\ref{fig:platforms}.
 
 \begin{figure}[h!tb]
 \centering
@@ -248,12 +257,15 @@ Table & \multicolumn{4}{c}{Fields} \\
 
 \subsection{Fingerprinting Algorithms}
 \label{subsec:algorithms}
-The localization algorithm in charge of estimating the position of each detected user has been implemented on the back-end using the JavaScript SDK provided by Parse Server. The fingerprinting technique is based on a preliminary offline phase in which the building administrator create the training set for the algorithm. More specifically, the training procedure provides the creation of a label for each building zone (For example, \verb|OFFICE_1| or \verb|MEETING_ROOM|). Then the administrator needs to visit each building zone and declare the correct room label. During ground truth collection, the application asks to the administrator to remain stationary if the zone is tiny ($< 15 - 20m^2$) or walk around slowly if the zone is bigger. Meanwhile, on the server side, the RSS samples coming from the admin application are collected and stored in the training set together with the corresponding ground truth location. For each location, the number of vector collected must be at least 4; otherwise the fingerprinting for that location is considered incomplete.
+The localization algorithm in charge of estimating the position of each detected user has been implemented on the back-end using the JavaScript SDK provided by Parse Server.
 
+The fingerprinting technique is based on a preliminary offline phase in which the building administrator create the training set for the algorithm. More specifically, the training procedure provides the creation of a label for each building zone (For example, \verb|OFFICE_1| or \verb|MEETING_ROOM|). Then the administrator needs to visit each building zone and declare the correct room label. During ground truth collection, the application asks to the administrator to remain stationary if the zone is tiny ($< 15 - 20m^2$) or walk around slowly if the zone is bigger. Meanwhile, on the server side, the RSS samples coming from the admin application are collected and stored in the training set together with the corresponding ground truth location. For each location, the number of vector collected must be at least 4; otherwise the fingerprinting for that location is considered incomplete.
+
+\smallskip
 The simplest, or \emph{baseline}, training set schema (represented by the TrainingSet entry in database \ref{tab:db}) is those illustrated in the following example (table \ref{tab:sample-simple}):
 
-\definecolor{darkblue}{rgb}{0.47, 0.62, 0.8}
-\newcolumntype{a}{>{\columncolor{darkblue}}c}
+\definecolor{blizzardblue}{rgb}{0.67, 0.9, 0.93}
+\newcolumntype{a}{>{\columncolor{blizzardblue}}c}
 
 \begin{table}[h!tb]
 \caption[Example of RSS samples captured during a training phase.]{Example of RSS samples captured during a training phase (baseline training set). Blue cells represent classification features.}
@@ -261,7 +273,7 @@ The simplest, or \emph{baseline}, training set schema (represented by the Traini
 \begin{center}
   \begin{tabular}{ | c | a | a | a | a | a |}
     \hline
-    zoneId & zoneLabel & RSS1 & RSS2 & RSS3 & RSS4\\ \hline
+    zoneLabel & zoneID & RSS1 & RSS2 & RSS3 & RSS4\\ \hline
     COFFEE ROOM & \verb|WTbiGlRdxu| & -60 & -81 & -85 & -95\\
     COFFEE ROOM & \verb|WTbiGlRdxu| & -62 & -80 & -86 & -89\\
     COFFEE ROOM & \verb|WTbiGlRdxu| & -70 & -82 & -91 & -96\\
@@ -281,7 +293,6 @@ The training samples reported above have been collected with the configuration d
 \label{fig:necst-sketch}
 \end{figure}
 
-%TODO: riempire immagine
 
 Observing the configuration, and thinking on what is the aim of the training phase, a critical issue raises up. The features of the training set are strictly dependent on the particular mobile device where the learning procedure is executed. More specifically, the system will store batches of RSS values that depend not only on the current position, but also on the transmission power of the onboard BLE antenna.
 The presence of a hardware dependent classification feature makes the system unreliable when the mobile device that need to be localized at runtime is different from the device used for the training procedure.\\
@@ -296,7 +307,7 @@ The purpose of the differential training set is to reduce the correlation of eac
 \setlength{\tabcolsep}{.35em}
   \begin{tabularx}{\textwidth}{ | Y | a | a | a | a | a | a | a |}
     \hline
-    zoneId & zoneLabel & Diff12 & Diff13 & Diff14 & Diff23 & Diff24 & Diff34\\ \hline
+    zoneLabel & zoneID & Diff12 & Diff13 & Diff14 & Diff23 & Diff24 & Diff34\\ \hline
     COFFEE ROOM & \verb|WTbiGlRdxu| & 21 & 25 & 35 & 4 & 14 & 10\\
     COFFEE ROOM & \verb|WTbiGlRdxu| & 18 & 24 & 27 & 6 & 9 & 3\\
     COFFEE ROOM & \verb|WTbiGlRdxu| & 12 & 21 & 26 & 9 & 14 & 5\\
@@ -311,9 +322,10 @@ The training set has been used to train the following classification algorithms.
 \subsection{K Nearest Neighbor}
 \label{subsec:knn}
 For the KNN algorithm, each vector of the training set is virtually positioned in a D-dimensional graph, where D is the dimension of the vector. Since in our testbed there have been employed 4 sensor nodes, the graph has dimension 4 for the baseline training set, and dimension 6 for the differential set.
+
 At run time, the algorithm builds the RSS vector using the user ID and the timestamps of the samples that fall within a short sliding window (1 - 2 seconds). This guarantees that each sample of the vector comes from the same location in the building, since the user can't change position a short window of time.
-Whenever a new unlabeled vector is constructed, the algorithm put the element on the virtual graph. At this point, a number of K training points that are the K closest points to the runtime point are selected. From the K labeled observations, a majority vote determines the position label of the runtime sample. The implemented algorithm selects $K=5$ training observations.
-The distance between two points $a$ and $b$ (where for instance $a$ is labeled and $b$ is unlabeled) is computed using the Euclidean distance:
+Whenever a new unlabeled vector is constructed, the algorithm put the element on the virtual graph. At this point, a set of K training points that are the K closest points to the runtime point are selected. From the K labeled observations, a majority vote determines the position label of the runtime sample. The implemented algorithm selects $K=5$ training observations.
+The distance between two points $a$ and $b$ (where for instance $a$ is labeled and $b$ is unlabeled) is computed using the Euclidean distance ($E$ for the baseline while $E'$ for the differential case):
 
 \begin{equation}\label{eq:E-baseline}
 E(a,b)=\sqrt{(rss_{a,1} - rss_{b,1})^2 + ... + (rss_{a,k} - rss_{b,k})^2}
@@ -323,9 +335,51 @@ E'(a,b)=\sqrt{(diff_{a,12} - diff_{b,12})^2 + ... + (diff_{a,jk} - diff_{b,jk})^
 \end{equation}
 
 In equation \ref{eq:E-baseline}, $rss_{a,1}$ represents the RSS value captured by node 1 and stored in the training vector $a$. In equation \ref{eq:E-differential}, $Diff_{a,12}$ represents the difference between training RSS sample of node 1 and node 2, and stored in the training vector $a$.
-The implemented algorithm computes the distance $E(a,b)$ for every vector $a$ belonging to the training set, sorts in increasing order the resulting list of distances and select the firsts 5 elements for the majority vote. Defining $N$ as the dimension of the training set, and $d$ the dimension of each sample the resulting time complexity is $O(dN + NlogN)$.
+
+\medskip
+The implemented algorithm computes the distance $E(a,b)$ for every vector $a$ belonging to the training set, sorts in increasing order the resulting list of distances and select the firsts 5 elements for the majority vote. Defining $N$ as the dimension of the training set, and $d$ the dimension of each sample the resulting time complexity to estimate the position each time is $O(dN + NlogN)$.
 
 %TODO: parlare dei dati mancanti
+
+\subsection{Decision Trees}
+\label{subsec:trees}
+For Decision Trees algorithm, each (baseline) RSS vector has been normalized using the Min-Max scaling. Each normalized element $\widetilde{rss_i}$ has been computing using the following equation (\ref{eq:norm}), where $rss_i$ is the raw sample, while $\vec{rss}$ is the entire RSS training set:
+
+\begin{equation}\label{eq:norm}
+\widetilde{rss_i} = \frac{rss_i - min(\vec{rss})}{max(\vec{rss}) - min(\vec{rss})}
+\end{equation}
+
+For each feature, a splitting attribute $s$ has been defined as the mean value from the entire data set of that feature. The splitting attribute is used to identify a runtime value as low if it is lower than $s$, or high if it is equal or higher than $s$.
+
+Successively, in order to build a valid decisional tree, the following procedure has been applied to each feature and for each classification in turn. Consider the feature $\widetilde{rss_1}$ and the classification "COFFEE ROOM". The feature has two possible values: low and high. Some of the training samples are low, and we call this set of samples $LOW$. Other samples have been identified as high, and we define this set as $HIGH$. for each one of the two sets, an histogram is built over the classification label "COFFEE ROOM", as shown in figure \ref{fig:tree}.
+
+\begin{figure}[h!tb]
+\centering
+\includegraphics[width=\linewidth]{tree.pdf}
+\caption[Example of data normalization using Min-Max scaling.]{Example of data normalization using Min-Max scaling. The histogram shows frequency for each one of the \emph{bucket}.}
+\label{fig:tree}
+\end{figure}
+
+ Now it's possible to check how much the "COFFEE ROOM" classification is correct if the guess is made exclusively on the $\widetilde{rss_1}$ feature.
+In the HIGH set the classification performs 100\% correctly. In the LOW set the classification performs 70\% of them correctly, while 30\% wrong. So overall you would classify 17 out of 20 correctly (85\%). Thus, we can say that the \emph{score} of the $\widetilde{rss_1}$ feature is 85\%. 
+
+The mentioned score is used to sort all the features from the highest to the lowest score, and the order is used to build the decision tree, applying each time the subsequent feature.
+
+\smallskip
+The procedure explained however, provide the binary classification that localizes the user inside coffee room or outside coffee room. To obtain the multi-class classification that identify the correct building zone, it is possible to apply the binary classifier repeatedly and combine the results to get the multi-class classification.
+
+% SPLITTO RANGE IN PIU DI DUE INTERVALLI. CANCELLARE SE ALBERI NON BINARI è SBAGLIATO
+% After normalization, each RSS vector is composed by values that can range from \numrange{0}{1}. The range has been dived in 5 \emph{buckets} (0.0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8, 0.8-1.0) as shown by the example in figure \ref{fig:norm}:
+
+% \begin{figure}[h!tb]
+% \centering
+% \includegraphics[height=11cm, width=13cm]{norm.png}
+% \caption[Example of data normalization using Min-Max scaling.]{Example of data normalization using Min-Max scaling. The histogram shows frequency for each one of the \emph{bucket}.}
+% \label{fig:norm}
+% \end{figure}
+% Successively, in order to build a valid decisional tree, the following procedure has been applied to each feature and for each classification in turn. Consider the feature $\widetilde{rss_1} > 0.8$ and the classification "COFFEE ROOM". The feature has two possible value: no and yes. Some of the training samples have an answer "no", and we call this set of samples $CR$. Other samples have an answer yes, and we define this set as $Y$. for each
+
+
 
 \section{Integration with a Thermal Comfort System}
 \label{sec:thermosense}
@@ -338,7 +392,8 @@ The implemented algorithm computes the distance $E(a,b)$ for every vector $a$ be
 \end{figure}
 
 BlueSentinel has been integrated with \emph{ThermoSense}
-\footnote{ThermoSense project: \url{http://box.necst.it/thermosense.html}}, a thermal comfort system developed in our laboratory. The mobile application described in section \ref{sec:app} has been used in conjunction with BlueSentinel and ThermoSense. In particular, while the BlueSentinel module manages all the Bluetooth functionalities, ThermoSense module collects information on the current thermal comfort of the tenants. Users are able to provide a thermal comfort feedback (a complaint) that quantifies the amount of cold or hot perceived through a gradient interface. The feedback information, together with the user position detected by BlueSentinel, is used by ThermoSense to compute the best possible HVAC set point to satisfy the occupants comfort while minimizing the building consumption.
+\footnote{ThermoSense project: \url{http://box.necst.it/thermosense.html}}, a thermal comfort system developed in our laboratory.\\
+The mobile application described in section \ref{sec:app} has been used in conjunction with BlueSentinel and ThermoSense. In particular, while the BlueSentinel module manages all the Bluetooth functionalities, ThermoSense module collects information on the current thermal comfort of the tenants. Users are able to provide a thermal comfort feedback (a complaint) that quantifies the amount of cold or hot perceived through a gradient interface. The feedback information, together with the user position detected by BlueSentinel, is used by ThermoSense to compute the best possible HVAC set point to satisfy the occupants comfort while minimizing the building consumption.
 The position information is retrieved by the decisional engine of ThermoSense directly on the backend level. However, any other smart building application developed as a third-party components can retrieve the building occupancy information using the REST interface explained in section \ref{sec:back-end}.
 
 
@@ -354,13 +409,32 @@ Another chart has been used to visualized the occupancy history of each building
 
 In all the dashboard elements, users identity has never been showed to guarantee the occupants privacy.
 
-
-\section{Implementation Decisions}
-\label{sec:decisions}
+%TODO: spostare o cancellare
+% \section{Implementation Decisions}
+% \label{sec:decisions}
 
 \section{Limitations}
 \label{sec:limitations}
 %advertising background for ios. backwards compatibility android. --> detection delays
-%
+A first limitation of the proposed approach regards the numerous mobile devices that doesn't support BLE advertising. These can be classified in two categories: devices presenting a version of Bluetooth lower than 4.0 (non BLE), or devices supporting BLE but without a built-in peripheral chipset.\\
+For both these two cases, a workaround as been exploited in the BlueSentinel system to provide a backward compatibility to older devices. At this purpose, when the Android application detects the lack of advertising support, it edits the so called Bluetooth friendly-name, i.e. the string that the device provide for pairing with surrounding objects (for example "Andrea's phone"). The friendly name is edited so that it contains the userID and BlueSentinel token introduced in section \ref{sec:app}. In addition, the application edits the Bluetooth discoverability time setting it to infinite.\\
+The workaround allows the system to extend the compatibility to older devices; however present some drawbacks. First, the sensor nodes (section \ref{sec:wsn}) showed that using this method the discovery time required to detect the devices is higher compared to BLE advertisement, ranging from 2 to 10 seconds. Second, extending the Bluetooth discoverability of the devices is discouraged since can cause security issues.
+
+\smallskip
+Another limitation of the proposed approach relies in the possibility to perform Bluetooth LE advertising on iOS devices when the phone is in background state, i.e. when the screen is off.
+The Apple documentation states that all service UUIDs contained in the value of the \verb|AdvertisementDataServiceUUIDsKey| advertisement key are placed in a special “overflow” area; they can be discovered only by an iOS device that is explicitly scanning for them. Nevertheless, the iOS developer community has proven that it's possible to access the advertisement key through a BLE advertisement inquiry performed by the scanning device. Unfortunately, during the development of the BlueSentinel sensor nodes, this particular BLE inquiry has revealed to be unsupported by the current BLE libraries for Raspberry Pi boards. However, moving from the single board computer implementation to a more specific hardware nodes, for example a microcontroller based board, could allow a lower level management of the Bluetooth protocol stack.
+
+\section{Conclusions}
+\label{sec:conclusion}
+
+In this chapter, the proposed BLE occupancy monitoring system has been described. First, the feasibility study is reported, explaining also the reasons of the adopted design and the technology employed. Then, the architecture of the system has been illustrated, passing through application, sensing and back-end layers. On the application side, has been discussed the potentiality and limitations of the BLE signal advertisement of recent smartphones, one of the key functionalities exploited in our system. Successively, at sensors level, have been discussed the methods of synchronization and signal filtering implemented. For the back-end side, are reported the database employed for the system, and the different classification methods employed for users localization. In addition will be also illustrated how the occupancy information has being visualized in a web application.
+
+the key contribution of the proposed system are:
+\begin{enumerate*}[label={\textbf{(\arabic*)}}]
+\item extremely low battery consumption of the mobile application that allows the system to run continuously for many hours;
+\item the occupancy detection in real-time;
+\item an approach that is non-intrusive from the user point of view;
+\item simplified installation and training assisted by a mobile application for building administrator.
+\end{enumerate*}
 %
 % -----------------------------END------------------------------------- %
