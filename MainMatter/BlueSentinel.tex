@@ -402,10 +402,33 @@ The position information is retrieved by the decisional engine of ThermoSense di
 
 \section{Web-Based Monitoring Dashboard}
 \label{sec:webmonitor}
-The occupancy information computed by BlueSentinel has been visualized in a web monitoring page. The page shows location data in three forms.\\
-First a text table reports the current number of occupants for each zone or room. Together with the occupants number, is available the time instant in which the last user has been seen in the zone.\\
-The real-time occupancy is also reported in a heat-map that represents the population distribution inside the indoor environment. The heat-map shows in dark red the more populated zones, while in yellow and white semi-empty or empty rooms.\\
-Another chart has been used to visualized the occupancy history of each building zone. Each line represent the number of people in a room as a function of the time.
+The occupancy information computed by BlueSentinel has been visualized in a monitoring web page. The page shows location data in three different forms.\\
+First a text table reports the current number of occupants for each zone or room (figure \ref{fig:monitor-text}). Together with the occupants number, is available the time instant in which the last user has been seen in the zone.
+
+\begin{figure}[h!tb]
+\center
+\includegraphics[width=0.7\linewidth]{monitor-text.pdf}
+\captionof{figure}[Number of occupants per room from the web based monitor page.]{Number of occupants per room from the web based monitor page.}
+\label{fig:monitor-text}
+\end{figure}
+
+The real-time occupancy is also reported in a heat-map that represents the population distribution inside the indoor environment (figure \ref{fig:monitor-rooms}). The heat-map shows in dark red the more populated zones, while in yellow and white semi-empty or empty rooms.
+
+\begin{figure}[h!tb]
+\center
+\includegraphics[width=\linewidth]{monitor-rooms.pdf}
+\captionof{figure}[Occupants distribution of the building on a heatmap.]{Occupants distribution of the building on a heatmap.}
+\label{fig:monitor-rooms}
+\end{figure}
+
+Another chart has been used to visualized the occupancy history of each building zone (figure \ref{fig:monitor-history}). Each line represents the number of people in a room as a function of the time.
+
+\begin{figure}[h!tb]
+\center
+\includegraphics[width=\linewidth]{monitor-history.pdf}
+\captionof{figure}[Occupancy history of the building on a line chart.]{Occupancy history of the building on a line chart.}
+\label{fig:monitor-history}
+\end{figure}
 
 In all the dashboard elements, users identity has never been showed to guarantee the occupants privacy.
 
@@ -436,5 +459,8 @@ the key contribution of the proposed system are:
 \item an approach that is non-intrusive from the user point of view;
 \item simplified installation and training assisted by a mobile application for building administrator.
 \end{enumerate*}
+
+Last, some limitations of the implemented system have been presented, together with possible approaches to overcome these issues.
+
 %
 % -----------------------------END------------------------------------- %

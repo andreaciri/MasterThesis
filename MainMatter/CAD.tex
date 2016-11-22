@@ -11,26 +11,36 @@
 \chapter[CAD Deployment for Indoor WSNs]{Towards Smart Building Design Automation: CAD Deployment for Indoor WSNs}
 \label{cap:cad}
 
-Over the last years, many smart buildings applications, such as indoor localization or safety systems, have been subject of intense research. Smart environments usually rely on several hardware nodes equipped with sensors, actuators and communication functionalities.
+
+\section{Introduction}
+\label{sec:CADintro}
+As described in chapter \ref{cap:soa}, over the last years many smart buildings applications have been subject of intense research.
+Smart environments usually rely on several hardware nodes equipped with sensors, actuators and communication functionalities.
+A clear example is the occupancy monitoring system presented in chapter \ref{cap:bluesentinel}, but the same applies for different applications like indoor localization or safety systems.\\
 The high level of heterogeneity and the lack of standardization across technologies make design of such environments a very challenging task, as each installation has to be designed manually and performed ad-hoc for the specific building.
 On the other hand, many different systems show common characteristics, like the strict dependency with the building floor plan, also sharing similar requirements such as a nodes allocation that provides sensing coverage and nodes connectivity.
-The work explained in this chapter consists in a CAD application for the design of smart building systems based on the installation of hardware nodes across the indoor space. The tool provides a site-specific algorithm for cost-effective deployment of wireless localization systems, with the aim to maximize the localization accuracy. Experimental results from real-world environment show that the proposed site-specific model can improve the positioning accuracy of general models from the \mbox{state-of-the-art}.
-The tool, available \mbox{open-source}, is modular and extensible through plug-ins allowing to model building systems with different requirements.
+
+The work explained in this chapter consists in a CAD application for the design of smart building systems based on the installation of hardware nodes across the indoor space. The tool provides a site-specific algorithm for cost-effective deployment of wireless localization systems, with the aim to maximize the localization accuracy.
+
+%Experimental results from real-world environment show that the proposed site-specific model can improve the positioning accuracy of general models from the \mbox{state-of-the-art}.
+The tool, born to assist the installation of the BlueSentinel system, has become general-purpose and extensible through plug-ins allowing to model building systems with different requirements.
 
 \section{The Nodes Deployment Problem}
 \label{sec:deploy-problem}
 
-Many smart buildings applications are based on indoor localization techniques, using location information to optimize the environment and provide context-aware services.
-Indoor localization systems often require the presence of wireless devices such as Access Points (AP), in order to let the user identify its position by means of a mobile device.
-Most smart building applications have been developed in order to achieve sustainability, reducing energy waste related to energy-consuming appliances like Heating, Ventilation, and Air-Conditioning (HVAC). Some examples are \cite{Erickson2011} and \cite{Balaji2013}. Smart HVAC systems usually rely on a set of ambient sensors able to collect indoor values of temperature and humidity. This allow the control system to build thermal maps of the indoor environment, locate thermal complaint feedbacks coming from the tenants and regulate only the necessary portion of the physical system.
+Many smart buildings applications are based on indoor localization techniques, using location information to optimize the environment and provide context-aware services.\\
+Indoor localization systems often require the presence of wireless devices such as Access Points (AP), in order to let the user identify its position by means of a mobile device.\\
+Most smart building applications have been developed in order to achieve sustainability, reducing energy waste related to energy-consuming appliances like Heating, Ventilation, and Air-Conditioning (HVAC). Some examples are \cite{Erickson2011} and \cite{Balaji2013}. Smart HVAC systems usually rely on a set of ambient sensors able to collect indoor values of temperature and humidity. This allows the control system to build thermal maps of the indoor environment, locate thermal complaint feedbacks coming from the tenants and regulate only the necessary portion of the physical system.\\
 Another target feature of complex buildings is safety, characterized by the ability to respond to crisis events limiting damages and victims. These systems are able to detect safety threats, for example from smoke detectors or heat detectors. Also in this scenario, a proper allocation of sensor nodes is essential to detect and locate the threat responsively.
 
+\smallskip
 The position of each node strongly affects the performance of the system, since a bad allocation could lead to unmonitored areas.
 %encumber: gravare; sinonimi: burden, weigh (pesare figurato).
-The number of nodes employed, besides weighting on the installation cost, also burdens the overall energy consumption of the system, a key parameter to consider especially for energy saving systems.
+The number of nodes employed, besides weighting on the installation cost, also burdens the overall energy consumption of the system, a key parameter to consider especially for energy saving systems.\\
 The choice of the hardware nodes can get more difficult by the availability on the market of several devices and components that differ in cost, power consumption and maximum range distance.
-Although the key role of nodes allocation, many smart building systems proposed in literature don't consider nodes amount and positioning problems in environments that differ from the original testbeds.
 
+\smallskip
+Although the key role of nodes allocation, many smart building systems proposed in literature don't consider nodes amount and positioning problems in environments that differ from the original testbeds.\\
 Without a systematic approach the design space is not well explored, which leads to inefficient solutions.
 In this context, the development of tools able to automatize part of the design flow of smart building systems is essential.
 In order to find a near-optimal allocation of nodes, the knowledge of the floor plan is required. However, for installations performed on existing buildings, administrators can encounter difficulties in obtaining the floor plan in an easily-interpretable digital format.
@@ -40,7 +50,7 @@ To address these problems, we developed a CAD tool to assist building designers 
 The application manages common requirements like the building floor plan specification. We decided to implement a node allocation algorithm for three different indoor localization systems, that searches for  near-optimal 
 %aiming to keep low ...
 allocations of nodes, from mixed hardware types, with the aim of keeping low the total cost. Due to the high level of heterogeneity and lack of standardization across systems to design, we make the system extensible through plug-ins to let new functionalities being integrated into the system.
-The tool\footnote{A video demo of the tool has been published at \url{https://youtu.be/6c6D6wolDBQ}}
+The tool\footnote{A video demo of the tool has been published at \url{https://youtu.be/5BnFU9iXXWo}}
 is developed within the QCAD\footnote{QCAD - Open Source CAD System: \url{http://www.qcad.org/}} environment, an \mbox{open-source} computer-aided drafting application. The key contributions of our work can be summarized in the following:
 \begin{itemize}
 \item A traditional CAD interface to specify both the physical building floor-plan and the functional components of the smart environment.
@@ -54,13 +64,16 @@ Building Information Modeling (BIM) is a consolidate process to support building
 
 The problem of the allocation of hardware nodes in a given environment can be compared, on first approximation, by the maximal cover location problem (MCLP), i.e. the problem of covering the maximum amount of demand locations with a given number of facilities. Similarly, the location set covering problem (LSCP) consists in finding the minimum set of facilities that covers all available demand locations. Each facility has the same coverage radius \(r\); a demand point is assumed to be covered if it is within distance \(r\) of a facility. Daskin et al. gave a general formulation of the LSCP \cite{Daskin1983} and re-formulated it for network systems and emergency vehicle deployment \cite{Daskin1981}.
 
+The maximum sensing coverage region (MSCR) is a special case of the previous two problems that focuses on the research of an allocation of wireless nodes that guarantees both sensing coverage and network connectivity between nodes~\cite{VinhTranQuang, So2005}. In this scenario the placement need to take care not only of the sensing range, but also of the communication range of each node.
+%Questi approcci citati hanno lo svantaggio di considerare le singole locazioni come variabili binarie coperte/scoperte, senza modellizzare le performance complessive del sistema.
+
 \begin{table}
 \centering
 \def\arraystretch{1}
 \label{tab:comparison}
 \caption{Comparison between proposed deployment methods and tools for indoor WSN and Access Points based systems.}
 \begin{tabulary}{\textwidth}{| L | L | L | L | L |}
-    \toprule
+    \hline
     \textbf{Deployment} & \textbf{Site Specific vs General Model} & \textbf{Heterogeneous Nodes} & \textbf{Application Integrated} & \textbf{Extensible} \\ \hline
     Zhao et al. \cite{Zhao2008} & General Model & No & Yes & No\\ \hline
     He at al. \cite{He2011} & General Model & No & No & No\\ \hline
@@ -69,9 +82,6 @@ The problem of the allocation of hardware nodes in a given environment can be co
 
     \end{tabulary}
 \end{table}
-
-The maximum sensing coverage region (MSCR) is a special case of the previous two problems that focuses on the research of an allocation of wireless nodes that guarantees both sensing coverage and network connectivity between nodes~\cite{VinhTranQuang, So2005}. In this scenario the placement need to take care not only of the sensing range, but also of the communication range of each node.
-%Questi approcci citati hanno lo svantaggio di considerare le singole locazioni come variabili binarie coperte/scoperte, senza modellizzare le performance complessive del sistema.
 
 For what concern the allocation in indoor environments, only minimum literature has been published so far to the best of our knowledge. Zhao et al. in \cite{Zhao2008} proposed an access point (AP) positioning model based on the Differential Evolution algorithm, specific for fingerprinting localization techniques. Their model focuses on increasing the diversity of the received signal array along the indoor locations, and thus improving the positioning accuracy of fingerprinting schemes.
 However, the model does not take into account the effect of walls or other obstacles present in the target environment.
@@ -91,7 +101,7 @@ Our system has been developed on top of the QCAD application framework. The QCAD
 The whole application rely on Qt, a framework that covers a lot of generic and low level functionality for desktop applications and not directly related to CAD.
 \begin{figure}[h!tb]
 \centering\includegraphics[scale=0.7]{framework.pdf}
-\caption{Overview of the application stack. The script interpreter features standard ECMAScript functionality and on top of that provides additional classes from the Qt API, QCAD API and the \emph{SmartBuilding} module.}
+\caption[Overview of the CAD application framework stack.]{Overview of the application stack. The script interpreter features standard ECMAScript functionality and on top of that provides additional classes from the Qt API, QCAD API and the \emph{SmartBuilding} module.}
 \end{figure}
 
 The QCAD Application Framework offers a very complete and powerful ECMAScript interface. The SmartBuilding module, as well as the QCAD Application Framework, is accessible through that scripting interface. Through the ECMAScript interface developers will be able to extend the whole application in an easy and very efficient way. The choice of a popular script language that is easy to learn enables anyone with previous programming experience to extend the application. Such extensions can for example be CAD related interactive tools like an HVAC layout construction widget, or a temperature sensor nodes deployment algorithm.
@@ -103,12 +113,12 @@ In some situations extending QCAD through scripts alone may not be possible. Thi
 
 \begin{figure}[h!tb]
 \centering\includegraphics[scale=0.7]{extend.pdf}
-\caption{Functional overview of the system components. Drawing tools and algorithms for systems deployment and simulation are extensible through ECMAScript or C++ plug-ins.}
+\caption[Functional overview of the system components of the CAD application.]{Functional overview of the system components. Drawing tools and algorithms for systems deployment and simulation are extensible through ECMAScript or C++ plug-ins.}
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[scale=0.4]{floorplan2.pdf}
-\caption{Floor-plan design tool. User can specify the layout of the rooms and a possible set of candidate sites for the node placement.}
+\centering\includegraphics[width=\linewidth]{floorplan2.pdf}
+\caption[Graphical interface of the floor-plan design of the CAD tool.]{Floor-plan design tool. User can specify the layout of the rooms and a possible set of candidate sites for the node placement.}
 \label{fig:floor}
 \end{figure}
 
@@ -144,7 +154,7 @@ The system will return to the designer a set $N$ of nodes $n_{jt}$ (possibly wit
 
 \begin{figure}[h!tb]
 \centering\includegraphics[scale=0.5]{main.pdf}
-\caption{System Process. After the design of the floor plan, different parameters are used to define the search for an optimal allocation of nodes.}
+\caption[System process of the CAD deployment tool for indoor WSNs.]{System Process. After the design of the floor plan, different parameters are used to define the search for an optimal allocation of nodes.}
 \label{fig:main}
 \end{figure}
 
@@ -160,7 +170,7 @@ Our tool provides three different ways to cover the floor-plan space, each one i
 
 \begin{figure}[h!tb]
 \centering\includegraphics[scale=0.65]{coverage.pdf}
-\caption{Sample floor-plans with a location $l$ covered (a) in single mode, (b) for trilateration, and (c) for fingerprinting where $rss_{l,1} < rss_{l,2}$.}
+\caption[Example of indoor location covered in single, trilateration and fingerprinting mode.]{Sample floor-plans with a location $l$ covered (a) in single mode, (b) for trilateration, and (c) for fingerprinting where $rss_{l,1} < rss_{l,2}$.}
 \label{fig:coverage}
 \end{figure}
 
@@ -173,13 +183,13 @@ E(a,b)=\sqrt{(rss_{a,1} - rss_{b,1})^2 + ... + (rss_{a,k} - rss_{b,k})^2}
 Consider the vector $\vec{rss_a}$ as the run-time sample, while the vector $\vec{rss_b}$ retrieved from the stored fingerprint. The smaller is the \(E(a,b)\), more confident is the localization system approximating current location of \(a\) with the stored location of \(b\).
 
 \begin{figure}
-\centering\includegraphics[scale=0.45]{example.pdf}
-\caption[Relation between localization accuracy and RSS samples Euclidean distance]{In diagram (a) bi-dimensional elements of the localization dataset are represented in Cartesian coordinates corresponding to components $rss_1, rss_2$. A run-time sample $R$ is showed in (b) where its circular area delineates run-time signal fluctuations. If $DS2$ is the nearest points to $R$ in the physical space, green area is proportional to the probability of correct localization, while red dashed area represent wrong localizations. In diagram (c) the Euclidean distance between sampling points has been increased, improving the correct localization, while diagram (d) shows the opposite effect.}
+\centering\includegraphics[scale=0.51]{example.pdf}
+\caption[Relation between localization accuracy and RSS samples Euclidean distance.]{In diagram (a) bi-dimensional elements of the localization dataset are represented in Cartesian coordinates corresponding to components $rss_1, rss_2$. A run-time sample $R$ is showed in (b) where its circular area delineates signal fluctuations. Green area is proportional to the probability of correct localization, while red dashed area represent wrong localizations. In diagram (c) the Euclidean distance has been increased, thus improving the correct localization; diagram (d) shows the opposite effect.}
 \label{fig:fing_example}
 \end{figure}
 
 It has been demonstrated that maximizing the Euclidean distances of the $rss$ arrays between all sampling points, the positioning accuracy of wireless localization systems can be improved \cite{Zhao2008, He2011}.
-In Figure~\ref{fig:fing_example} is reported a graphical demonstration of the aforementioned statement. Take as an example a dataset ($DS1, DS2, DS3, DS4$) of stored $\vec{rss}$ vectors, where each vector is bi-dimensional ($K=2$) and coupled with the corresponding physical position. Fig.~\ref{fig:fing_example}.a shows each element of the database where the Cartesian coordinates corresponds to components $rss_1, rss_2$. Although the plane does not represent the physical area the floor-plan, database elements that are near between them are more likely to be close also in the physical space. Given a run-time element $R$, each arrow represents the Euclidean distance $E(R,DS_i)$ from the surrounding dataset elements. A localization algorithm can exploit the Nearest Neighbor technique to approximate the position of $R$ with the nearest dataset element. Unfortunately, the run-time $rss$ measurement of $R$ will not be constant over time, but will experience continuous fluctuations due to environmental noise. These fluctuations make the sample $R$ move randomly to the surrounding points. Suppose that $DS2$ is the nearest points to $R$ in the physical space. Fig.~\ref{fig:fing_example}.b shows with a green area the probability to assign $R$ the correct (or more accurate) position, while a red (with line pattern) area represents the probability to get a wrong position from the system. Fig.~\ref{fig:fing_example}.c demonstrates how an increase in the $rss$ Euclidean distance between sampling points increase the red area and the accuracy of the localization, while in Fig.~\ref{fig:fing_example}.d an Euclidean distance reduction will lead to poorer localizations.\\
+In Figure~\ref{fig:fing_example} is reported a graphical demonstration of the aforementioned statement. Take as an example a dataset ($DS1, DS2, DS3, DS4$) of stored $\vec{rss}$ vectors, where each vector is bi-dimensional ($K=2$) and coupled with the corresponding physical position. Fig.~\ref{fig:fing_example}.a shows each element of the database where the Cartesian coordinates corresponds to components $rss_1, rss_2$. Although the plane does not represent the physical area of the floor-plan, database elements that are near between them are more likely to be close also in the physical space. Given a run-time element $R$, each arrow represents the Euclidean distance $E(R,DS_i)$ from the surrounding dataset elements. A localization algorithm can exploit the Nearest Neighbor technique to approximate the position of $R$ with the nearest dataset element. Unfortunately, the run-time $rss$ measurement of $R$ will not be constant over time, but will experience continuous fluctuations due to environmental noise. These fluctuations make the sample $R$ move randomly to the surrounding points. Suppose that $DS2$ is the nearest points to $R$ in the physical space. Fig.~\ref{fig:fing_example}.b shows with a green area the probability to assign $R$ the correct (or more accurate) position, while a red (with line pattern) area represents the probability to get a wrong position from the system. Fig.~\ref{fig:fing_example}.c demonstrates how an increase in the $rss$ Euclidean distance between sampling points increase the red area and the accuracy of the localization, while in Fig.~\ref{fig:fing_example}.d an Euclidean distance reduction will lead to poorer localizations.\\
 
 
 
@@ -195,7 +205,7 @@ where \(PL\) is the signal path loss (in dB), \(f_c\) is the frequency in GHz, \
 
 \begin{table}[h!tb]
 \centering
-\caption{Values of coefficients depending on LOS (Line-Of-Sight) or NLOS (Non-Line-Of-Sight) propagations. Values have been taken from the WINNER II path loss model \cite{Kyosti2008}.}
+\caption[Values of coefficients depending on LOS (Line-Of-Sight) or NLOS (Non-Line-Of-Sight) propagations.]{Values of coefficients depending on LOS (Line-Of-Sight) or NLOS (Non-Line-Of-Sight) propagations. Values have been taken from the WINNER II path loss model \cite{Kyosti2008}.}
 \label{tab:pathloss}
 \def\arraystretch{1.3}
 \begin{tabular}{ | l | l |}
@@ -259,9 +269,9 @@ Connected networks are managed by our allocation algorithm in the same way of no
     $w_l$ & reward weighted on the node cost\\ \hline
     $x_{jt}$ & allocation of node with type $t$ in $j$ (binary) \\ \hline
     $a_{ljt}$ & reachability of $n_{jt}$ from location $l$ (binary) \\ \hline
-    $k$-coverage & number of ref. nodes required by the system \\ \hline
-    $k_l$ & current number of ref. nodes covering $l$\\ \hline
-    $S$ & min. signal space Euclidean distance threshold \\ \hline
+    $k$-coverage & number of reference nodes required by the system \\ \hline
+    $k_l$ & current number of reference nodes covering $l$\\ \hline
+    $S$ & minimum signal space Euclidean distance threshold \\ \hline
     $s_{min}$ & minimum number of node moves in \emph{shaking} procedure\\ \hline
     $s_{max}$ & maximum number of node moves in \emph{shaking} procedure\\ \hline
     $Rmax$ & number of restarts of the \emph{VNS} algorithm\\ \hline
@@ -338,7 +348,7 @@ y_l \leq \sum\limits_{j \in J}\sum\limits_{t \in T} a_{ljt} x_{jt} \quad \forall
 \end{cases}
 \end{equation}
 
-The decision variable $x_{jt}=1$ represent the allocation of a node of type $t$ in location $j$; $a_{ljt}$ is equal to $1$ if location $l$ can be reached by a node of type $t$ placed in $j$, and $a_{ljt}=0$ otherwise. $y_l=1$ if location $l$ is covered, $y_l=0$ otherwise. The constraint \eqref{eq:one} set to one the maximum number of nodes that can be located in each site.
+The decision variable $x_{jt}=1$ represents the allocation of a node of type $t$ in location $j$; $a_{ljt}$ is equal to $1$ if location $l$ can be reached by a node of type $t$ placed in $j$, and $a_{ljt}=0$ otherwise. $y_l=1$ if location $l$ is covered, $y_l=0$ otherwise. The constraint \eqref{eq:one} fixes to one the maximum number of nodes that can be located in each site.
 
 \subsection{Greedy Procedure}\label{subsec:greedy}
 The positioning algorithm starts with a \emph{Greedy} procedure with the purpose of find a reasonable number of reference nodes, for both coverage and localization accuracy. The procedure generate a first solution \(N\) positioning a set of \(k\) = $\lvert N \rvert$ nodes, each one with a type \(t \in T\).
