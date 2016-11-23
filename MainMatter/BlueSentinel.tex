@@ -267,11 +267,12 @@ The simplest, or \emph{baseline}, training set schema (represented by the Traini
 \definecolor{blizzardblue}{rgb}{0.67, 0.9, 0.93}
 \newcolumntype{a}{>{\columncolor{blizzardblue}}c}
 
+
 \begin{table}[h!tb]
 \caption[Example of RSS samples captured during a training phase.]{Example of RSS samples captured during a training phase (baseline training set). Blue cells represent classification features.}
 \label{tab:sample-simple}
 \begin{center}
-  \begin{tabular}{ | c | a | a | a | a | a |}
+  \begin{tabular}{ | c | c | a | a | a | a |}
     \hline
     zoneLabel & zoneID & RSS1 & RSS2 & RSS3 & RSS4\\ \hline
     COFFEE ROOM & \verb|WTbiGlRdxu| & -60 & -81 & -85 & -95\\
@@ -305,7 +306,7 @@ The purpose of the differential training set is to reduce the correlation of eac
 \begin{center}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \setlength{\tabcolsep}{.35em}
-  \begin{tabularx}{\textwidth}{ | Y | a | a | a | a | a | a | a |}
+  \begin{tabularx}{\textwidth}{ | Y | Y | a | a | a | a | a | a |}
     \hline
     zoneLabel & zoneID & Diff12 & Diff13 & Diff14 & Diff23 & Diff24 & Diff34\\ \hline
     COFFEE ROOM & \verb|WTbiGlRdxu| & 21 & 25 & 35 & 4 & 14 & 10\\
@@ -319,8 +320,8 @@ The purpose of the differential training set is to reduce the correlation of eac
 
 The training set has been used to train the following classification algorithms.
 
-\subsection{K Nearest Neighbor}
-\label{subsec:knn}
+\subsubsection{K Nearest Neighbor}
+\label{subsubsec:knn}
 For the KNN algorithm, each vector of the training set is virtually positioned in a D-dimensional graph, where D is the dimension of the vector. Since in our testbed there have been employed 4 sensor nodes, the graph has dimension 4 for the baseline training set, and dimension 6 for the differential set.
 
 At run time, the algorithm builds the RSS vector using the user ID and the timestamps of the samples that fall within a short sliding window (1 - 2 seconds). This guarantees that each sample of the vector comes from the same location in the building, since the user can't change position a short window of time.
@@ -341,8 +342,8 @@ The implemented algorithm computes the distance $E(a,b)$ for every vector $a$ be
 
 %TODO: parlare dei dati mancanti
 
-\subsection{Decision Trees}
-\label{subsec:trees}
+\subsubsection{Decision Trees}
+\label{subsubsec:trees}
 For Decision Trees algorithm, each (baseline) RSS vector has been normalized using the Min-Max scaling. Each normalized element $\widetilde{rss_i}$ has been computing using the following equation (\ref{eq:norm}), where $rss_i$ is the raw sample, while $\vec{rss}$ is the entire RSS training set:
 
 \begin{equation}\label{eq:norm}
