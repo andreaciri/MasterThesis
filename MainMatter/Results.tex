@@ -13,45 +13,86 @@
 %
 \label{cap:results}
 %
-\section{Experimental Testbed}
-\label{testbed}
+\section{Occupancy Monitoring Evaluation}
+\label{sec:testbed}
 The occupancy monitoring system presented in chapter \ref{cap:bluesentinel} has been evaluated using data collected from a real-world environment. The system has been set up inside the NECST Lab, located at the basement of DEIB department at Politecnico di Milano.
 The dimension of the test-bed is 198 squared meters ($9x22m$). The area is subdivided by walls in three separate spaces: a relax room for coffee breaks, a room for meetings and talks, and an open-space with desktop stations. For the installation of the system, before proceed with the training procedure, the administrator needs to identify the regions in which the floor-plan will be partitioned. The dimension of each region will determine the spatial resolution of the occupancy monitoring, as stated in section \ref{sec:occupancy-metrics}. In our setup, we decide to identify a single region for each room in the case of coffee and meeting rooms, while dividing the open-space for two main reasons. First, the open-space is large roughly two times the dimension of the other rooms, and this way each region has similar dimensions. Second, because the open-space presents a functional division in two parts between stations occupied by computer security students and by computer architectures students.
 
+\begin{figure}[h!tb]
+\centering\includegraphics[width=\linewidth]{necst-regions.pdf}
+\caption[Floor-plan rooms of the experimental testbed and the regions identified for the occupancy detection.]{Floor-plan rooms of the experimental testbed and the regions identified for the occupancy detection.}
+\label{fig:regions}
+\end{figure}
 
-\subsection{Indoor Environment}
-\subsection{Smartphones}
-\subsection{WSN prototype}
-\subsection{Back-end}
+\subsubsection{Indoor Environment}
+\label{test-env}
+The space used for all the test reported in this chapter is that explained in section \ref{sec:testbed} and showed in figure \ref{fig:regions}. The perimeter of the laboratory is constituted by reinforced concrete walls, while the walls dividing the three rooms are made in plasterboard.
+
+From the point of view of signal propagation, the environment is characterized by a high level of noise. The space is in most cases high populated, reaching 30 people at the same time ($\approx 2 ~ people / m^2$).
+Many of these occupants bring in laboratory devices such as smartphones, smartwatches and Bluetooth headphones.
+The laboratory equipment includes a high number of wireless devices, such has WiFi access points, Bluetooth beacons, and wireless development boards. Other devices that could interfere with signal transmission and analysis are two microwaves, a projector and a 3D printer.
+
+Summarizing, the wireless communication in our testbed is characterized by lossy and noisy channels, representing a worst case for accuracy measurements.
+
+\subsubsection{Smartphones}
+\label{sec:test-phones}
+To test the accuracy of the occupancy monitoring system, two Android devices have been employed.\\
+The first is a Google Nexus 5 running Android 6.0.1, while the second is a Samsung I9300 (Galaxy S3) running Android 4.3.
+The Samsung device has also been used, using a customized battery, to measure precise energy consumption of the mobile application.
+\subsubsection{WSN prototype}
+\label{sec:test-wsn}
+Each node of the wireless sensor network has been implemented with Raspberry Pi boards version 3. The operating system running on each board is the Raspbian 4.4 (September 2016) based on Debian 7.0.\\
+%posizionamento e quantità dei nodi con immagine (o sketch o cad)
+Some of the nodes have been connected to the building LAN using Ethernet sockets, while other were connected using WiFi.
+Power consumption of sensor nodes has been measured using the energy logger 4000 by Voltcraft.
+\subsubsection{Back-end}
+\label{sub:test-backend}
+Since the localization algorithm is performed on the back-end side, the amount of computational resources and the response time of the cloud service determine the responsiveness of the occupancy detection.
+
+\subsection{Localization Accuracy}
+\label{sec:loc-accuracy}
+All the results on the classification algorithms we present in this section have been computed by using the data mining tool Weka \cite{weka}.
+During the test we move through the four different regions many times in order to collect a big number of statistical samples, simulating the presence of huge number of people.
+We have conducted a large number of experiments in order to check if people inside (or outside) a region are correctly recognized by the BlueSentinel system and if the proposed approach can be effectively used to determine the number and the identities of the people inside a particular room.
+\subsubsection{K Nearest Neighbor}
+This section reports the results we have obtained by employing the k-Nearest Neighbors algorithm with k equal to 5.
+\subsubsection{Decision Trees}
+\subsection{Responsiveness Test}
+\subsection{Power Consumption}
+\subsection{Stress Test}
+
 \section{Automatic Nodes Deployment Results}
-Presented experimental results are initially focused on the usability of the tool, testing the ability to provide a solution in a reasonable time. Then, the performances of the model have been evaluated, in terms of localization accuracy through realistic indoor environment experiments, and in terms of cost-effectiveness of the suggested deployments.
+In this section are reported the experimental results of the CAD tool proposed in chapter \ref{cap:cad}.
+Presented results are initially focused on the usability of the tool, testing the ability to provide a solution in a reasonable time. Then, the performances of the model have been evaluated, in terms of localization accuracy through realistic indoor environment experiments, and in terms of cost-effectiveness of the suggested deployments.
 
 \subsection{Computational Experience}\label{subsec:comp_res}
-The tool has been been evaluated running several different configurations. Every test reported in this section has been executed with a spatial resolution of the floor plan equal to 1 meter.  A first analysis can be done on the execution times of the proposed solution. Although the execution time can be tuned by the parameter $R_{max}$, which represent the maximum number of restarts of the VNS algorithm, an idea on the order of magnitude is given by Figure~\ref{fig:time}, where the time is represented as a function of the floorplan dimension. 
+The tool has been been evaluated running several different configurations. Every test reported in this section has been executed with a spatial resolution of the floor plan equal to 1 meter.  A first analysis can be done on the execution times of the proposed solution. Although the execution time can be tuned by the parameter $R_{max}$, which represent the maximum number of restarts of the VNS algorithm, an idea on the order of magnitude is given by Figure~\ref{fig:time}, where the time is represented as a function of the floor-plan dimension.
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.45]{exec_times.pdf}
+\centering\includegraphics[scale=0.55]{exec_times.pdf}
 \caption{Execution time of the tool with floor plans of different areas, for each covering technique ($R_{max} = 20$, $target = 95\%$, $r_t=8$).}
 \label{fig:time}
 \end{figure}
 In the given example, $R_{max}$ has been fixed to 20 restarts, the $target$ coverage equals to 95\% of the total area, a single node type available with a range of 8 meters, covering floor-plans with rectangular areas. The graph shows that for single coverage, the execution time is low even for areas of 3000 squared meters. For trilateration and fingerprinting, the execution times become high from floor-plan of $2500~m^2$. However, the tests represent a bad case in which the map dimension is very large while the node range available and the spatial resolution are small (respectively 8m and 1m). Increasing the range or the resolution, the instance of the problem decrease, resulting in faster executions.
 
 A key aspect that characterizes the goodness of the proposed approach is the improvement of the objective function achieved by the VNS algorithm with respect to the first Greedy configuration. For this test we have run the tool several times with a floor-plan area of $2500~m^2$ and a node range of $12m$. The number of reference nodes allocated is determined by the Greedy procedure and increase with $S$, while the number of VNS restarts $R_{max}$ has been fixed to 35.
+
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.45]{greedy_vs_vns.pdf}
+\centering\includegraphics[scale=0.55]{greedy_vs_vns.pdf}
 \caption{Average signal space Euclidean distance ($z$) obtained with the Greedy execution and compared with the $z$ value after the VNS optimization. $z$ values expressed as a function of the threshold $S$. Floor-plan area $=2500~m^2$, $R_{max} = 20$, $target = 100\%$, $r_t=12$}
 \label{fig:greedy_vns}
 \end{figure}
+
 In Fig.~\ref{fig:greedy_vns} we reported the value of $z$, i.e. the average signal space Euclidean distance obtained with the first Greedy execution, compared with the $z$ value after the VNS optimization. The graph reports the $z$ values as a function of the threshold $S$, described in section~\ref{subsec:greedy} as the minimum value of average signal space Euclidean distance ($z$) required during the Greedy procedure. The graph shows that moving the threshold within the range $(2,6)$dB the VNS is able to improve the $z$ value constantly around 2 dB.
 Although the VNS improvement is not astonishing for what regard the average value, Fig.~\ref{fig:greedy_vns2} shows that the variance is strongly improved. This has been achieved moving from the objective function $z$ used in Greedy procedure to the $Z$ function of the VNS. The $Z$ objective function has in fact the purpose to provide as many target location as possible with a high signal space Euclidean distance w.r.t. the surrounding locations.
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.45]{greedy_vs_vns2.pdf}
+\centering\includegraphics[scale=0.55]{greedy_vs_vns2.pdf}
 \caption{Signal space Euclidean distance variance obtained with the Greedy execution and compared with the $z$ value after the VNS optimization. Values expressed as a function of the threshold $S$. Floor-plan area $=2500~m^2$, $R_{max} = 20$, $target = 100\%$, $r_t=12$}
 \label{fig:greedy_vns2}
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[scale=0.37]{necst.pdf}
+\centering\includegraphics[width=\linewidth]{necst.pdf}
 \caption[NECST Lab floor-plan used as indoor environment testbed for deployments evaluation.]{NECST Lab floor-plan, located at the basement of DEIB department at Politecnico di Milano. Each allocation corresponds to a BLE beacon with a range of 7 meters. Green crosses indicates allocations provided by our algorithm, gray rhombus represent allocations from \cite{He2011} while blue triangle positions have been computed maximizing the coverage \cite{Kouakou2010a}.}
 \label{fig:necst}
 \end{figure}
@@ -63,7 +104,7 @@ We collected 40 training samples for the localization algorithm using the obtain
 KNN with $K=3$ has been employed as the fingerprinting algorithm.
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.45]{loc_error.pdf}
+\centering\includegraphics[scale=0.55]{loc_error.pdf}
 \caption{Cumulative error distribution function experienced by our approach ad compared with two different solutions from the state-of-the-art.}
 \label{fig:loc_error}
 \end{figure}
@@ -71,7 +112,7 @@ KNN with $K=3$ has been employed as the fingerprinting algorithm.
 A first result is showed in figure \ref{fig:loc_error}. The cumulative error distribution function shows that from 1.5 meters our approach performs better. Under 1.5 meters, He at al. approach performs better, but the difference in accuracy is marginal.
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.45]{group_errors.pdf}
+\centering\includegraphics[scale=0.52]{group_errors.pdf}
 \caption{Mean positioning accuracy of the proposed allocation algorithm divided into different error ranges.}
 \label{fig:group_errors}
 \end{figure}
@@ -116,9 +157,9 @@ We experimented the behavior of the tool increasing the level of irregularity, w
   \label{tab:irregularity}
   \begin{tabularx}{\columnwidth}{|c|YY|YY|YY|}
     \hline
-    \multirow{2}{0.55cm}{\textbf{$~~I$}} & \multicolumn{2}{c|}{\textbf{Single}} & \multicolumn{2}{c|}{\textbf{Trilater.}} & \multicolumn{2}{c|}{\textbf{Fingerprint.}}\\
+    \multirow{2}{0.55cm}{\textbf{$~~I$}} & \multicolumn{2}{c|}{\textbf{Single}} & \multicolumn{2}{c|}{\textbf{Trilateration}} & \multicolumn{2}{c|}{\textbf{Fingerprinting}}\\
     \cline{2-7}
-    & homog. & mixed & homog. & mixed & homog. & mixed\\
+    & homogen. & mixed & homogen. & mixed & homogen. & mixed\\
     \hline
     1 & 480 & 440 & 1440 & 1280 & 840 & 760\\
     2 & 480 & 440 & 1500 & 1320 & 840 & 780\\
@@ -128,9 +169,6 @@ We experimented the behavior of the tool increasing the level of irregularity, w
   \end{tabularx}
   \end{table}
 In conclusion, experimental results show that for most of the problem instances, a solution can be obtained in reasonable execution times. Depending on the available hardware types, homogeneous solutions could be improved with the employment of different type of nodes.
-\section{Localization Accuracy}
-\section{Responsiveness Test}
-\section{Power Consumption}
-\section{Stress Test}
+
 %
 % -----------------------------END------------------------------------- %
