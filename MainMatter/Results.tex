@@ -12,11 +12,18 @@
 \chapter{Experimental Results}
 %
 \label{cap:results}
-%
+
+In this chapter are reported the experimental analysis performed to validate the work done for this thesis.\\
+First, section \ref{sec:bs-test} contains the experiments conducted over the occupancy monitoring system (BlueSentinel) proposed in chapter \ref{cap:bluesentinel}. The system has been evaluated in terms of accuracy of the localization, responsiveness of the detection and power consumption of the mobile application developed. As we will see, the results confirmed that the proposed approach is suitable to obtain the occupancy monitoring information with a good quality.
+
+Later, section \ref{sec:CAD-test} contains the results obtained from the automatic deployment tool reported in chapter \ref{cap:cad}. The tool has been used to deploy a localization system different from BlueSentinel (a beacons based system) in order to test the general-purpose functionalities and the ability to model different systems. The results include the computational experience of the tool, such as the execution times, and some evaluation metrics of the resulting deployed configuration. These include the cost-effectiveness and the accuracy of the resulting localization systems with respect to configuration suggested from different approaches in literature.
+
 \section{Occupancy Monitoring Evaluation}
-\label{sec:testbed}
-The occupancy monitoring system presented in chapter \ref{cap:bluesentinel} has been evaluated using data collected from a real-world environment. The system has been set up inside the NECST Lab, located at the basement of DEIB department at Politecnico di Milano.
+\label{sec:bs-test}
+The occupancy monitoring system presented in chapter \ref{cap:bluesentinel} has been evaluated using data collected from a real-world environment. The system has been set up inside the NECST Lab, located at the basement of DEIB department at Politecnico di Milano.\\
 The dimension of the test-bed is 198 squared meters ($9x22m$). The area is subdivided by walls in three separate spaces: a relax room for coffee breaks, a room for meetings and talks, and an open-space with desktop stations. For the installation of the system, before proceed with the training procedure, the administrator needs to identify the regions in which the floor-plan will be partitioned. The dimension of each region will determine the spatial resolution of the occupancy monitoring, as stated in section \ref{sec:occupancy-metrics}. In our setup, we decide to identify a single region for each room in the case of coffee and meeting rooms, while dividing the open-space for two main reasons. First, the open-space is large roughly two times the dimension of the other rooms, and this way each region has similar dimensions. Second, because the open-space presents a functional division in two parts between stations occupied by computer security students and by computer architectures students.
+
+The resulting configuration has been used to detect and the presence of a user, classifying its position in the best fitting region based on the collected data. The performance and the accuracy of the classification has been evaluated observing manually the ground truth location of the test user.
 
 \begin{figure}[h!tb]
 \centering\includegraphics[width=\linewidth]{necst-regions.pdf}
@@ -26,9 +33,9 @@ The dimension of the test-bed is 198 squared meters ($9x22m$). The area is subdi
 
 \subsubsection{Indoor Environment}
 \label{test-env}
-The space used for all the test reported in this chapter is that explained in section \ref{sec:testbed} and showed in figure \ref{fig:regions}. The perimeter of the laboratory is constituted by reinforced concrete walls, while the walls dividing the three rooms are made in plasterboard.
+The space used for all the test reported in this chapter is that introduced previously and showed in figure \ref{fig:regions}. The perimeter of the laboratory is constituted by reinforced concrete walls, while the walls dividing the three rooms are made in plasterboard.
 
-From the point of view of signal propagation, the environment is characterized by a high level of noise. The space is in most cases high populated, reaching 30 people at the same time ($\approx 2 ~ people / m^2$).
+From the point of view of signal propagation, the environment is characterized by a high level of noise. The space is in most cases high populated, reaching 30 people at the same time ($\approx 1 ~ person / 5m^2$).
 Many of these occupants bring in laboratory devices such as smartphones, smartwatches and Bluetooth headphones.
 The laboratory equipment includes a high number of wireless devices, such has WiFi access points, Bluetooth beacons, and wireless development boards. Other devices that could interfere with signal transmission and analysis are two microwaves, a projector and a 3D printer.
 
@@ -36,32 +43,188 @@ Summarizing, the wireless communication in our testbed is characterized by lossy
 
 \subsubsection{Smartphones}
 \label{sec:test-phones}
-To test the accuracy of the occupancy monitoring system, two Android devices have been employed.\\
-The first is a Google Nexus 5 running Android 6.0.1, while the second is a Samsung I9300 (Galaxy S3) running Android 4.3.
+To test the accuracy of the occupancy monitoring system, two Android devices have been employed.
+\begin{itemize}
+\item The first is a Google Nexus 5 running Android 6.0.1. This device has been used to perform the system training, and to test the localization accuracy when the runtime device is the same of the training.
+\item The second is a Samsung I9300 (Galaxy S3) running Android 4.3. This device has been used to test the localization accuracy when the runtime device is different from the device employed for the training.
+\end{itemize}
+The mobile application running on the devices during test has been explained in detail in section \ref{sec:app}.
 The Samsung device has also been used, using a customized battery, to measure precise energy consumption of the mobile application.
 \subsubsection{WSN prototype}
 \label{sec:test-wsn}
-Each node of the wireless sensor network has been implemented with Raspberry Pi boards version 3. The operating system running on each board is the Raspbian 4.4 (September 2016) based on Debian 7.0.\\
+Each node of the wireless sensor network has been implemented with Raspberry Pi boards version 3. The operating system running on each board is the Raspbian 4.4 (September 2016) based on Debian 7.0. The software routine running on each sensor node has been detailed in section \ref{sec:wsn}.\\
 %posizionamento e quantità dei nodi con immagine (o sketch o cad)
+The positioning and the amount of nodes employed has been obtained using the tool detailed in chapter \ref{cap:cad}. The sketch in figure \ref{fig:wsn-sketch} shows the resulting nodes allocation of four nodes.
+
+\begin{figure}[h!tb]
+\centering\includegraphics[width=\linewidth]{necst-wsn.pdf}
+\caption[Sensor nodes allocation on the floor-plan of the experimental testbed for the occupancy detection.]{Sensor nodes allocation on the floor-plan of the experimental testbed for the occupancy detection.}
+\label{fig:wsn-sketch}
+\end{figure}
+
 Some of the nodes have been connected to the building LAN using Ethernet sockets, while other were connected using WiFi.
 Power consumption of sensor nodes has been measured using the energy logger 4000 by Voltcraft.
 \subsubsection{Back-end}
 \label{sub:test-backend}
 Since the localization algorithm is performed on the back-end side, the amount of computational resources and the response time of the cloud service determine the responsiveness of the occupancy detection.
+In our case, the system back-end relies on a cloud platform that provides free services until a certain load (e.g. the number requests and pushes), while applying different pricing for higher loads.
+For this reason, delays of the system are mainly caused by the server layer, and moving to custom deployed servers with higher computational resources can improve the overall responsiveness.
 
 \subsection{Localization Accuracy}
 \label{sec:loc-accuracy}
-All the results on the classification algorithms we present in this section have been computed by using the data mining tool Weka \cite{weka}.
+All the results on the classification algorithms presented in this section have been computed by using the data mining tool Weka \cite{weka}.
 During the test we move through the four different regions many times in order to collect a big number of statistical samples, simulating the presence of huge number of people.
 We have conducted a large number of experiments in order to check if people inside (or outside) a region are correctly recognized by the BlueSentinel system and if the proposed approach can be effectively used to determine the number and the identities of the people inside a particular room.
 \subsubsection{K Nearest Neighbor}
-This section reports the results we have obtained by employing the k-Nearest Neighbors algorithm with k equal to 5.
+This section reports the results we have obtained by employing the k-Nearest Neighbors algorithm with K equal to 5.
+We have computed this values by using a stratified ten-fold cross validation, because of the high number of samples collected.
+
+\begin{table}
+\caption[K Nearest Neighbor classification results obtained using the baseline training data.]{K Nearest Neighbor classification results obtained using the baseline training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
+\label{tab:knn-baseline}
+\begin{tabular}{ |l|l|l| }
+  \hline
+  \multicolumn{3}{|c|}{\textbf{KNN Classification - Baseline Dataset}} \\
+  \hline
+  \textbf{Parameter} & \textbf{Same device} & \textbf{different device}\\
+  \hline
+  Correctly Classified Instances & 749 (86.09\%) & 635 (72.99\%) \\
+  Incorrectly Classified Instances & 121 (13.91\%) & 235 (27.01\%) \\
+  Total Number Of Instances & 870 & 870 \\
+  Kappa statistic & 0.696 & 0.374 \\
+  Mean absolute error & 0.139 & 0.270 \\
+  Root mean squared error & 0.373 & 0.519 \\
+  True Positive Rate & 86.09\% & 72.99\% \\
+  False Positive Rate & 13.91\% & 27.01\% \\
+  Precision & 86.09\% & 72.99\% \\
+  Recall & 86.09\% & 72.99\% \\
+  F-Measure & 86.09\% & 72.99\% \\
+  \hline
+\end{tabular}
+\end{table}
+
+The results in table \ref{tab:knn-baseline} refers to classification performed using baseline RSS data (section \ref{subsec:algorithms}). The results show that KNN is able to classify the occupant in the correct region with an accuracy of 86\% when its device is the same (or has similar transmission power) with the one employed during training. The classifier seems to perform well even if it is pretty simple, leading to a good precision, recall, F-measure and ROC area. The first two metrics evaluate the impact of false positives and false negatives, while the F-measure takes in account both precision and recall. The higher is this metric, the better is the quality of the classifier. Similarly, the receiver operating characteristic (ROC) characterizes the trade-off between hit rate and false-alarm rate in this noisy environment.\\
+However, moving to the runtime dataset collected with a different mobile device, the performance suffers a sensible deterioration. In particular, the accuracy is lower than 73\%. This sensible difference is most likely to be caused by the employment of absolute values of RSS, even if different devices transmit signals at different power levels.
+
+\medskip
+With the aim to solve this issue, another dataset has been evaluated. In this case, elements of the RSS vectors are not considered absolute values, but in a differential way as explained in section \ref{subsec:algorithms}.
+The results that refers to classification performed using differential RSS data are reported in table \ref{tab:knn-diff}.
+
+\begin{table}
+\caption[K Nearest Neighbor classification results obtained using the differential training data.]{K Nearest Neighbor classification results obtained using the differential training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
+\label{tab:knn-diff}
+\begin{tabular}{ |l|l|l| }
+  \hline
+  \multicolumn{3}{|c|}{\textbf{KNN Classification - Differential Dataset}} \\
+  \hline
+  \textbf{Parameter} & \textbf{Same device} & \textbf{different device}\\
+  \hline
+  Correctly Classified Instances & 757 (87.01\%) & 720 (82.76\%) \\
+  Incorrectly Classified Instances & 121 (12.99\%) & 150 (17.24\%) \\
+  Total Number Of Instances & 870 & 870 \\
+  Kappa statistic & 0.701 & 0.583 \\
+  Mean absolute error & 0.118 & 0.159 \\
+  Root mean squared error & 0.344 & 0.399 \\
+  True Positive Rate & 87.01\% & 82.76\% \\
+  False Positive Rate & 13.91\% & 17.24\% \\
+  Precision & 87.01\% & 82.76\% \\
+  Recall & 87.01\% & 82.76\% \\
+  F-Measure & 87.01\% & 82.76\% \\
+  \hline
+\end{tabular}
+\end{table}
+
+The results show that KNN is able to classify the occupant in the correct region with an accuracy of 87\% when its device is the same (or has similar transmission power) with the one employed during training.
+The classifier seems to perform well even if it is pretty simple, leading to a good precision, recall, F-measure and ROC area.\\
+As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 83\%). However, comparing to the previous case of baseline data, the classification accuracy has been increased of almost ten percentage points. The differential data approach reveals to be effective to reduce the hardware dependency of samples, and to reduce the correlation between collected data and runtime device.
+
+
 \subsubsection{Decision Trees}
+\label{test-trees}
+In this section are presented the results obtained by using decision trees classification, evaluated with a stratified ten-fold cross validation. The specific algorithm employed is detailed in section \ref{subsubsec:trees}. As shown in table \ref{tab:tree-baseline}, for the baseline dataset, the accuracy of the tree algorithm is very similar to the one obtained with the KNN algorithm (table \ref{tab:knn-baseline}). In particular, the accuracy, is slightly lower for same device case (83\%), and almost the same for different device (73.8\%).
+
+
+\begin{table}
+\caption[Decision Trees classification results obtained using the baseline training data.]{Decision Trees classification results obtained using the baseline training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
+\label{tab:tree-baseline}
+\begin{tabular}{ |l|l|l| }
+  \hline
+  \multicolumn{3}{|c|}{\textbf{Decision Trees Classification - Baseline Dataset}} \\
+  \hline
+  \textbf{Parameter} & \textbf{Same device} & \textbf{different device}\\
+  \hline
+  Correctly Classified Instances & 726 (83.45\%) & 642 (73.79\%) \\
+  Incorrectly Classified Instances & 144 (16.55\%) & 228 (26.21\%) \\
+  Total Number Of Instances & 870 & 870 \\
+  Kappa statistic & 0.611 & 0.492 \\
+  Mean absolute error & 0.136 & 0.241 \\
+  Root mean squared error & 0.369 & 0.491 \\
+  True Positive Rate & 83.45\% & 73.79\% \\
+  False Positive Rate & 16.55\% & 26.21\% \\
+  Precision & 83.45\% & 73.79\% \\
+  Recall & 83.45\% & 73.79\% \\
+  F-Measure & 83.45\% & 73.79\% \\
+  \hline
+\end{tabular}
+\end{table}
+
+Also for tree based classification, the algorithm has been tested with differential data (\ref{tab:tree-diff}).
+The results show that decisional trees are able to classify the occupant in the correct region with an accuracy of 85\% when its device is the same (or has similar transmission power) with the one employed during training.
+The classifier seems to perform quite well, leading to a good precision, recall, F-measure and ROC area.\\
+As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 81\%). Unfortunately, with respect to KNN algorithm where the differential data brought to a sensible increase in performance for the "different device" case, the previous performance of baseline data has not been increased so much. The differential data approach reveals to be less effective in decisional trees with respect to KNN in order to reduce the hardware dependency of RSS samples.
+
+\begin{table}
+\caption[Decision Trees classification results obtained using the differential training data.]{Decision Trees classification results obtained using the differential training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
+\label{tab:tree-diff}
+\begin{tabular}{ |l|l|l| }
+  \hline
+  \multicolumn{3}{|c|}{\textbf{Decision Trees Classification - Differential Dataset}} \\
+  \hline
+  \textbf{Parameter} & \textbf{Same device} & \textbf{different device}\\
+  \hline
+  Correctly Classified Instances & 739 (84.94\%) & 706 (81.15\%) \\
+  Incorrectly Classified Instances & 131 (15.06\%) & 164 (18.85\%) \\
+  Total Number Of Instances & 870 & 870 \\
+  Kappa statistic & 0.639 & 0.523 \\
+  Mean absolute error & 0.121 & 0.194 \\
+  Root mean squared error & 0.349 & 0.440 \\
+  True Positive Rate & 84.94\% & 81.15\% \\
+  False Positive Rate & 15.06\% & 18.85\% \\
+  Precision & 84.94\% & 81.15\% \\
+  Recall & 84.94\% & 81.15\% \\
+  F-Measure & 84.94\% & 81.15\% \\
+  \hline
+\end{tabular}
+\end{table}
+
 \subsection{Responsiveness Test}
+\label{test-resp}
+
+%tempo che intercorre fra spostamento della persona e l'output a livello di web monitor
+%delays introdotti a vari livelli : nodi flitro e push, back-end, classificazione, output
+
+%However, as stated in the previous sections, the tree-based classification algorithm performs much better during the run-time phase, thus it has to be preferred every time the cost of the offline training phase does not affect the tree overall quality of the system (which usually happens in most cases, where the physical layout of the smart building changes quit rarely). From the point of view of timing performance, the time required to the tree-based classification algorithm to produce the results is in the order of few mil- liseconds, while the ones of the KNN algorithm are in the order of tens of milliseconds. Thus, even though both the approaches meet the quasi real-time performance typically required by this kind of applications, the tree-based algorithm represents the fastest solution, being around one order of magnitude better than KNN
+
 \subsection{Power Consumption}
-\subsection{Stress Test}
+\label{sec:test-consumption}
+
+As we said in the previous chapters, a key aspect of occupancy monitoring systems based on smart devices is the mobile consumption. In order to make the system non-intrusive on the user habits, the localization needs to preserve the battery energy as more as possible.
+
+A preliminary test on the consumption of Bluetooth Low Energy advertisement have been performed during the feasibility study of the BlueSentinel approach, using an Apple iPhone 6. The test consisted in leaving the smartphone advertising in background (screen off) and observe the discharge, starting from the 100\%. During this test, all the connectivities different from the Bluetooth has been disabled to focus exclusively on the advertising consumption. The qualitative test was really impressive, since the phone was able to advertise for 2h:19min without moving from the 100\% of battery level, and 4h:52min to reach the 90\%.
+
+Later, we performed a more precise and quantitative measurement of the energy requested by the developed application.
+The test has been performed using the Mobile Device Power Monitor (by Monsoon), connected with a Samsung Galaxy S3 through a customized battery (figure \ref{fig:monsoon}).
+
+\begin{figure}[h!tb]
+\centering\includegraphics[width=0.7\linewidth]{monsoon.pdf}
+\caption{Mobile Device Power Monitor (by Monsoon) used to measure the power consumption of the BlueSentinel application.}
+\label{fig:monsoon}
+\end{figure}
+
 
 \section{Automatic Nodes Deployment Results}
+\label{sec:CAD-test}
+
 In this section are reported the experimental results of the CAD tool proposed in chapter \ref{cap:cad}.
 Presented results are initially focused on the usability of the tool, testing the ability to provide a solution in a reasonable time. Then, the performances of the model have been evaluated, in terms of localization accuracy through realistic indoor environment experiments, and in terms of cost-effectiveness of the suggested deployments.
 
@@ -82,7 +245,7 @@ A key aspect that characterizes the goodness of the proposed approach is the imp
 \label{fig:greedy_vns}
 \end{figure}
 
-In Fig.~\ref{fig:greedy_vns} we reported the value of $z$, i.e. the average signal space Euclidean distance obtained with the first Greedy execution, compared with the $z$ value after the VNS optimization. The graph reports the $z$ values as a function of the threshold $S$, described in section~\ref{subsec:greedy} as the minimum value of average signal space Euclidean distance ($z$) required during the Greedy procedure. The graph shows that moving the threshold within the range $(2,6)$dB the VNS is able to improve the $z$ value constantly around 2 dB.
+In Fig.~\ref{fig:greedy_vns} are reported the value of $z$, i.e. the average signal space Euclidean distance obtained with the first Greedy execution, compared with the $z$ value after the VNS optimization. The graph reports the $z$ values as a function of the threshold $S$, described in section~\ref{subsec:greedy} as the minimum value of average signal space Euclidean distance ($z$) required during the Greedy procedure. The graph shows that moving the threshold within the range $(2,6)$dB the VNS is able to improve the $z$ value constantly around 2 dB.
 Although the VNS improvement is not astonishing for what regard the average value, Fig.~\ref{fig:greedy_vns2} shows that the variance is strongly improved. This has been achieved moving from the objective function $z$ used in Greedy procedure to the $Z$ function of the VNS. The $Z$ objective function has in fact the purpose to provide as many target location as possible with a high signal space Euclidean distance w.r.t. the surrounding locations.
 
 \begin{figure}[h!tb]
