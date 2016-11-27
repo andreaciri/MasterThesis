@@ -72,7 +72,7 @@ For this reason, delays of the system are mainly caused by the server layer, and
 
 \subsection{Localization Accuracy}
 \label{sec:loc-accuracy}
-All the results on the classification algorithms presented in this section have been computed by using the data mining tool Weka \cite{weka}.
+All the results on the classification algorithms presented in this section have been computed by using the data mining tool Weka \cite{Hall2009}.
 During the test we move through the four different regions many times in order to collect a big number of statistical samples, simulating the presence of huge number of people.
 We have conducted a large number of experiments in order to check if people inside (or outside) a region are correctly recognized by the BlueSentinel system and if the proposed approach can be effectively used to determine the number and the identities of the people inside a particular room.
 \subsubsection{K Nearest Neighbor}
@@ -213,11 +213,11 @@ As we said in the previous chapters, a key aspect of occupancy monitoring system
 A preliminary test on the consumption of Bluetooth Low Energy advertisement have been performed during the feasibility study of the BlueSentinel approach, using an Apple iPhone 6. The test consisted in leaving the smartphone advertising in background (screen off) and observe the discharge, starting from the 100\%. During this test, all the connectivities different from the Bluetooth has been disabled to focus exclusively on the advertising consumption. The qualitative test was really impressive, since the phone was able to advertise for 2h:19min without moving from the 100\% of battery level, and 4h:52min to reach the 90\%.
 
 Later, we performed a more precise and quantitative measurement of the energy requested by the developed application.
-The test has been performed using the Mobile Device Power Monitor (by Monsoon), connected with a Samsung Galaxy S3 through a customized battery (figure \ref{fig:monsoon}).
+The test has been performed using the Mobile Device Power Monitor (by Monsoon \textregistered), connected with a Samsung Galaxy S3 through a customized battery (figure \ref{fig:monsoon}).
 
 \begin{figure}[h!tb]
 \centering\includegraphics[width=0.7\linewidth]{monsoon.pdf}
-\caption{Mobile Device Power Monitor (by Monsoon) used to measure the power consumption of the BlueSentinel application.}
+\caption{Mobile Device Power Monitor (by Monsoon \textregistered) used to measure the power consumption of the BlueSentinel application.}
 \label{fig:monsoon}
 \end{figure}
 
