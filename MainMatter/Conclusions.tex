@@ -23,6 +23,17 @@
 %
 % ------------------------------------------------------------------------ %
 %
-\lipsum[1-4]
+During the past few years, a lot of effort has been put in the research of technologies in the area of the Internet of Things. A big portion of the IoT research is applied to the domain of Smart Buildings, where connected devices are exploited to increase comfort, safety, and energy sustainability.
+However, there can be identified some missing tiles that prevent the adoption of such technologies in real buildings.
+The work done during this thesis tries to solve at least two of these missing tiles.
+
+First, an occupancy monitoring system is proposed. One of the main limitations of the existing solutions is the inability to provide both long time monitoring (many hours of execution) and a non-intrusive approach from the occupant point of view.
+With the proposed system, called BlueSentinel, we tried to exploit the Bluetooth Low Energy technology at low level to detect the presence of occupants inside the building. The approach allows the system to run continuously and for many hours without heavily affect the mobile battery consumption.\\
+The system has been evaluated in terms of accuracy of the localization, responsiveness of the detection and power consumption of the mobile application developed. The results confirmed that the proposed approach is suitable to obtain a real-time occupancy monitoring information with a good quality, even if the unrefined implementation presents a lot of space for improvement.
+
+The second part of this work tries to solve the problem of designing optimal Smart Building systems based on wireless devices. We tried to explain the challenges faced by designers during the installation of smart building systems that require the positioning of several hardware nodes, and the lack of supporting tools. A common limitation of existing models is the lack of a convenient way to specify geometric information of the indoor map. This also leads to the employment of less accurate general models for signal propagation, instead of site-specific models. The design phase is get more difficult by the availability on the market of different hardware nodes, with different power transmissions and costs.\\
+For these reasons we propose an integrated tool for both floor plan specification and node positioning, developed within an \mbox{open-source} CAD environment extensible through plug-ins. The tool is able to provide a near-optimal solution of node allocations, possibly with mixed types, with the aim to reduce the installation costs. The results suggest that, for most of the problem instances, a solution can be obtained in a reasonable execution time. Depending on the available hardware types, total cost of the solution could be improved moving from homogeneous to mixed type allocation.
+
+For future work, we plan to improve the system with an indoor signal propagation model able to consider refraction and diffraction effects of the indoor environment like walls and floors. In addition, we'll try to apply the model to 3D designing tools, becoming suitable also for multi-floor environments.
 %
 % ------------------------------------------------------------------------ %

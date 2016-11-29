@@ -322,7 +322,7 @@ The training set has been used to train the following classification algorithms.
 
 \subsubsection{K Nearest Neighbor}
 \label{subsubsec:knn}
-For the KNN algorithm, each vector of the training set is virtually positioned in a D-dimensional graph, where D is the dimension of the vector. Since in our testbed there have been employed 4 sensor nodes, the graph has dimension 4 for the baseline training set, and dimension 6 for the differential set.
+For the KNN algorithm, each vector of the training set is virtually positioned in a D-dimensional space, where D is the dimension of the vector. Since in our testbed there have been employed 4 sensor nodes, the space has dimension 4 for the baseline training set, and dimension 6 for the differential set.
 
 At run time, the algorithm builds the RSS vector using the user ID and the timestamps of the samples that fall within a short sliding window (1 - 2 seconds). This guarantees that each sample of the vector comes from the same location in the building, since the user can't change position a short window of time.
 Whenever a new unlabeled vector is constructed, the algorithm put the element on the virtual graph. At this point, a set of K training points that are the K closest points to the runtime point are selected. From the K labeled observations, a majority vote determines the position label of the runtime sample. The implemented algorithm selects $K=5$ training observations.
@@ -338,7 +338,7 @@ E'(a,b)=\sqrt{(diff_{a,12} - diff_{b,12})^2 + ... + (diff_{a,jk} - diff_{b,jk})^
 In equation \ref{eq:E-baseline}, $rss_{a,1}$ represents the RSS value captured by node 1 and stored in the training vector $a$. In equation \ref{eq:E-differential}, $Diff_{a,12}$ represents the difference between training RSS sample of node 1 and node 2, and stored in the training vector $a$.
 
 \medskip
-The implemented algorithm computes the distance $E(a,b)$ for every vector $a$ belonging to the training set, sorts in increasing order the resulting list of distances and select the firsts 5 elements for the majority vote. Defining $N$ as the dimension of the training set, and $d$ the dimension of each sample the resulting time complexity to estimate the position each time is $O(dN + NlogN)$.
+The implemented algorithm computes the distance $E(a,b)$ for every vector $a$ belonging to the training set, sorts in increasing order the resulting list of distances and select the firsts 5 elements for the majority vote. Defining $N$ as the dimension of the training set, and $d$ the dimension of each sample, the resulting time complexity to estimate the position each time is $O(dN + NlogN)$.
 
 %TODO: parlare dei dati mancanti
 
@@ -364,10 +364,10 @@ Successively, in order to build a valid decisional tree, the following procedure
  Now it's possible to check how much the "COFFEE ROOM" classification is correct if the guess is made exclusively on the $\widetilde{rss_1}$ feature.
 In the HIGH set the classification performs 100\% correctly. In the LOW set the classification performs 70\% of them correctly, while 30\% wrong. So overall you would classify 17 out of 20 correctly (85\%). Thus, we can say that the \emph{score} of the $\widetilde{rss_1}$ feature is 85\%. 
 
-The mentioned score is used to sort all the features from the highest to the lowest score, and the order is used to build the decision tree, applying each time the subsequent feature.
-
-\smallskip
+The mentioned score is used to sort all the features from the highest to the lowest score, and the order is used to build the decision tree, applying each time the subsequent feature.\\
 The procedure explained however, provide the binary classification that localizes the user inside coffee room or outside coffee room. To obtain the multi-class classification that identify the correct building zone, it is possible to apply the binary classifier repeatedly and combine the results to get the multi-class classification.
+
+We define $N$ as the dimension of the training set, while $d$ the number of feature for each samples ($d=4$ for baseline dataset, $d=6$ for differential dataset). The resulting time complexity of the decisional trees implemented is $O(d^2N)$, almost one order of magnitude better than KNN.
 
 % SPLITTO RANGE IN PIU DI DUE INTERVALLI. CANCELLARE SE ALBERI NON BINARI è SBAGLIATO
 % After normalization, each RSS vector is composed by values that can range from \numrange{0}{1}. The range has been dived in 5 \emph{buckets} (0.0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8, 0.8-1.0) as shown by the example in figure \ref{fig:norm}:
@@ -397,9 +397,9 @@ BlueSentinel has been integrated with \emph{ThermoSense}
 The mobile application described in section \ref{sec:app} has been used in conjunction with BlueSentinel and ThermoSense. In particular, while the BlueSentinel module manages all the Bluetooth functionalities, ThermoSense module collects information on the current thermal comfort of the tenants. Users are able to provide a thermal comfort feedback (a complaint) that quantifies the amount of cold or hot perceived through a gradient interface. The feedback information, together with the user position detected by BlueSentinel, is used by ThermoSense to compute the best possible HVAC set point to satisfy the occupants comfort while minimizing the building consumption.
 The position information is retrieved by the decisional engine of ThermoSense directly on the backend level. However, any other smart building application developed as a third-party components can retrieve the building occupancy information using the REST interface explained in section \ref{sec:back-end}.
 
-
-\section{Real-World Deployed System}
-\label{sec:lab}
+%TODO: spostare, declassare o cancellare
+%\section{Real-World Deployed System}
+%\label{sec:lab}
 
 \section{Web-Based Monitoring Dashboard}
 \label{sec:webmonitor}
@@ -433,9 +433,6 @@ Another chart has been used to visualized the occupancy history of each building
 
 In all the dashboard elements, users identity has never been showed to guarantee the occupants privacy.
 
-%TODO: spostare o cancellare
-% \section{Implementation Decisions}
-% \label{sec:decisions}
 
 \section{Limitations}
 \label{sec:limitations}

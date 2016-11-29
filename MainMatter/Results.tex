@@ -16,14 +16,15 @@
 In this chapter are reported the experimental analysis performed to validate the work done for this thesis.\\
 First, section \ref{sec:bs-test} contains the experiments conducted over the occupancy monitoring system (BlueSentinel) proposed in chapter \ref{cap:bluesentinel}. The system has been evaluated in terms of accuracy of the localization, responsiveness of the detection and power consumption of the mobile application developed. As we will see, the results confirmed that the proposed approach is suitable to obtain the occupancy monitoring information with a good quality.
 
-Later, section \ref{sec:CAD-test} contains the results obtained from the automatic deployment tool reported in chapter \ref{cap:cad}. The tool has been used to deploy a localization system different from BlueSentinel (a beacons based system) in order to test the general-purpose functionalities and the ability to model different systems. The results include the computational experience of the tool, such as the execution times, and some evaluation metrics of the resulting deployed configuration. These include the cost-effectiveness and the accuracy of the resulting localization systems with respect to configuration suggested from different approaches in literature.
+Later, section \ref{sec:CAD-test} contains the results obtained from the automatic deployment tool reported in chapter \ref{cap:cad}. The tool has been used to deploy a localization system different from BlueSentinel (a beacons based system) in order to test the general-purpose functionalities and the ability to model different systems. The results include the computational experience of the tool, such as the execution times, and some evaluation metrics of the resulting deployed configuration. These include the cost-effectiveness and the accuracy of the resulting localization system with respect to configuration obtained from different approaches in literature.
 
 \section{Occupancy Monitoring Evaluation}
 \label{sec:bs-test}
 The occupancy monitoring system presented in chapter \ref{cap:bluesentinel} has been evaluated using data collected from a real-world environment. The system has been set up inside the NECST Lab, located at the basement of DEIB department at Politecnico di Milano.\\
-The dimension of the test-bed is 198 squared meters ($9x22m$). The area is subdivided by walls in three separate spaces: a relax room for coffee breaks, a room for meetings and talks, and an open-space with desktop stations. For the installation of the system, before proceed with the training procedure, the administrator needs to identify the regions in which the floor-plan will be partitioned. The dimension of each region will determine the spatial resolution of the occupancy monitoring, as stated in section \ref{sec:occupancy-metrics}. In our setup, we decide to identify a single region for each room in the case of coffee and meeting rooms, while dividing the open-space for two main reasons. First, the open-space is large roughly two times the dimension of the other rooms, and this way each region has similar dimensions. Second, because the open-space presents a functional division in two parts between stations occupied by computer security students and by computer architectures students.
+The dimension of the test-bed is 198 squared meters ($9x22m$). The area is subdivided by walls in three separate spaces: a relax room for coffee breaks, a room for meetings and talks, and an open-space with desktop stations.\\
+For the installation of the system, before proceed with the training procedure, the administrator needs to identify the regions in which the floor-plan will be partitioned. The dimension of each region will determine the spatial resolution of the occupancy monitoring, as stated in section \ref{sec:occupancy-metrics}. In our setup, we decide to identify a single region for each room in the case of coffee and meeting rooms, while halving the open-space for two main reasons. First, the open-space is large roughly two times the dimension of the other rooms, and this way each region has similar dimensions. Second, because the open-space presents a functional division in two parts between stations occupied by computer security students and by computer architectures students.
 
-The resulting configuration has been used to detect and the presence of a user, classifying its position in the best fitting region based on the collected data. The performance and the accuracy of the classification has been evaluated observing manually the ground truth location of the test user.
+The resulting configuration has been used to detect the presence of a user, classifying its position in the best fitting region based on the collected data. The performance and the accuracy of the classification has been evaluated observing manually the ground truth location of the test user.
 
 \begin{figure}[h!tb]
 \centering\includegraphics[width=\linewidth]{necst-regions.pdf}
@@ -49,12 +50,14 @@ To test the accuracy of the occupancy monitoring system, two Android devices hav
 \item The second is a Samsung I9300 (Galaxy S3) running Android 4.3. This device has been used to test the localization accuracy when the runtime device is different from the device employed for the training.
 \end{itemize}
 The mobile application running on the devices during test has been explained in detail in section \ref{sec:app}.
-The Samsung device has also been used, using a customized battery, to measure precise energy consumption of the mobile application.
+The Samsung device has also been used, through a customized battery, to measure precise power consumptions of the mobile application.
+
+%TODO: accennare il fatto che rasp non ha antenna esterna
 \subsubsection{WSN prototype}
 \label{sec:test-wsn}
 Each node of the wireless sensor network has been implemented with Raspberry Pi boards version 3. The operating system running on each board is the Raspbian 4.4 (September 2016) based on Debian 7.0. The software routine running on each sensor node has been detailed in section \ref{sec:wsn}.\\
 %posizionamento e quantità dei nodi con immagine (o sketch o cad)
-The positioning and the amount of nodes employed has been obtained using the tool detailed in chapter \ref{cap:cad}. The sketch in figure \ref{fig:wsn-sketch} shows the resulting nodes allocation of four nodes.
+The position and the amount of nodes employed has been obtained using our automatic CAD tool detailed in chapter \ref{cap:cad}. The sketch in figure \ref{fig:wsn-sketch} shows the resulting nodes allocation of four nodes.
 
 \begin{figure}[h!tb]
 \centering\includegraphics[width=\linewidth]{necst-wsn.pdf}
@@ -64,17 +67,23 @@ The positioning and the amount of nodes employed has been obtained using the too
 
 Some of the nodes have been connected to the building LAN using Ethernet sockets, while other were connected using WiFi.
 Power consumption of sensor nodes has been measured using the energy logger 4000 by Voltcraft.
+% TODO: togliere o finire
+
 \subsubsection{Back-end}
 \label{sub:test-backend}
-Since the localization algorithm is performed on the back-end side, the amount of computational resources and the response time of the cloud service determine the responsiveness of the occupancy detection.
-In our case, the system back-end relies on a cloud platform that provides free services until a certain load (e.g. the number requests and pushes), while applying different pricing for higher loads.
-For this reason, delays of the system are mainly caused by the server layer, and moving to custom deployed servers with higher computational resources can improve the overall responsiveness.
+Since the localization algorithm is performed on the back-end side, the amount of computational resources and the response time of the cloud service determine the responsiveness of the occupancy detection.\\
+In our case, the system back-end relies on a cloud platform
+\footnote{Parse Cloud service: \url{https://parse.com/}}
+that provides free services until a certain load (e.g. the number requests and pushes), while applying different pricing for superior plans.
+For this reason, delays of our system at the back-end layer are mainly caused by the plan limits of the cloud service; moving to a custom deployed server with higher computational resources can improve the overall responsiveness.
 
 \subsection{Localization Accuracy}
 \label{sec:loc-accuracy}
 All the results on the classification algorithms presented in this section have been computed by using the data mining tool Weka \cite{Hall2009}.
-During the test we move through the four different regions many times in order to collect a big number of statistical samples, simulating the presence of huge number of people.
+During the test we move through the four different regions many times in order to collect a big number of statistical samples.
 We have conducted a large number of experiments in order to check if people inside (or outside) a region are correctly recognized by the BlueSentinel system and if the proposed approach can be effectively used to determine the number and the identities of the people inside a particular room.
+In the next two sections are reported the results of two classification methods, testing their ability to classify the occupant in the correct region.
+
 \subsubsection{K Nearest Neighbor}
 This section reports the results we have obtained by employing the k-Nearest Neighbors algorithm with K equal to 5.
 We have computed this values by using a stratified ten-fold cross validation, because of the high number of samples collected.
@@ -107,7 +116,7 @@ The results in table \ref{tab:knn-baseline} refers to classification performed u
 However, moving to the runtime dataset collected with a different mobile device, the performance suffers a sensible deterioration. In particular, the accuracy is lower than 73\%. This sensible difference is most likely to be caused by the employment of absolute values of RSS, even if different devices transmit signals at different power levels.
 
 \medskip
-With the aim to solve this issue, another dataset has been evaluated. In this case, elements of the RSS vectors are not considered absolute values, but in a differential way as explained in section \ref{subsec:algorithms}.
+With the aim to solve this issue, another dataset has been evaluated. In this case, elements of the RSS vectors are not considered as absolute values; instead, a differential value between each couple of RSS is computed and used to build the differential a vector, as explained in section \ref{subsec:algorithms}.
 The results that refers to classification performed using differential RSS data are reported in table \ref{tab:knn-diff}.
 
 \begin{table}
@@ -136,7 +145,7 @@ The results that refers to classification performed using differential RSS data 
 
 The results show that KNN is able to classify the occupant in the correct region with an accuracy of 87\% when its device is the same (or has similar transmission power) with the one employed during training.
 The classifier seems to perform well even if it is pretty simple, leading to a good precision, recall, F-measure and ROC area.\\
-As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 83\%). However, comparing to the previous case of baseline data, the classification accuracy has been increased of almost ten percentage points. The differential data approach reveals to be effective to reduce the hardware dependency of samples, and to reduce the correlation between collected data and runtime device.
+As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 83\%). However, comparing this result to the previous case of baseline data, the classification accuracy has been increased of almost ten percentage points. The differential data approach reveals to be effective to reduce the hardware dependency of samples, and to reduce the correlation between collected data and runtime device.
 
 
 \subsubsection{Decision Trees}
@@ -171,7 +180,7 @@ In this section are presented the results obtained by using decision trees class
 Also for tree based classification, the algorithm has been tested with differential data (\ref{tab:tree-diff}).
 The results show that decisional trees are able to classify the occupant in the correct region with an accuracy of 85\% when its device is the same (or has similar transmission power) with the one employed during training.
 The classifier seems to perform quite well, leading to a good precision, recall, F-measure and ROC area.\\
-As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 81\%). Unfortunately, with respect to KNN algorithm where the differential data brought to a sensible increase in performance for the "different device" case, the previous performance of baseline data has not been increased so much. The differential data approach reveals to be less effective in decisional trees with respect to KNN in order to reduce the hardware dependency of RSS samples.
+As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 81\%). Unfortunately, with respect to KNN algorithm where the differential data bring a sensible increase in performance for the "different device" case, the previous performance of baseline data has not been increased so much. The differential data approach reveals to be less effective in decisional trees than KNN in order to reduce the hardware dependency of RSS samples.
 
 \begin{table}
 \caption[Decision Trees classification results obtained using the differential training data.]{Decision Trees classification results obtained using the differential training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
@@ -197,8 +206,10 @@ As expected, moving to the runtime dataset collected with a different mobile dev
 \end{tabular}
 \end{table}
 
-\subsection{Responsiveness Test}
-\label{test-resp}
+
+%TODO
+%\subsection{Responsiveness Test}
+%\label{test-resp}
 
 %tempo che intercorre fra spostamento della persona e l'output a livello di web monitor
 %delays introdotti a vari livelli : nodi flitro e push, back-end, classificazione, output
@@ -210,15 +221,45 @@ As expected, moving to the runtime dataset collected with a different mobile dev
 
 As we said in the previous chapters, a key aspect of occupancy monitoring systems based on smart devices is the mobile consumption. In order to make the system non-intrusive on the user habits, the localization needs to preserve the battery energy as more as possible.
 
-A preliminary test on the consumption of Bluetooth Low Energy advertisement have been performed during the feasibility study of the BlueSentinel approach, using an Apple iPhone 6. The test consisted in leaving the smartphone advertising in background (screen off) and observe the discharge, starting from the 100\%. During this test, all the connectivities different from the Bluetooth has been disabled to focus exclusively on the advertising consumption. The qualitative test was really impressive, since the phone was able to advertise for 2h:19min without moving from the 100\% of battery level, and 4h:52min to reach the 90\%.
-
-Later, we performed a more precise and quantitative measurement of the energy requested by the developed application.
-The test has been performed using the Mobile Device Power Monitor (by Monsoon \textregistered), connected with a Samsung Galaxy S3 through a customized battery (figure \ref{fig:monsoon}).
+A preliminary test on the consumption of Bluetooth Low Energy advertisement have been performed during the feasibility study of the BlueSentinel approach, using an Apple iPhone 6. The test consisted in leaving the smartphone advertising in background (screen off) while observing the discharge, starting from the 100\%. During this test, all the connectivities except the Bluetooth has been disabled to focus exclusively on the advertising consumption. The qualitative test was really impressive, since the phone was able to advertise for 2h:19min without moving from the 100\% of battery level, and for 4h:52min until reach the 90\%.
+\smallskip
 
 \begin{figure}[h!tb]
 \centering\includegraphics[width=0.7\linewidth]{monsoon.pdf}
 \caption{Mobile Device Power Monitor (by Monsoon \textregistered) used to measure the power consumption of the BlueSentinel application.}
 \label{fig:monsoon}
+\end{figure}
+
+Later, we performed a more precise and quantitative measurement of the power requested at runtime by our developed application.
+The test has been performed using the Mobile Device Power Monitor (by Monsoon \textregistered), connected with a Samsung Galaxy S3 through a customized battery (figure \ref{fig:monsoon}). This setup allows to power up the smartphone providing the necessary voltage through the Power Monitor, that bypasses the original battery and measures the power consumption.
+
+
+\begin{table}[h!tb]
+\caption{Power consumption of the mobile device in three different configurations.}
+\label{tab:monsoon}
+\begin{tabular}{|l|l|l|c|}
+  \hline
+  \textbf{Configuration} & \textbf{Average current} & \textbf{Voltage} & \textbf{Power chart}\\
+  \hline
+  All disabled & 2.06 mA & 3.69 V & \ref{fig:monsoon-no} \\
+  Only WiFi & 11.78 mA & 3.69 V & \ref{fig:monsoon-wifi} \\
+  Only BlueSentinel & 2.57 mA & 3.70 V & \ref{fig:monsoon-bs} \\
+  \hline
+\end{tabular}
+\end{table}
+
+The test conducted with the Power Monitor are summarized in table \ref{tab:monsoon}. All this tests has been performed with the device screen turned off (background mode) since the power requested by the screen is so high that makes the other components negligible. The first configuration tested refers to the smartphone with all the possible wireless connections turned off. Table \ref{tab:monsoon} reports the constant voltage measured and the average current (2.06 mA) of the configuration. Figure \ref{fig:monsoon-no} shows a measured current flow (in violet) very low, where the only affecting component is probably the CPU activity.
+The second configuration tested refers to the smartphone with WiFi connection active, while all the other wireless connections turned off. Table \ref{tab:monsoon} reports the constant voltage measured and the average current (11.78 mA) of the configuration. Figure \ref{fig:monsoon-wifi} shows a measured current flow significantly increased from the base case. The last configuration refers to the BlueSentinel advertisement transmission active, with all the other wireless connections turned off. The average current is 2.57 mA, very similar to the baseline configuration. Figure \ref{fig:monsoon-bs} shows the measured current flow where the only affecting component, besides the CPU activity, is the BLE service with a very low profile.
+
+\begin{figure}
+\centering
+\subfloat[]{\includegraphics[width=0.85\linewidth]{monsoon-no-conn.png}\label{fig:monsoon-no}}
+\newline
+\subfloat[]{\includegraphics[width=0.85\linewidth]{monsoon-wifi.png}\label{fig:monsoon-wifi}}
+\newline
+\subfloat[]{\includegraphics[width=0.85\linewidth]{monsoon-bs.png}\label{fig:monsoon-bs}}
+\caption[Power consumption of a Samsung Galaxy S3.]{Power consumption of a Samsung Galaxy S3: orange line represents current, violet line represents voltage. \protect\subref{fig:monsoon-no} All connections disabled. \protect\subref{fig:monsoon-wifi} Only WiFI enabled. \protect\subref{fig:monsoon-bs} Only the BlueSentinel advertisement enabled.}
+\label{fig:monsoon-graph}
 \end{figure}
 
 
