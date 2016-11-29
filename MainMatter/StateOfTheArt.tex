@@ -110,7 +110,7 @@ System intrusiveness, from both the points of view of the building equipment and
 \label{sec:soa}
 In this section are reviewed some of the most relevant approaches proposed in literature to solve the occupancy monitoring problem, grouped by their respective enabling technologies. A particular attention is directed to wireless-based indoor positioning systems (section \ref{sec:wips}), how they have been exploited for occupancy monitoring and their limitations in this specific context.
 
-\subsection{Traditional solutions}
+\subsection{Traditional Solutions}
 The traditional solutions used to face the occupancy detection problem are based on passive infrared sensors (PIR), door badges or radio frequency identification tags (RFID tags). PIR sensors are used to detect people movements in order to control lighting, doors and other appliances.
 The main issue is that overly still occupants become invisible to these sensors. In some cases, door sensors have been added to mitigate this issue. How will be explained in section \ref{subsec:ambient}, usually PIR are used in combination with other ambient sensors because of their low accuracy and their inability to provide estimations on the number of occupants.
 
@@ -355,7 +355,7 @@ An example has been provided in figure \ref{fig:KNN}. For each room, three signa
 \end{itemize}
 
 
-\subsection{WiFi protocol}
+\subsection{WiFi Protocol}
 The midrange wireless local area network (WLAN) standard, operating in the 2.4GHz Industrial, Scientific and Medical (ISM) band, has become very popular in public hot-spots and enterprise locations during the last few years. With a typical gross bit rate of 11, 54, or 108 Mbps and a range of 50-100 m, IEEE 802.11 is currently the dominant local wireless networking standard. It is, therefore, appealing to use an existing WLAN infrastructure for indoor location as well, by adding a location server. The accuracy of typical WLAN positioning systems using RSS is approximately 3 to 10 m, with an update rate in the range of few seconds.
 
 All the functionality of the protocol is reflected in the packet headers. RF technology and station mobility impose some complex requirements on 802.11 WLAN networks. This added complexity is reflected in the long physical layer convergence protocol (PLCP) headers as well as the data-rich MAC header. The packet compared with the Ethernet structure is showed in figure \ref{fig:802}.
@@ -366,7 +366,7 @@ All the functionality of the protocol is reflected in the packet headers. RF tec
 \label{fig:802}
 \end{figure}
 
-\subsection{Bluetooth protocol}
+\subsection{Bluetooth Protocol}
 Bluetooth is a wireless technology standard for exchanging data over short distances (using short-wavelength UHF radio waves in the ISM band from 2.4 to 2.485 GHz) from fixed and mobile devices, and building personal area networks.
 Nowadays, various mobile devices (most of commercially available phones, personal digital assistants, etc.) are equipped with Bluetooth radio transceivers. Due to its broad adoption, Bluetooth can be considered a highly ubiquitous standard. Bluetooth was originally a codename for a project lead by a Special Interest Group (SIG) consisting of major companies, like Ericsson, Intel and Nokia. The Bluetooth bit rate is lower (1 Mbps), and the range is shorter (typically
 10-15 m) with respect to Wi-Fi. Moreover, Bluetooth is a lighter standard and supports several other networking services in addition to IP. For positioning, it is suggested to employ received signal strength indications (RSSI), since RSSI decreases with distance between sender and receiver. Since Bluetooth is a low-cost and low-power technology (Bluetooth tags are small size transceivers), it can be intended as an efficient solution to design IPSs. The Bluetooth positioning systems suffer from the same drawbacks of RF positioning technique in complex and full of obstacles indoor situations.

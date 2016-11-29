@@ -24,6 +24,7 @@ The work explained in this chapter consists in a CAD application for the design 
 
 %Experimental results from real-world environment show that the proposed site-specific model can improve the positioning accuracy of general models from the \mbox{state-of-the-art}.
 The tool, born to assist the installation of the BlueSentinel system, has become general-purpose and extensible through plug-ins allowing to model building systems with different requirements.
+The results of this project have been presented at UBICOMP 2016 \cite{Cirigliano2016} and will be published in TCAD (Transactions on Computer-Aided Design of Integrated Circuits and Systems).
 
 \section{The Nodes Deployment Problem}
 \label{sec:deploy-problem}
@@ -59,7 +60,7 @@ is developed within the QCAD\footnote{QCAD - Open Source CAD System: \url{http:/
 \item The integration of the tool within an \mbox{open-source}\footnote{The source code of the system is \mbox{open-source} and available at \url{https://bitbucket.org/necst/box-smartcad}} application framework able to extend the system by means of JavaScript or C++ plug-ins.
 \end{itemize}
 
-\section{Related work}\label{sec:related}
+\section{Related Work}\label{sec:related}
 Building Information Modeling (BIM) is a consolidate process to support building constructions and renovations. BIM softwares, and in particular CAD for buildings such as ArchiCAD~\cite{Archicad}, focus on the generation and management of digital representations of the physical aspects of places. BIM tools can coordinate architectural and structural requirements, for essential tasks such as collision detection~\cite{Zhang2011}. Materials employed for a construction can be represented with extremely high levels of accuracy, thanks to the several libraries developed in many years, resulting in precise cost estimations~\cite{Xu2014}. With the diffusion of integrated smart systems built to increase comfort and efficiency, buildings require the design of aspects that go beyond the mere physical design. The concept of smart environment is becoming more and more concrete with the integration of sensors, actuators and computational elements in buildings, while tools able to model smart and interactive functionalities of modern buildings are currently lacking.
 
 The problem of the allocation of hardware nodes in a given environment can be compared, on first approximation, by the maximal cover location problem (MCLP), i.e. the problem of covering the maximum amount of demand locations with a given number of facilities. Similarly, the location set covering problem (LSCP) consists in finding the minimum set of facilities that covers all available demand locations. Each facility has the same coverage radius \(r\); a demand point is assumed to be covered if it is within distance \(r\) of a facility. Daskin et al. gave a general formulation of the LSCP \cite{Daskin1983} and re-formulated it for network systems and emergency vehicle deployment \cite{Daskin1981}.
@@ -96,7 +97,7 @@ A common limitation of many works described previously is the employment of simp
 %The result can lead designers in time-consuming maps configuration, and error-prone design phase for the allocation of hardware nodes.
 In addition, none of the existing solutions takes in consideration different hardware characteristics and costs of the nodes to be deployed.
 
-\section{The proposed Application Framework}\label{sec:components}
+\section{The Proposed Application Framework}\label{sec:components}
 Our system has been developed on top of the QCAD application framework. The QCAD Application Framework consists of programming libraries and resources that provides CAD specific functionalities. An example of module provided by the QCAD Application framework is the Math module that implements mathematical concepts such as vectors or matrices as well as basic geometrical classes like points, lines and so on. The QCAD Framework has been enhanced with a \emph{SmartBuilding} module that provides some fundamental functionalities for the design of smart building systems. The module include abstract entities like rooms, walls, sockets, sensor nodes and gateways. User interface components are also provided in order to create and edit this entities (\emph{tools}) and to specify parameters (\emph{widgets}). Our module implements a node deployment algorithm for three commons indoor localization systems, that will be discussed later.
 The whole application rely on Qt, a framework that covers a lot of generic and low level functionality for desktop applications and not directly related to CAD.
 \begin{figure}[h!tb]
@@ -122,7 +123,7 @@ In some situations extending QCAD through scripts alone may not be possible. Thi
 \label{fig:floor}
 \end{figure}
 
-\section{Nodes deployment for indoor localization}\label{sec:problem}
+\section{Nodes Deployment for Indoor Localization}\label{sec:problem}
 Smart environments always rely on a set of hardware nodes able to collect sensing data and communicate through cabled or wireless technologies. The number of nodes employed and the position of each one strongly affect the overall performance of the system as well as the cost of installation.
 In our work, indoor localization systems have been taken as the main case study for the nodes allocation, since occupants localization and monitoring is one of the most common requirements of different smart environments.
 
@@ -134,7 +135,7 @@ The way in which the indoor environment must be covered by the nodes depends on 
 \end{enumerate}
 Trilateration and fingerprinting usually exploit wireless technologies as Wi-Fi or Bluetooth to establish a connection between mobile and stationary nodes. Sensing regions can refer to any type of ambient sensors, such as Passive Infrared Sensors (PIR) \cite{Erickson2013}, remote thermal sensors \cite{Beltran2013}, but also proximity based radio transmitters such as RFID tag readers \cite{Zhao2014} and Bluetooth Low Energy transmitters (BLE beacons) \cite{Nacci2015}.
 %During the installation phase, the choice of the hardware nodes can get more difficult by the availability on the market of several hardware components that differ in cost, transmission power and maximum range distance.
-\section{The proposed deployment tool}\label{sec:plan_tool}
+\section{The Proposed Deployment Tool}\label{sec:plan_tool}
 %valutare la possibilità di inserire, oltre che al sensing range, anche il communicatrion range
 As we previously said, smart environments always rely on a set of sensor nodes, each one able to communicate through cabled or wireless technologies. Also for outdoor WSNs, a key challenge is how to achieve coverage of the target monitoring space and sufficient network connectivity between sensor nodes. Usually each sensor mote communicates with the rest of the network through technologies like Wi-Fi or Zig-bee. Additional issues for outdoor WSNs are the limited battery life of each node and the power consumption required for packet transmissions. Given the availability in most (also "non-smart") buildings of power outlets, Ethernet sockets and Wi-Fi signal, the mentioned limitations of WSNs can be solved in indoor application making use of the existing infrastructure. Differently from outdoor WSN deployments, where coverage and connectivity are always treated together, our system leaves nodes connectivity optional, focusing on providing the coverage service to the indoor locations.
 %Far notare che la connectivity ha senso per single coverage, mentre per trila e fing, dove i nodi sono tx, sensing e communication sono lo stesso range. In realtà non è così! vedi bluesentinel
@@ -153,7 +154,7 @@ After the design phase, different parameters are provided by the administrator a
 The system will return to the designer a set $N$ of nodes $n_{jt}$ (possibly with mixed hardware types) and their position on the building map. The outcome will have the lower cost of installation among all the inspected solutions that satisfy the \emph{target} percentage of covered area. Figure~\ref{fig:main} shows an overview of the process explained so far.
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.5]{main.pdf}
+\centering\includegraphics[width=\linewidth]{main.pdf}
 \caption[System process of the CAD deployment tool for indoor WSNs.]{System Process. After the design of the floor plan, different parameters are used to define the search for an optimal allocation of nodes.}
 \label{fig:main}
 \end{figure}
@@ -169,7 +170,7 @@ Our tool provides three different ways to cover the floor-plan space, each one i
 \end{enumerate}
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.65]{coverage.pdf}
+\centering\includegraphics[scale=0.67]{coverage.pdf}
 \caption[Example of indoor location covered in single, trilateration and fingerprinting mode.]{Sample floor-plans with a location $l$ covered (a) in single mode, (b) for trilateration, and (c) for fingerprinting where $rss_{l,1} < rss_{l,2}$.}
 \label{fig:coverage}
 \end{figure}
