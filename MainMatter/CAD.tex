@@ -304,11 +304,36 @@ D_l = \{s \in L \mid distance(l,s)  \leq d\}
 \end{equation}
 The distance $d$ is used to restrict the $rss$ comparison and diversification only to the locations that are more likely to be erroneously confuse with $l$ by the localization system. Fig.~\ref{fig:rssdiv} shows an example of how the Euclidean distance of a location is compared to a neighbor location.
 
-\begin{figure}[h!tb]
-\centering\includegraphics[scale=0.75]{rssdiv.pdf}
+
+\begin{figure}
+\centering
+\begin{minipage}{0.6\textwidth}
+
+\begin{equation}
+\begin{gathered}
+\nonumber
+\vec{rss_l} = \langle rss_{l,1}, rss_{l,2} \rangle = \langle-84, -72\rangle ~ [dB] \\
+\vec{rss_s} = \langle rss_{s,1}, rss_{s,2} \rangle = \langle-67, -41\rangle ~ [dB] \\
+E(l,s) = \\ = \sqrt{(rss_{l,1} - rss_{s,1})^2 + (rss_{l,2} - rss_{s,2})^2} = \\
+= \sqrt{(-84-(-67))^2 + (-72-(-41))^2} = \\ = 35.3 ~ [dB]
+\end{gathered}
+\end{equation}
+
+\end{minipage}%%%
+\begin{minipage}{0.4\textwidth}
+\centering\includegraphics[width=\linewidth]{rssdiv.pdf}
+\end{minipage}
 \caption{Regular grid showing how the mean Euclidean distance between the received $rss$ vectors in a certain location \(l\), and the surrounding locations $s$ within a certain distance \(d\).}
 \label{fig:rssdiv}
 \end{figure}
+
+
+
+% \begin{figure}[h!tb]
+% \centering\includegraphics[scale=0.75]{rssdiv.pdf}
+% \caption{Regular grid showing how the mean Euclidean distance between the received $rss$ vectors in a certain location \(l\), and the surrounding locations $s$ within a certain distance \(d\).}
+% \label{fig:rssdiv}
+% \end{figure}
 
 We define the average signal space Euclidean distance $z$:
 \begin{equation}\label{eq:z1}
