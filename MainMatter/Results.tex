@@ -66,7 +66,7 @@ The position and the amount of nodes employed has been obtained using our automa
 \end{figure}
 
 Some of the nodes have been connected to the building LAN using Ethernet sockets, while other were connected using WiFi.
-Power consumption of sensor nodes has been measured using the energy logger 4000 by Voltcraft.
+%Power consumption of sensor nodes has been measured using the energy logger 4000 by Voltcraft.
 % TODO: togliere o finire
 
 \subsubsection{Back-end}
@@ -89,6 +89,7 @@ This section reports the results we have obtained by employing the k-Nearest Nei
 We have computed this values by using a stratified ten-fold cross validation, because of the high number of samples collected.
 
 \begin{table}
+\center
 \caption[K Nearest Neighbor classification results obtained using the baseline training data.]{K Nearest Neighbor classification results obtained using the baseline training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
 \label{tab:knn-baseline}
 \begin{tabular}{ |l|l|l| }
@@ -120,6 +121,7 @@ With the aim to solve this issue, another dataset has been evaluated. In this ca
 The results that refers to classification performed using differential RSS data are reported in table \ref{tab:knn-diff}.
 
 \begin{table}
+\center
 \caption[K Nearest Neighbor classification results obtained using the differential training data.]{K Nearest Neighbor classification results obtained using the differential training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
 \label{tab:knn-diff}
 \begin{tabular}{ |l|l|l| }
@@ -154,6 +156,7 @@ In this section are presented the results obtained by using decision trees class
 
 
 \begin{table}
+\center
 \caption[Decision Trees classification results obtained using the baseline training data.]{Decision Trees classification results obtained using the baseline training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
 \label{tab:tree-baseline}
 \begin{tabular}{ |l|l|l| }
@@ -183,6 +186,7 @@ The classifier seems to perform quite well, leading to a good precision, recall,
 As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 81\%). Unfortunately, with respect to KNN algorithm where the differential data bring a sensible increase in performance for the "different device" case, the previous performance of baseline data has not been increased so much. The differential data approach reveals to be less effective in decisional trees than KNN in order to reduce the hardware dependency of RSS samples.
 
 \begin{table}
+\center
 \caption[Decision Trees classification results obtained using the differential training data.]{Decision Trees classification results obtained using the differential training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
 \label{tab:tree-diff}
 \begin{tabular}{ |l|l|l| }
@@ -207,15 +211,6 @@ As expected, moving to the runtime dataset collected with a different mobile dev
 \end{table}
 
 
-%TODO
-%\subsection{Responsiveness Test}
-%\label{test-resp}
-
-%tempo che intercorre fra spostamento della persona e l'output a livello di web monitor
-%delays introdotti a vari livelli : nodi flitro e push, back-end, classificazione, output
-
-%However, as stated in the previous sections, the tree-based classification algorithm performs much better during the run-time phase, thus it has to be preferred every time the cost of the offline training phase does not affect the tree overall quality of the system (which usually happens in most cases, where the physical layout of the smart building changes quit rarely). From the point of view of timing performance, the time required to the tree-based classification algorithm to produce the results is in the order of few mil- liseconds, while the ones of the KNN algorithm are in the order of tens of milliseconds. Thus, even though both the approaches meet the quasi real-time performance typically required by this kind of applications, the tree-based algorithm represents the fastest solution, being around one order of magnitude better than KNN
-
 \subsection{Power Consumption}
 \label{sec:test-consumption}
 
@@ -235,9 +230,10 @@ The test has been performed using the Mobile Device Power Monitor (by Monsoon \t
 
 
 \begin{table}[h!tb]
+\center
 \caption{Power consumption of the mobile device in three different configurations.}
 \label{tab:monsoon}
-\begin{tabular}{|l|l|l|c|}
+\begin{tabular}{|l|c|c|c|}
   \hline
   \textbf{Configuration} & \textbf{Average current} & \textbf{Voltage} & \textbf{Power chart}\\
   \hline
@@ -261,6 +257,36 @@ The second configuration tested refers to the smartphone with WiFi connection ac
 \caption[Power consumption of a Samsung Galaxy S3.]{Power consumption of a Samsung Galaxy S3: orange line represents current, violet line represents voltage. \protect\subref{fig:monsoon-no} All connections disabled. \protect\subref{fig:monsoon-wifi} Only WiFI enabled. \protect\subref{fig:monsoon-bs} Only the BlueSentinel advertisement enabled.}
 \label{fig:monsoon-graph}
 \end{figure}
+
+
+\subsection{Responsiveness Test}
+\label{test-resp}
+An important evaluation metric of the occupancy detection system is the time spent between the transition of a user in a new region and the instant in which the transition is detected. This metric represents the ability of the system to provide a real-time service.
+
+Before discussing the results is important to notice how many factors affect the responsiveness. First, the BLE advertisement frequency of the mobile device. Then, on each sensor node, the signal is filtered to reduce fluctuations (section \ref{sec:wsn}) introducing a considerable delay. Later, data needs to be sent over HTTP requests. Finally, the back-end computation could introduce delays for three different causes: a possible slowdown of the cloud service, the execution time of the classification algorithm, and a possible false negative detection of the algorithm when the occupant is still very close to the previous region.
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{table}[h!tb]
+\center
+\caption{Responsiveness of the system using different time windows for the EWMA signal filter.}
+\label{tab:resp}
+\begin{tabularx}{0.85\linewidth}{|Y|Y|Y|}
+  \hline
+  \textbf{EWMA Time Window [sec]} & \textbf{Average System Delay [sec]} & \textbf{Delay Standard Deviation [sec]} \\
+  \hline
+  0.5 & 5.202 & 1.21 \\
+  1.0 & 3.915 & 0.99 \\
+  1.5 & 3.761 & 1.08 \\
+  2.0 & 4.420 & 0.95 \\
+  \hline
+\end{tabularx}
+\end{table}
+
+Table \ref{tab:resp} reports the average system delay experienced using different time windows for the signal filtering. The tabulated values suggest that a time window of 0.5 seconds is too short to smooth the signal fluctuations, causing false negative detections that increase the overall delay. A time window of 2.0 seconds is large and the RSS samples are pushed to the back-end in a discontinuous way. The time window of 1.5 seconds performs better. The resulting average delay of 3.761 seconds is not impressive; however as introduced before, it can be reduced by improving the system implementation at different levels, from mobile to server layer.
+
+The values reported in table \ref{tab:resp} have been computed using the tree based classification.
+%As stated in section \ref{sec:loc-accuracy}, the tree-based classification algorithm performs better during the run-time phase, thus it has to be preferred every time the cost of the offline training phase does not affect the tree overall quality of the system (which usually happens in most cases, where the physical layout of the building changes quit rarely).
+From the point of view of timing performance, the time required to the tree-based classification algorithm to produce the results is in the order of few milliseconds, while the ones of the KNN algorithm are in the order of tens of milliseconds. Thus, even though both the approaches meet the quasi real-time performance typically required by this kind of applications, the tree-based algorithm represents the fastest solution, being around one order of magnitude better than KNN.
 
 
 \section{Automatic Nodes Deployment Results}
@@ -353,7 +379,7 @@ The amount of saving in the total cost of the mixed solution doesn't depend only
 \label{fig:irregularity}
 \end{figure}
 We experimented the behavior of the tool increasing the level of irregularity, while maintaining a constant total area of $1000~m^2$. The test has been done with the same nodes configuration used in table~\ref{tab:costs} (homogeneous $T=t_1$, mixed $T=t_1,t_2$). The results shown in Table~\ref{tab:irregularity} proven that increasing the floor-plan irregularity, the cost difference between homogeneous and mixed solution becomes higher. This is caused by the increasing number of corners in the map, that can be covered with less powerful nodes.
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
+%\newcolumntype{Y}{>{\centering\arraybackslash}X}
 \begin{table}[H]
   \centering
   \renewcommand{\arraystretch}{1.2}
