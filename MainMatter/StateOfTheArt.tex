@@ -55,18 +55,14 @@ Occupancy detection solutions can range to deeply different implementations, dep
 \medskip
 A feature that characterizes different occupancy monitoring systems is \textbf{Resolution} (Fig~\ref{fig:resolution}): it represents the granularity of the measurement.
 
-\begin{figure*}
-\center
-
-\minipage{0.51\textwidth}
-  \includegraphics[width=\linewidth]{resolution.pdf}
-  \caption{Occupancy Monitoring systems resolution.}\label{fig:resolution}
-\endminipage\hfill
-\minipage{0.49\textwidth}%
-  \includegraphics[width=\linewidth]{intrusiveness.pdf}
-  \caption{Occupancy Monitoring systems intrusiveness.}\label{fig:intrusiveness}
-\endminipage
-\end{figure*}
+\begin{figure}
+\centering
+\subfloat[]{\includegraphics[width=0.5\linewidth]{resolution.pdf}\label{fig:resolution}}
+%
+\subfloat[]{\includegraphics[width=0.5\linewidth]{intrusiveness.pdf}\label{fig:intrusiveness}}
+\caption[Occupancy Monitoring systems Resolution and Intrusiveness.]{\protect\subref{fig:resolution} Occupancy Monitoring systems Resolution. \protect\subref{fig:intrusiveness} Occupancy Monitoring systems Intrusiveness.}
+\label{fig:res_intr}
+\end{figure}
 
 Resolution can refer to:
 \begin{itemize}
@@ -430,26 +426,19 @@ Since the information is required in real-time on the infrastructure side (back-
 Take in consideration WiFi based IPS as shown in figure \ref{fig:wfips_od}. The mobile device compute its position exploiting signals coming from WiFi access points. In order to monitor its position in real-time, the mobile application needs to upload the current position continuously, generating an interminable connection with high energy consumption (red connection in fig.~\ref{fig:wfips_od}). Since occupancy monitoring is required to work potentially for many hours of the day, the approach become unsustainable for the mobile battery. In addition, an energy-hungry application is intrusive for the user point of view and less likely to be adopted for continuous monitoring.
 
 
-\begin{figure*}
-\center
-\includegraphics[scale=0.3]{protocololdwf.pdf}
-\caption{Common WiFi based IPS applied for real-time occupancy monitoring.}\label{fig:wfips_od}
-\includegraphics[scale=0.3]{protocololdbt.pdf}
-\caption{Common Bluetooth based IPS applied for real-time occupancy monitoring.}\label{fig:btips_od}
-\end{figure*}
+\floatsetup[figure]{style=plain, subcapbesideposition=center}
+\begin{figure}
+\centering
+\sidesubfloat[]{\includegraphics[scale=0.33]{protocololdwf.pdf}\label{fig:wfips_od}}
+\newline
+\sidesubfloat[]{\includegraphics[scale=0.33]{protocololdbt.pdf}\label{fig:btips_od}}
+\caption[Traditional Indoor Positioning Systems applied for occupancy monitoring.]{Traditional Indoor Positioning Systems applied for occupancy monitoring. \protect\subref{fig:wfips_od} Refers to common WiFi based IPS, \protect\subref{fig:btips_od} refers to common Bluetooth based IPS used for real-time monitoring.}
+\label{fig:wfips_btips}
+\end{figure}
 
 In case of Bluetooth Low Energy, the employment of reference nodes such as beacons enable to provide users with their location using a low power communication. The wide popularity of the Apple iBeacon or the Estimote in commercial contexts have proved that BLE beacons are a suitable technology for providing users ranging applications and location aware services. However, in the context of location monitoring, they show the same limitations of WiFi based systems, as reported in figure \ref{fig:btips_od}. In order to retrieve position in real-time at the BMS level, the device needs to send its current position continuously through mobile connectivity, generating a long connection characterized by high energy consumptions.
 
-% separate figures
-% \begin{figure}[h!tb]
-% \centering\includegraphics[scale=0.8]{protocololdwf.pdf}
-% \caption{}
-% \label{fig:wfips_od}
-% \end{figure}\begin{figure}[h!tb]
-% \centering\includegraphics[scale=0.8]{protocololdbt.pdf}
-% \caption{}
-% \label{fig:btips_od}
-% \end{figure}
+
 
 \section{Comparison}
 \label{sec:comparison}
