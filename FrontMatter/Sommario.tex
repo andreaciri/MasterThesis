@@ -1,0 +1,50 @@
+% ------------------------------------------------------------------------ %
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = pdflatex
+% !TEX root = ../Tesi.tex
+% !TEX spellcheck = it-IT
+% ------------------------------------------------------------------------ %
+% ------------------------------------------------------------------------ %
+% 	SOMMARIO
+% ------------------------------------------------------------------------ %
+%
+\cleardoublepage
+%
+\phantomsection
+\addcontentsline{toc}{chapter}{Sommario}
+
+
+\markboth{Sommario}{Sommario}
+%
+\chapter*{Sommario}
+Oggigiorno, l'avvento tecnologico delle reti di sensori e attuatori ha permesso di modernizzare gli edifici per migliorarne il monitoraggio e l'automazione. In particolare, l'uso della tecnologia è rivolto ad incrementare il comfort degli utenti, la sicurezza e l'efficienza energetica degli ambienti interni.\\
+Gli edifici intelligenti (o \emph{Smart Buildings}) stanno diventando una realtà con l'adozione di sistemi automatici detti Building Management Systems (BMS), vale a dire sistemi di controllo che integrano l'infrastruttura di monitoraggio e attuazione sottostante con un motore di decisione logica ad alto livello. Queste decisioni sono solitamente basate su impostazioni dell'amministratore e regole definite dall'utente, oltre che da algoritmi di apprendimento automatico più complessi.
+
+In questo contesto, identificare in tempo reale il numero degli occupanti nell'edificio, la loro posizione e l'identità di ciascuno può essere essenziale per fornire la logica di attuazione dell'edificio. Per citare un esempio, i sistemi di condizionamento, riscaldamento, e ventilazione dell'aria (sistemi HVAC) possono essere modulati in base al numero degli occupanti, aumentando il comfort termico, ed evitando sprechi di energia. Il problema di rilevare in tempo reale la posizione degli utenti in un edificio, noto come il problema dell'\emph{Occupancy Detection}, è uno dei due obiettivi principali di questa tesi.
+
+La sostenibilità energetica non è l'unico scopo dell'occupancy detection. Recentemente, sistemi di sicurezza avanzati sono stati studiati e adottati negli edifici commerciali per rispondere a situazioni di pericolo e limitare i danni e le vittime. Il compito principale di questi sistemi è quello di rilevare eventi di crisi e fornire una risposta adeguata. La capacità di rilevare la posizione degli utenti all'interno dell'edificio può essere cruciale per assistere evacuazioni o recuperi di salvataggio.
+
+Il problema di localizzare gli utenti in ambienti interni è intrinsecamente difficile, sia tecnologicamente che per quanto riguarda l'interazione con l'utente. Per applicazioni ad uso esterno, l'uso del GPS si è rivelata la migliore soluzione in termini di costo, precisione e facilità d'uso, aumentandone la diffusione. Per le applicazioni in ambienti interni, la mancanza di sistemi di localizzazione in edifici moderni è causato dall'inesistenza di una soluzione tecnologica a basso costo, con sufficiente precisione e buona usabilità. Inoltre, il problema specifico di rilevamento dell'occupazione pone ulteriori sfide rispetto ai sistemi di posizionamento indoor (IPS) generici. La differenza fondamentale tra i sistemi di occupancy monitoring e i IPS tradizionali risiede nel tempo di esecuzione. L'occupancy monitoring richiede di monitorare gli utenti per molte ore del giorno, mentre l'utilizzo di un IPS è in genere limitato all'orientamento e alla navigazione dell'utente.
+Un lungo tempo di esecuzione porta innanzitutto ad un enorme problema di consumo della batteria per soluzioni che prevedono dispositivi mobili nel processo di localizzazione. Le applicazioni di localizzazione consumano in genere molta energia, e mentre ciò può essere accettato per un uso limitato, diventa impraticabile per molte ore di esecuzione.\\
+Un altro problema che deriva dal lungo monitoraggio è l'invadenza del sistema sull'attività degli occupanti. Sistemi di occupancy monitoring basati su immagini provenienti dalle telecamere possono sollevare problemi di privacy, anche in spazi di lavoro condivisi come uffici e sale riunioni.
+
+Un altro requisito impegnativo di molti sistemi di rilevamento dell' occupazione, fra cui quello proposto in questa tesi, è di fornire le informazioni di occupazione in tempo reale. Per essere considerati in tempo reale, i dati di posizione dovrebbero essere ricevuti dal sistema di back-end con un ritardo massimo di 2-3 secondi; in caso contrario l'automazione non viene percepita come utile o reattiva dall'utente. Ciò significa che le caratteristiche ambientali come temperatura, umidità, luce e CO2 che sono legate all'occupazione, non possono essere facilmente sfruttate per il rilevamento in tempo reale a causa del loro tempo di risposta lento.
+
+Il sistema di occupancy monitoring proposto, chiamato BlueSentinel, è stato realizzato per monitorare a lungo la posizione degli utenti senza gravare sul consumo di batteria mobile. BlueSentinel è stato realizzato sfruttando il protocollo Bluetooth Low Energy a basso livello, per soddisfare i requisiti di real-time e bassa invadenza sugli utenti. Il sistema è composto, oltre che da una applicazione per smartphone, da una rete di nodi sensore posizionati nell'edificio in grado di rilevare la presenza degli utenti. I segnali percepiti vengono raccolti in maniera centralizzata da un server, dove la posizione di ogni persona viene calcolata con un algoritmo di classificazione.
+
+\medskip
+Per risolvere il problema dell'occupancy detection, così come altri sistemi per Smart Buildings (ad esempio gestione delle emergenze o del comfort termico), è comune impiegare numerosi dispositivi connessi con funzionalità di sensoristica, attuazione o di comunicazione wireless. 
+L'elevato livello di eterogeneità e la mancanza di standardizzazione tra le tecnologie rende il design di questi ambienti un compito molto impegnativo, perché ogni installazione deve essere progettata ed eseguita manualmente, in maniera ad-hoc per la specifica applicazione. D'altra parte, molti sistemi diversi mostrano caratteristiche comuni, come la stretta dipendenza con la pianta dell'edificio, condividendo anche requisiti simili come un'allocazione dei nodi che fornisce connettività wireless e copertura all'ambiente.
+
+La posizione di ogni nodo influenza fortemente le prestazioni del sistema, in quanto una cattiva allocazione può portare a zone non monitorate. Il numero di nodi impiegati, oltre a influire sul costo di installazione, grava anche sul consumo energetico complessivo del sistema, un parametro particolarmente critico da considerare soprattutto per sistemi di risparmio energetico.
+La scelta dei nodi hardware può diventare ancor più difficile per la disponibilità sul mercato di diversi dispositivi e componenti che si differenziano per il costo, il consumo di potenza e la portata dei segnali wireless.
+
+Nonostante l'importanza del posizionamento dei nodi, molti sistemi per Smart Buildings proposti in letteratura ignorano il problema per tutti gli ambienti che differiscono da quello di test originale.
+Senza un approccio sistematico, lo spazio di progettazione non viene esplorato in maniera efficace, portando a soluzioni non ottimali. In tale contesto, lo sviluppo di strumenti in grado di automatizzare parte del flusso di progettazione dei sistemi per Smart Buildings è essenziale.
+
+La mancanza di strumenti automatici di supporto di questo tipo ci ha indotto a sviluppare un'applicazione CAD specifica allo scopo.
+Il lavoro che costituisce la seconda parte di questa tesi consiste in una applicazione CAD per la progettazione di sistemi per Smart Buildings basati sull'installazione di nodi hardware nell'ambiente interno. Lo strumento fornisce un algoritmo per la distribuzione efficiente di sistemi di localizzazione wireless, con l'obiettivo di massimizzare l'accuratezza della localizzazione mantenendo i costi di installazione contenuti.
+Il progetto, rilasciato in maniera open-source, è estendibile tramite plugin in modo da poter modellizzare sistemi per Smart Buildings con diverse caratteristiche e requisiti.
+
+
+

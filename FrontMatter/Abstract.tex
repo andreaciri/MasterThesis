@@ -4,27 +4,27 @@
 % !TEX root = ../Tesi.tex
 % !TEX spellcheck = it-IT
 % ------------------------------------------------------------------------ %
-%
 % ------------------------------------------------------------------------ %
-% 	SOMMARIO + ABSTRACT
+% 	ABSTRACT
 % ------------------------------------------------------------------------ %
 %
 \cleardoublepage
 %
 \phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
 %
-\pdfbookmark{Abstract}{Abstract}
+%\pdfbookmark{Abstract}{Abstract}
 %
-\markboth{Abstract}{Abstract}
 % ------------------------------------------------------------------------ %
 % consento presenza di più capitoli nella stessa pagina
-\begingroup
+%\begingroup
 %\let\clearpage\relax
-\let\cleardoublepage\relax
-\let\cleardoublepage\relax
+%\let\cleardoublepage\relax
+%\let\cleardoublepage\relax
 % ------------------------------------------------------------------------ %
 %
 \chapter*{Abstract}
+\markboth{Abstract}{Abstract}
 %
 During the past few years, a lot of effort has been put in the research area of connected sensors and actuators, the so-called \emph{Internet-Of-Things}. A big portion of this research is applied to the domain of Smart Buildings, where connected devices are exploited to increase comfort, safety, and energy sustainability.
 However, there can be identified some missing tiles that get more difficult the adoption of such technologies in real buildings.
@@ -48,11 +48,14 @@ Smart Buildings; Occupancy Detection; Occupancy Monitoring; Indoor Localization;
 % ------------------------------------------------------------------------ %
 %
 %
-\pdfbookmark{Sommario}{Sommario}
+\cleardoublepage
 %
-\markboth{Sommario}{Sommario}
+\phantomsection
+% \pdfbookmark{Abstract}{Abstract}
+% %
+% \markboth{Abstract}{Abstract}
 %
-\chapter*{Sommario}
+\chapter*{Abstract}
 %
 Negli ultimi anni, il continuo avanzamento tecnologico nel campo delle reti di sensori e attuatori ha generato il fenomeno del cosiddetto \emph{Internet-Of-Things}. Larga parte della ricerca in questo campo è rivolta alla realizzazione di \emph{edifici intelligenti} (Smart Buildings), in cui numerosi dispositivi connessi sono utilizzati per aumentare il comfort, la sicurezza ed il risparmio energetico degli edifici. Tuttavia, esistono ancora alcuni problemi irrisolti che ostacolano la diffusione di queste tecnologie negli edifici odierni. Il lavoro descritto in questa tesi tenta di risolvere due di questi problemi.
 
@@ -61,7 +64,7 @@ A tal proposito verrà presentato BlueSentinel, il sistema di \emph{Occupancy Mo
 Le analisi sperimentali confermano che l'approccio proposto è adatto a rilevare in tempo reale la posizione degli utenti, con un'accuratezza della localizzazione in linea con i metodi proposti nello stato dell'arte.
 
 Successivamente, viene affrontato il problema del design di sistemi per Smart Buildings basati su nodi wireless. Durante l'installazione di questi sistemi, ad esempio di localizzazione o monitoraggio, il posizionamento dei nodi è critico, influendo sul costo e le performance del sistema. Tuttavia, questo processo viene ancora realizzato manualmente a causa della mancanza di tool automatizzati.\\
-Proponiamo dunque una applicazione CAD per la specifica della struttura di un edificio e l'allocamento ottimale di nodi sensori. L'applicazione, rilasciata in maniera open-source ed estendibile tramite plugins, è in grado di posizionare i nodi in modo da massimizzare l'accuratezza del sistema, e allo stesso tempo fornire soluzioni a basso costo.
+Proponiamo dunque una applicazione CAD per la specifica della struttura di un edificio e l'allocazione ottimale di nodi sensori. L'applicazione, rilasciata in maniera open-source ed estendibile tramite plugins, è in grado di posizionare i nodi in modo da massimizzare l'accuratezza del sistema, e allo stesso tempo fornire soluzioni a basso costo.
 I risultati mostrano che il tool proposto è in grado di fornire, a parità di accuratezza, soluzioni meno costose allocando nodi eterogenei.
 
 \medskip
@@ -70,10 +73,5 @@ I risultati mostrano che il tool proposto è in grado di fornire, a parità di a
 Edifici Smart; Rilevamento dell'Occupazione; Monitoraggio dell'Occupazione; Localizzazione Indoor; Indoor WSNs; Posizionamento Automatico di WSNs Indoor;
 %
 % ------------------------------------------------------------------------ %
-%
-%
-\endgroup			
-%
-%\vfill
-%
-% ------------------------------------------------------------------------ %
+
+
