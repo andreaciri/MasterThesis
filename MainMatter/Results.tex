@@ -16,7 +16,7 @@
 In this chapter are reported the experimental analysis performed to validate the work done for this thesis.\\
 First, section \ref{sec:bs-test} contains the experiments conducted over the occupancy monitoring system (BlueSentinel) proposed in chapter \ref{cap:bluesentinel}. The system has been evaluated in terms of accuracy of the localization, responsiveness of the detection and power consumption of the mobile application developed. As we will see, the results confirmed that the proposed approach is suitable to obtain the occupancy monitoring information with a good quality.
 
-Later, section \ref{sec:CAD-test} contains the results obtained from the automatic deployment tool reported in chapter \ref{cap:cad}. The tool has been used to deploy a localization system different from BlueSentinel (a beacons based system) in order to test the general-purpose functionalities and the ability to model different systems. The results include the computational experience of the tool, such as the execution times, and some evaluation metrics of the resulting deployed configuration. These include the cost-effectiveness and the accuracy of the resulting localization system with respect to configuration obtained from different approaches in literature.
+Later, section \ref{sec:CAD-test} contains the results obtained from the automatic deployment tool reported in chapter \ref{cap:cad}. The tool has been used to deploy a localization system different from BlueSentinel (a beacons based system) in order to test the general-purpose functionalities and the ability to model different systems. The results include the computational experience of the tool, such as the execution times, and some evaluation metrics of the resulting deployed configuration. These include the cost-effectiveness and the accuracy of the resulting localization system with respect to configuration obtained with different approaches from literature.
 
 \section{Occupancy Monitoring Evaluation}
 \label{sec:bs-test}
@@ -24,7 +24,7 @@ The occupancy monitoring system presented in chapter \ref{cap:bluesentinel} has 
 The dimension of the test-bed is 198 squared meters ($9x22m$). The area is subdivided by walls in three separate spaces: a relax room for coffee breaks, a room for meetings and talks, and an open-space with desktop stations.\\
 For the installation of the system, before proceed with the training procedure, the administrator needs to identify the regions in which the floor-plan will be partitioned. The dimension of each region will determine the spatial resolution of the occupancy monitoring, as stated in section \ref{sec:occupancy-metrics}. In our setup, we decide to identify a single region for each room in the case of coffee and meeting rooms, while halving the open-space for two main reasons. First, the open-space is large roughly two times the dimension of the other rooms, and this way each region has similar dimensions. Second, because the open-space presents a functional division in two parts between stations occupied by computer security students and by computer architectures students.
 
-The resulting configuration has been used to detect the presence of a user, classifying its position in the best fitting region based on the collected data. The performance and the accuracy of the classification has been evaluated observing manually the ground truth location of the test user.
+The resulting configuration has been used to detect the presence of a user, classifying its position in the best fitting region based on the collected data. The performance and the accuracy have been evaluated comparing the classification results with the observed ground truth location of the test user.
 
 \begin{figure}[h!tb]
 \centering\includegraphics[width=\linewidth]{necst-regions.pdf}
@@ -71,7 +71,7 @@ Some of the nodes have been connected to the building LAN using Ethernet sockets
 
 \subsubsection{Back-end}
 \label{sub:test-backend}
-Since the localization algorithm is performed on the back-end side, the amount of computational resources and the response time of the cloud service determine the responsiveness of the occupancy detection.\\
+Since the localization algorithm is performed on the back-end side, the amount of computational resources and the response time of the cloud service affect the responsiveness of the occupancy detection.\\
 In our case, the system back-end relies on a cloud platform
 \footnote{Parse Cloud service: \url{https://parse.com/}}
 that provides free services until a certain load (e.g. the number requests and pushes), while applying different pricing for superior plans.
@@ -82,15 +82,15 @@ For this reason, delays of our system at the back-end layer are mainly caused by
 All the results on the classification algorithms presented in this section have been computed by using the data mining tool Weka \cite{Hall2009}.
 During the test we move through the four different regions many times in order to collect a big number of statistical samples.
 We have conducted a large number of experiments in order to check if people inside (or outside) a region are correctly recognized by the BlueSentinel system and if the proposed approach can be effectively used to determine the number and the identities of the people inside a particular room.
-In the next two sections are reported the results of two classification methods, testing their ability to classify the occupant in the correct region.
+In the next two sections are reported the test results of two classification methods, verifying their ability to classify the occupant in the correct region.
 
 \subsubsection{K Nearest Neighbor}
-This section reports the results we have obtained by employing the k-Nearest Neighbors algorithm with K equal to 5.
+This section reports the results we have obtained by employing the K-Nearest Neighbors algorithm with K equal to 5.
 We have computed this values by using a stratified ten-fold cross validation, because of the high number of samples collected.
 
 \begin{table}
 \center
-\caption[K Nearest Neighbor classification results obtained using the baseline training data.]{K Nearest Neighbor classification results obtained using the baseline training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
+\caption[K Nearest Neighbor classification results obtained using the baseline dataset.]{K Nearest Neighbor classification results obtained using the baseline dataset (sec. \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
 \label{tab:knn-baseline}
 \begin{tabular}{ |l|l|l| }
   \hline
@@ -113,16 +113,14 @@ We have computed this values by using a stratified ten-fold cross validation, be
 \end{tabular}
 \end{table}
 
-The results in table \ref{tab:knn-baseline} refers to classification performed using baseline RSS data (section \ref{subsec:algorithms}). The results show that KNN is able to classify the occupant in the correct region with an accuracy of 86\% when its device is the same (or has similar transmission power) with the one employed during training. The classifier seems to perform well even if it is pretty simple, leading to a good precision, recall, F-measure and ROC area. The first two metrics evaluate the impact of false positives and false negatives, while the F-measure takes in account both precision and recall. The higher is this metric, the better is the quality of the classifier. Similarly, the receiver operating characteristic (ROC) characterizes the trade-off between hit rate and false-alarm rate in this noisy environment.\\
-However, moving to the runtime dataset collected with a different mobile device, the performance suffers a sensible deterioration. In particular, the accuracy is lower than 73\%. This sensible difference is most likely to be caused by the employment of absolute values of RSS, even if different devices transmit signals at different power levels.
+The results in table \ref{tab:knn-baseline} refers to classification performed using baseline RSS data (sec. \ref{subsec:algorithms}). The results show that KNN is able to classify the occupant in the correct region with an accuracy of 86\% when its device is the same (or has similar transmission power) with the one employed during training. The classifier seems to perform well even if it is pretty simple, leading to a good precision, recall, F-measure and ROC area. The first two metrics evaluate the impact of false positives and false negatives, while the F-measure takes in account both precision and recall. The higher is this metric, the better is the quality of the classifier. Similarly, the receiver operating characteristic (ROC) characterizes the trade-off between hit rate and false-alarm rate in this noisy environment.\\
+However, moving to the runtime dataset collected with a different mobile device (last column in \ref{tab:knn-baseline}), the performance suffers a sensible deterioration. In particular, the accuracy is lower than 73\%. This sensible difference is most likely to be caused by the employment of absolute values of RSS, when instead different devices transmit signals at different power levels.
 
 \medskip
-With the aim to solve this issue, another dataset has been evaluated. In this case, elements of the RSS vectors are not considered as absolute values; instead, a differential value between each couple of RSS is computed and used to build the differential a vector, as explained in section \ref{subsec:algorithms}.
-The results that refers to classification performed using differential RSS data are reported in table \ref{tab:knn-diff}.
-
+With the aim to solve this issue, another dataset has been evaluated. In this case, elements of the RSS vectors are not considered as absolute values; instead, a differential value between each couple of RSS is computed and used to build the differential vector, as explained in section \ref{subsec:algorithms}.\\
 \begin{table}
 \center
-\caption[K Nearest Neighbor classification results obtained using the differential training data.]{K Nearest Neighbor classification results obtained using the differential training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
+\caption[K Nearest Neighbor classification results obtained using the differential dataset.]{K Nearest Neighbor classification results obtained using the differential dataset (sec. \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
 \label{tab:knn-diff}
 \begin{tabular}{ |l|l|l| }
   \hline
@@ -144,7 +142,7 @@ The results that refers to classification performed using differential RSS data 
   \hline
 \end{tabular}
 \end{table}
-
+The results that refers to classification performed using differential RSS data are reported in table \ref{tab:knn-diff}.
 The results show that KNN is able to classify the occupant in the correct region with an accuracy of 87\% when its device is the same (or has similar transmission power) with the one employed during training.
 The classifier seems to perform well even if it is pretty simple, leading to a good precision, recall, F-measure and ROC area.\\
 As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 83\%). However, comparing this result to the previous case of baseline data, the classification accuracy has been increased of almost ten percentage points. The differential data approach reveals to be effective to reduce the hardware dependency of samples, and to reduce the correlation between collected data and runtime device.
@@ -152,12 +150,12 @@ As expected, moving to the runtime dataset collected with a different mobile dev
 
 \subsubsection{Decision Trees}
 \label{test-trees}
-In this section are presented the results obtained by using decision trees classification, evaluated with a stratified ten-fold cross validation. The specific algorithm employed is detailed in section \ref{subsubsec:trees}. As shown in table \ref{tab:tree-baseline}, for the baseline dataset, the accuracy of the tree algorithm is very similar to the one obtained with the KNN algorithm (table \ref{tab:knn-baseline}). In particular, the accuracy, is slightly lower for same device case (83\%), and almost the same for different device (73.8\%).
+In this section are presented the results obtained by using decision trees classification, evaluated with a stratified ten-fold cross validation. The specific algorithm employed is detailed in section \ref{subsubsec:trees}. As shown in table \ref{tab:tree-baseline}, for the baseline dataset, the accuracy of the tree algorithm is very similar to the one obtained with the KNN algorithm (table \ref{tab:knn-baseline}). In particular, the accuracy is slightly lower for same device case (83\%), and almost the same for different device (73.8\%).
 
 
 \begin{table}
 \center
-\caption[Decision Trees classification results obtained using the baseline training data.]{Decision Trees classification results obtained using the baseline training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
+\caption[Decision Trees classification results obtained using the baseline dataset.]{Decision Trees classification results obtained using the baseline dataset (sec. \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
 \label{tab:tree-baseline}
 \begin{tabular}{ |l|l|l| }
   \hline
@@ -180,14 +178,14 @@ In this section are presented the results obtained by using decision trees class
 \end{tabular}
 \end{table}
 
-Also for tree based classification, the algorithm has been tested with differential data (\ref{tab:tree-diff}).
+Also for tree based classification, the algorithm has been tested with differential data.
 The results show that decisional trees are able to classify the occupant in the correct region with an accuracy of 85\% when its device is the same (or has similar transmission power) with the one employed during training.
 The classifier seems to perform quite well, leading to a good precision, recall, F-measure and ROC area.\\
-As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 81\%). Unfortunately, with respect to KNN algorithm where the differential data bring a sensible increase in performance for the "different device" case, the previous performance of baseline data has not been increased so much. The differential data approach reveals to be less effective in decisional trees than KNN in order to reduce the hardware dependency of RSS samples.
+As expected, moving to the runtime dataset collected with a different mobile device, the performance are lower ($\approx$ 81\%). Unfortunately, with respect to KNN algorithm where the differential data bring a sensible increase in performance for the "different device" case, the previous performance of baseline data has not been improved so much. The differential data approach reveals to be less effective in decisional trees than KNN in order to reduce the hardware dependency of RSS samples.
 
 \begin{table}
 \center
-\caption[Decision Trees classification results obtained using the differential training data.]{Decision Trees classification results obtained using the differential training data (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
+\caption[Decision Trees classification results obtained using the differential dataset.]{Decision Trees classification results obtained using the differential dataset (section \ref{subsec:algorithms}). Same device refers to measurement obtained using the same device for training and testing. Different device refers to measurement obtained using different devices for training and testing.}
 \label{tab:tree-diff}
 \begin{tabular}{ |l|l|l| }
   \hline
@@ -210,6 +208,21 @@ As expected, moving to the runtime dataset collected with a different mobile dev
 \end{tabular}
 \end{table}
 
+%TODO
+\subsubsection{Comparison and Considerations}
+\label{sec:accuracy-comp}
+The localization accuracy measured in previous sections has been summarized in figure \ref{fig:accuracy-comp}, that focuses on comparing results coming from different algorithms and different datasets.
+
+The first important thing to notice is that the discrepancy between training and runtime device affect more the KNN algorithm than the tree-based one. On the other hand, moving from baseline to differential data, the improvement is more sensible in KNN algorithm rather than decisional trees.
+
+In conclusions, the K-Nearest Neighbor classification algorithm with differential RSS dataset performs better, in both configurations (same and different devices).
+
+
+\begin{figure}[h!tb]
+\centering\includegraphics[width=0.8\linewidth]{accuracy-comp.pdf}
+\caption{Accuracy comparison.}
+\label{fig:accuracy-comp}
+\end{figure}
 
 \subsection{Power Consumption}
 \label{sec:test-consumption}
