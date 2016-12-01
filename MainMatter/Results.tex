@@ -208,28 +208,16 @@ As expected, moving to the runtime dataset collected with a different mobile dev
 \end{tabular}
 \end{table}
 
-%TODO
-\subsubsection{Comparison and Considerations}
-\label{sec:accuracy-comp}
-The localization accuracy measured in previous sections has been summarized in figure \ref{fig:accuracy-comp}, that focuses on comparing results coming from different algorithms and different datasets.
+\medskip
+Some considerations on the overall performances are reported later in section \ref{sec:accuracy-comp}, together with some comparisons with existing systems from the state of the art.
 
-The first important thing to notice is that the discrepancy between training and runtime device affect more the KNN algorithm than the tree-based one. On the other hand, moving from baseline to differential data, the improvement is more sensible in KNN algorithm rather than decisional trees.
-
-In conclusions, the K-Nearest Neighbor classification algorithm with differential RSS dataset performs better, in both configurations (same and different devices).
-
-
-\begin{figure}[h!tb]
-\centering\includegraphics[width=0.8\linewidth]{accuracy-comp.pdf}
-\caption{Accuracy comparison.}
-\label{fig:accuracy-comp}
-\end{figure}
 
 \subsection{Power Consumption}
 \label{sec:test-consumption}
 
 As we said in the previous chapters, a key aspect of occupancy monitoring systems based on smart devices is the mobile consumption. In order to make the system non-intrusive on the user habits, the localization needs to preserve the battery energy as more as possible.
 
-A preliminary test on the consumption of Bluetooth Low Energy advertisement have been performed during the feasibility study of the BlueSentinel approach, using an Apple iPhone 6. The test consisted in leaving the smartphone advertising in background (screen off) while observing the discharge, starting from the 100\%. During this test, all the connectivities except the Bluetooth has been disabled to focus exclusively on the advertising consumption. The qualitative test was really impressive, since the phone was able to advertise for 2h:19min without moving from the 100\% of battery level, and for 4h:52min until reach the 90\%.
+A preliminary test on the consumption of Bluetooth Low Energy advertisement have been performed during the feasibility study of the BlueSentinel approach, using an Apple iPhone 6. The test consisted in leaving the smartphone advertising in background (screen off) while observing the battery discharge, starting from the 100\%. During this test, all the connectivities except the Bluetooth has been disabled to focus exclusively on the advertising consumption. The qualitative test was really impressive, since the phone was able to advertise for 2h:19min without moving from the 100\% of battery level, and for 4h:52min until reach the 90\%.
 \smallskip
 
 \begin{figure}[h!tb]
@@ -241,24 +229,25 @@ A preliminary test on the consumption of Bluetooth Low Energy advertisement have
 Later, we performed a more precise and quantitative measurement of the power requested at runtime by our developed application.
 The test has been performed using the Mobile Device Power Monitor (by Monsoon \textregistered), connected with a Samsung Galaxy S3 through a customized battery (figure \ref{fig:monsoon}). This setup allows to power up the smartphone providing the necessary voltage through the Power Monitor, that bypasses the original battery and measures the power consumption.
 
-
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 \begin{table}[h!tb]
 \center
 \caption{Power consumption of the mobile device in three different configurations.}
 \label{tab:monsoon}
-\begin{tabular}{|l|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|}
   \hline
-  \textbf{Configuration} & \textbf{Average current} & \textbf{Voltage} & \textbf{Power chart}\\
+  \textbf{Configuration} & \textbf{Average} & \textbf{Voltage} & \textbf{Average} & \textbf{Power}\\
+   & \textbf{Current} &  & \textbf{ Power} & \textbf{Chart}\\
   \hline
-  All disabled & 2.06 mA & 3.69 V & \ref{fig:monsoon-no} \\
-  Only WiFi & 11.78 mA & 3.69 V & \ref{fig:monsoon-wifi} \\
-  Only BlueSentinel & 2.57 mA & 3.70 V & \ref{fig:monsoon-bs} \\
+  All disabled & 2.06 mA & 3.69 V & 7.601 mW & \ref{fig:monsoon-no} \\
+  Only WiFi & 11.78 mA & 3.69 V & 43.468 mW & \ref{fig:monsoon-wifi} \\
+  Only BlueSentinel & 2.57 mA & 3.70 V & 9.509 mW & \ref{fig:monsoon-bs} \\
   \hline
 \end{tabular}
 \end{table}
 
-The test conducted with the Power Monitor are summarized in table \ref{tab:monsoon}. All this tests has been performed with the device screen turned off (background mode) since the power requested by the screen is so high that makes the other components negligible. The first configuration tested refers to the smartphone with all the possible wireless connections turned off. Table \ref{tab:monsoon} reports the constant voltage measured and the average current (2.06 mA) of the configuration. Figure \ref{fig:monsoon-no} shows a measured current flow (in violet) very low, where the only affecting component is probably the CPU activity.
-The second configuration tested refers to the smartphone with WiFi connection active, while all the other wireless connections turned off. Table \ref{tab:monsoon} reports the constant voltage measured and the average current (11.78 mA) of the configuration. Figure \ref{fig:monsoon-wifi} shows a measured current flow significantly increased from the base case. The last configuration refers to the BlueSentinel advertisement transmission active, with all the other wireless connections turned off. The average current is 2.57 mA, very similar to the baseline configuration. Figure \ref{fig:monsoon-bs} shows the measured current flow where the only affecting component, besides the CPU activity, is the BLE service with a very low profile.
+The test conducted with the Power Monitor are summarized in table \ref{tab:monsoon}. All this tests has been performed with the device screen turned off (background mode) since the power requested by the screen is so high that makes the other components negligible. The first configuration tested refers to the smartphone with all the possible wireless connections turned off. Table \ref{tab:monsoon} reports the constant voltage measured, the average current, and the average power (7.601~mW) of the configuration. Figure \ref{fig:monsoon-no} shows a measured current flow (in violet) very low, where the only affecting component is probably the CPU activity.
+The second configuration tested refers to the smartphone with WiFi connection active, while all the other wireless connections turned off. Table \ref{tab:monsoon} reports the constant voltage and average current measured, resulting in an average power of 43.468~mW for this configuration. Figure \ref{fig:monsoon-wifi} shows a measured current flow significantly increased from the base case. The last configuration refers to the BlueSentinel advertisement transmission active, with all the other wireless connections turned off. The average power is 9.509~mW, very similar to the baseline configuration. Figure \ref{fig:monsoon-bs} shows the measured current flow where the only affecting component, besides the CPU activity, is the BLE service with a very low profile.
 
 \floatsetup[figure]{style=plain, subcapbesideposition=center}
 \begin{figure}
@@ -279,7 +268,6 @@ An important evaluation metric of the occupancy detection system is the time spe
 
 Before discussing the results is important to notice how many factors affect the responsiveness. First, the BLE advertisement frequency of the mobile device. Then, on each sensor node, the signal is filtered to reduce fluctuations (section \ref{sec:wsn}) introducing a considerable delay. Later, data needs to be sent over HTTP requests. Finally, the back-end computation could introduce delays for three different causes: a possible slowdown of the cloud service, the execution time of the classification algorithm, and a possible false negative detection of the algorithm when the occupant is still very close to the previous region.
 
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
 \begin{table}[h!tb]
 \center
 \caption{Responsiveness of the system using different time windows for the EWMA signal filter.}
@@ -302,6 +290,28 @@ The values reported in table \ref{tab:resp} have been computed using the tree ba
 %As stated in section \ref{sec:loc-accuracy}, the tree-based classification algorithm performs better during the run-time phase, thus it has to be preferred every time the cost of the offline training phase does not affect the tree overall quality of the system (which usually happens in most cases, where the physical layout of the building changes quit rarely).
 From the point of view of timing performance, the time required to the tree-based classification algorithm to produce the results is in the order of few milliseconds, while the ones of the KNN algorithm are in the order of tens of milliseconds. Thus, even though both the approaches meet the quasi real-time performance typically required by this kind of applications, the tree-based algorithm represents the fastest solution, being around one order of magnitude better than KNN.
 
+\subsection{Comparison and Considerations}
+\label{sec:accuracy-comp}
+The localization accuracy measures presented in section \ref{sec:loc-accuracy} has been summarized in figure \ref{fig:accuracy-comp}, that focuses on comparing results coming from different algorithms and different datasets.
+
+The first important thing to notice is that the discrepancy between training and runtime device affect more the KNN algorithm than the tree-based one. On the other hand, moving from baseline to differential data, the improvement is more sensible in KNN algorithm rather than decisional trees.
+
+
+\begin{figure}[h!tb]
+\centering\includegraphics[width=0.8\linewidth]{accuracy-comp.pdf}
+\caption{Accuracy comparison.}
+\label{fig:accuracy-comp}
+\end{figure}
+
+Summarizing the localization accuracy tests, the K-Nearest Neighbor classification algorithm with differential RSS dataset performs better, in both configurations (same and different devices). The accuracy is 87\% for the best case configuration, while 82\% for the worst case.\\
+Comparing the occupancy detection results with the more relevant works presented in the state of the art, the BlueSentinel system shows a similar accuracy.
+The project developed by Zheng et al. \cite{Cossio2012} (sec. \ref{subsec:ambient}) showed a daily F-measure that ranges between 0.71 and 0.94. Comparing their solution with the proposed one, on similar location accuracy, BlueSentinel is able to provide the detection in few seconds, while their temporal resolution is in the order of minutes.
+
+ The work presented by Balaji et al. \cite{Balaji2013} (sec. \ref{subsec:implicit}) reports an accuracy of 83\%. Again, their system is characterized by very slow reactions to the occupants movements (1000 seconds) respect to BlueSentinel.
+
+The results obtained by Beltran et al. \cite{Beltran2013} (sec. \ref{subsec:ambient}) are in general better than BlueSentinel, showing a worst case RMSE of 0.35 person, compared to the 0.4 of BlueSentinel. Both the approaches are able to detect the presence of users in real-time. However, their system (based on thermal sensor array and PIR sensors) requires the installation of several nodes even for limited areas; to be precise, till 16 nodes for a simple 10mx10m room, while a single BlueSentinel node can cover the same area. Since the nodes hardware prices are similar, the BlueSentinel system has noticeably better cost and ease of installation.
+
+For what concerns the indoor positioning systems cited in section \ref{subsec:wips_soa}, they overcome the localization performances in almost any case. Unfortunately, they do not report experimental results of battery consumption, so a quantitative comparison is not possible. However, since they all exploit active WiFi or GPS connections, their usage is not sustainable for many hours of execution, and this is confirmed by our power consumption tests.
 
 \section{Automatic Nodes Deployment Results}
 \label{sec:CAD-test}
