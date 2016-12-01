@@ -346,13 +346,15 @@ Although the VNS improvement is not astonishing for what regard the average valu
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[width=\linewidth]{necst.pdf}
-\caption[NECST Lab floor-plan used as indoor environment testbed for deployments evaluation.]{NECST Lab floor-plan, located at the basement of DEIB department at Politecnico di Milano. Each allocation corresponds to a BLE beacon with a range of 7 meters. Green crosses indicates allocations provided by our algorithm, gray rhombus represent allocations from \cite{He2011} while blue triangle positions have been computed maximizing the coverage \cite{Kouakou2010a}.}
+\includegraphics[width=0.79\textwidth]{necst2.pdf}
+\caption[NECST Lab floor-plan used as indoor environment testbed for deployments evaluation.]{NECST Lab floor-plan located at DEIB department. Each allocation corresponds to a BLE beacon with a range of 7 meters. Green crosses indicates allocations provided by our algorithm, gray rhombus represent allocations from \cite{He2011} while blue triangle positions have been computed maximizing the coverage \cite{Kouakou2010a}.}
 \label{fig:necst}
 \end{figure}
 
+
 \subsection{Experimental Setup and Accuracy Evaluation}
-The proposed tool was evaluated using data collected from a real-world environment, the NECST Lab, located at the basement of DEIB department at Politecnico di Milano. The dimension of the test-bed is 198 squared meters ($9x22m$). We collected Bluetooth Low Energy (BLE) signal data coming from BLE beacons with a coverage radius of 7 meters. Signal data has been collected using a Nexus 5 smartphone running Android 6.0.1.
+The proposed tool was evaluated using data collected from a real-world environment, the NECST Lab, located at the basement of DEIB department at Politecnico di Milano. The dimension of the test-bed is 198 squared meters ($9x22m$). We collected Bluetooth Low Energy (BLE) signal data coming from BLE beacons\footnote{We employed classic BLE beacons with passive behaviour. We decided to avoid BlueSentinel nodes in order to test the general-purpose functionalities of the tool.}
+with a coverage radius of 7 meters. Signal data has been collected using a Nexus 5 smartphone running Android 6.0.1.
 First, the NECST Lab floor-plan has been designed using our tool, obtaining the optimal number of beacons ($|N|=5$) and their allocation for fingerprinting localization. $R_{max}$ has been fixed to 20 restarts, the $target$ coverage equals to 100\% of the total area, a single node type available with a range of 7 meters, and the threshold $S=4,5$.
 We collected 40 training samples for the localization algorithm using the obtained allocation. Then, the test samples were collected at distinct positions changing the phone orientation and the way in which user was keeping it, for example by hand or in a pocket. For the entire duration of training and test phase, the number of occupants and their enabled wireless devices has changed, from a minimum of 3 to a maximum of 17 people. This variation affects the accuracy performances, but at the same time contributes in obtaining realistic results. The training and test phase has been repeated with two configurations coming from different allocation algorithms: maximization of the coverage \cite{Kouakou2010a} and the allocation algorithm proposed by He at al. in \cite{He2011}. For these two algorithms, the number of employed nodes has been fixed to 5.
 KNN with $K=3$ has been employed as the fingerprinting algorithm.

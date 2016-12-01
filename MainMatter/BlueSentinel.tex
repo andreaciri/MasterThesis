@@ -18,9 +18,9 @@
 \section{Introduction}
 \label{sec:intro}
 
-Smart buildings are environments like offices or schools able to exploit sensors, devices and appliances to observe users activity and adapt autonomously to achieve comfort, safety and energy efficiency. Considering the fast development of technologies for connected sensor and actuator (the so called \emph{Internet of Things}), since few years smart buildings are becoming a reality from a technological point of view.
+%Smart buildings are environments like offices or schools able to exploit sensors, devices and appliances to observe users activity and adapt autonomously to achieve comfort, safety and energy efficiency. Considering the fast development of technologies for connected sensor and actuator (the so called \emph{Internet of Things}), since few years smart buildings are becoming a reality from a technological point of view.
 
-\medskip
+%\medskip
 One of the main components of a smart building is the \textbf{Occupancy Monitoring system}, i.e. a system able to detect the number (or even the identity) of the occupants in every room or zone of the building. Occupants play a key role in the objectives of smart buildings. User comfort can be improved controlling automatically the environment temperature, humidity, and brightness, setting all the parameters exploiting user defined preferences. In this scenario, user identification and localization inside the building is fundamental.\\
 In order to guarantee the building safety, the knowledge of the occupants position in real-time can be precious. In case of emergencies like fires, escape routes and emergency exits might be highlighted with notifications targeted to the specific user's location.\\
 Probably, the main purpose of smart buildings, or in this case also called green buildings, is energy sustainability.
@@ -33,7 +33,9 @@ The expected outcome of an occupancy monitoring system is the detection in real-
 \smallskip
 As explained in chapter \ref{cap:soa}, a lot of effort has been put both from the industry and the academia in terms of research and product industrialization. However, some intrinsically hard challenges of the occupancy monitoring problem bring to the lack of an accessible solution with broad adoption.
 
-In this chapter is presented BlueSentinel, an occupancy monitoring system developed with the aim to improve the shortcomings identified in the state of the art.
+In this chapter is presented BlueSentinel, an occupancy monitoring system developed with the aim to improve the shortcomings identified in the state of the art. In particular, the BlueSentinel project aims at providing a monitoring system able to run continuously and for long execution times, limiting the intrusiveness on the occupants of the building. In order to achieve these requirements, the system has been developed exploiting at low level the Bluetooth Low Energy protocol. The architecture of the system derives from traditional indoor positioning systems; however, passive transmitting nodes (such as beacons) have been replaced with active nodes, composing a sort of wireless sensor network.
+
+During this chapter, the different layers and components of the system are described. In chapter \ref{cap:results} are presented the experimental results, suggesting that the proposed approach is valid and promising.
 
 \section{Choosing the Enabling Technology}
 \label{sec:technology}
