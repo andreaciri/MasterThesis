@@ -249,17 +249,28 @@ The test has been performed using the Mobile Device Power Monitor (by Monsoon \t
 The test conducted with the Power Monitor are summarized in table \ref{tab:monsoon}. All this tests has been performed with the device screen turned off (background mode) since the power requested by the screen is so high that makes the other components negligible. The first configuration tested refers to the smartphone with all the possible wireless connections turned off. Table \ref{tab:monsoon} reports the constant voltage measured, the average current, and the average power (7.601~mW) of the configuration. Figure \ref{fig:monsoon-no} shows a measured current flow (in violet) very low, where the only affecting component is probably the CPU activity.
 The second configuration tested refers to the smartphone with WiFi connection active, while all the other wireless connections turned off. Table \ref{tab:monsoon} reports the constant voltage and average current measured, resulting in an average power of 43.468~mW for this configuration. Figure \ref{fig:monsoon-wifi} shows a measured current flow significantly increased from the base case. The last configuration refers to the BlueSentinel advertisement transmission active, with all the other wireless connections turned off. The average power is 9.509~mW, very similar to the baseline configuration. Figure \ref{fig:monsoon-bs} shows the measured current flow where the only affecting component, besides the CPU activity, is the BLE service with a very low profile.
 
-\floatsetup[figure]{style=plain, subcapbesideposition=center}
+
 \begin{figure}
-\centering
-\sidesubfloat[]{\includegraphics[width=0.9\linewidth]{monsoon-no-conn.png}\label{fig:monsoon-no}}
-\newline
-\sidesubfloat[]{\includegraphics[width=0.9\linewidth]{monsoon-wifi.png}\label{fig:monsoon-wifi}}
-\newline
-\sidesubfloat[]{\includegraphics[width=0.9\linewidth]{monsoon-bs.png}\label{fig:monsoon-bs}}
-\caption[Power consumption of a Samsung Galaxy S3.]{Power consumption of a Samsung Galaxy S3: orange line represents current, violet line represents voltage. \protect\subref{fig:monsoon-no} All connections disabled. \protect\subref{fig:monsoon-wifi} Only WiFi enabled. \protect\subref{fig:monsoon-bs} Only the BlueSentinel advertisement enabled.}
-\label{fig:monsoon-graph}
+     \centering
+     \subfloat[]{\includegraphics[width=0.85\linewidth]{monsoon-no-conn.png}\label{fig:monsoon-no}}\\
+     \subfloat[]{\includegraphics[width=0.85\linewidth]{monsoon-wifi.png}\label{fig:monsoon-wifi}}\\
+     \subfloat[]{\includegraphics[width=0.85\linewidth]{monsoon-bs.png}\label{fig:monsoon-bs}}
+     \caption[Power consumption of a Samsung Galaxy S3.]{Power consumption of a Samsung Galaxy S3: orange line represents current, violet line represents voltage. \protect\subref{fig:monsoon-no} All connections disabled. \protect\subref{fig:monsoon-wifi} Only WiFi enabled. \protect\subref{fig:monsoon-bs} Only the BlueSentinel advertisement enabled.}
+      \label{fig:monsoon-graph}
 \end{figure}
+
+
+% \floatsetup[figure]{style=plain, subcapbesideposition=center}
+% \begin{figure}
+% \centering
+% \sidesubfloat[]{\includegraphics[width=0.9\linewidth]{monsoon-no-conn.png}\label{fig:monsoon-no}}
+% \newline
+% \sidesubfloat[]{\includegraphics[width=0.9\linewidth]{monsoon-wifi.png}\label{fig:monsoon-wifi}}
+% \newline
+% \sidesubfloat[]{\includegraphics[width=0.9\linewidth]{monsoon-bs.png}\label{fig:monsoon-bs}}
+% \caption[Power consumption of a Samsung Galaxy S3.]{Power consumption of a Samsung Galaxy S3: orange line represents current, violet line represents voltage. \protect\subref{fig:monsoon-no} All connections disabled. \protect\subref{fig:monsoon-wifi} Only WiFi enabled. \protect\subref{fig:monsoon-bs} Only the BlueSentinel advertisement enabled.}
+% \label{fig:monsoon-graph}
+% \end{figure}
 
 
 \subsection{Responsiveness Test}

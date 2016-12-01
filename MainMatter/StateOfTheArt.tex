@@ -56,13 +56,21 @@ Occupancy detection solutions can range to deeply different implementations, dep
 A feature that characterizes different occupancy monitoring systems is \textbf{Resolution} (Fig~\ref{fig:resolution}): it represents the granularity of the measurement.
 
 \begin{figure}
-\centering
-\subfloat[]{\includegraphics[width=0.5\linewidth]{resolution.pdf}\label{fig:resolution}}
-%
-\subfloat[]{\includegraphics[width=0.5\linewidth]{intrusiveness.pdf}\label{fig:intrusiveness}}
-\caption[Occupancy Monitoring systems Resolution and Intrusiveness.]{\protect\subref{fig:resolution} Occupancy Monitoring systems Resolution. \protect\subref{fig:intrusiveness} Occupancy Monitoring systems Intrusiveness.}
-\label{fig:res_intr}
+     \centering
+     \subfloat[]{\includegraphics[width=0.5\linewidth]{resolution.pdf}\label{fig:resolution}}
+     \subfloat[]{\includegraphics[width=0.5\linewidth]{intrusiveness.pdf}\label{fig:intrusiveness}}
+     \caption[Occupancy Monitoring systems Resolution and Intrusiveness.]{\protect\subref{fig:resolution} Occupancy Monitoring systems Resolution. \protect\subref{fig:intrusiveness} Occupancy Monitoring systems Intrusiveness.}
+	\label{fig:res_intr}
 \end{figure}
+
+% \begin{figure}
+% \centering
+% \subfloat[]{\includegraphics[width=0.5\linewidth]{resolution.pdf}\label{fig:resolution}}
+% %
+% \subfloat[]{\includegraphics[width=0.5\linewidth]{intrusiveness.pdf}\label{fig:intrusiveness}}
+% \caption[Occupancy Monitoring systems Resolution and Intrusiveness.]{\protect\subref{fig:resolution} Occupancy Monitoring systems Resolution. \protect\subref{fig:intrusiveness} Occupancy Monitoring systems Intrusiveness.}
+% \label{fig:res_intr}
+% \end{figure}
 
 Resolution can refer to:
 \begin{itemize}
@@ -254,7 +262,7 @@ ToF = \frac{T_{b1} - T_{a1} + T_{a2} - T_{b2}}{2}
 Where $T_{a}$ and $T_{b}$ represent a timestamp measured using respectively node A and B local clocks.
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.6]{ToF.pdf}
+\centering\includegraphics[scale=0.56]{ToF.pdf}
 \caption{Time of Flight computation exploiting a double packet transmission.}
 \label{fig:ToF}
 \end{figure}
@@ -290,7 +298,7 @@ Geometric algorithms are based on geometric properties of triangles. They achiev
 In figure \ref{fig:trilateration}, this condition is represented by a target node T localized by means of distances $d1, d2, d3$.
 
 \begin{figure}[h!tb]
-\centering\includegraphics[scale=0.48]{trilateration.pdf}
+\centering\includegraphics[scale=0.45]{trilateration.pdf}
 \caption{Example of a target node $T$ localized with Trilateration by means of distances $d1, d2, d3$.}
 \label{fig:trilateration}
 \end{figure}
@@ -420,21 +428,31 @@ The main purpose of traditional indoor localization systems is to provide to the
 Scans for wireless signals and location computation usually involve high battery consumption for the mobile devices. However, the mobile energy efficiency is not taken in consideration by the majority of the existing wireless IPS because orientation and navigation tasks are usually executed by users for a limited execution time (typically few minutes) and don't affect the battery lifetime.
 
 \smallskip
-Occupancy monitoring for smart buildings shows requirements extremely different. First, the main purpose is to obtain users presence and position information at the infrastructure level, the so called Building Management System (BMS). Here the occupancy information can be exploited to regulate automatic systems (e.g. HVAC and lighting), build occupancy probability profiles, expose occupancy information to safety applications, and so on.
+Occupancy monitoring for smart buildings shows requirements extremely different. First, the main purpose is to obtain users presence and position information at the infrastructure level. Here the occupancy information can be exploited by the BMS to regulate automatic systems (e.g. HVAC and lighting), build occupancy probability profiles, expose occupancy information to safety applications, and so on.
 Since the information is required in real-time on the infrastructure side (back-end), traditional indoor positioning systems that compute location on mobile device needs to transfer the location data through mobile connectivity.
 
 Take in consideration WiFi based IPS as shown in figure \ref{fig:wfips_od}. The mobile device compute its position exploiting signals coming from WiFi access points. In order to monitor its position in real-time, the mobile application needs to upload the current position continuously, generating an interminable connection with high energy consumption (red connection in fig.~\ref{fig:wfips_od}). Since occupancy monitoring is required to work potentially for many hours of the day, the approach become unsustainable for the mobile battery. In addition, an energy-hungry application is intrusive for the user point of view and less likely to be adopted for continuous monitoring.
 
 
-\floatsetup[figure]{style=plain, subcapbesideposition=center}
+
 \begin{figure}
-\centering
-\sidesubfloat[]{\includegraphics[scale=0.33]{protocololdwf.pdf}\label{fig:wfips_od}}
-\newline
-\sidesubfloat[]{\includegraphics[scale=0.33]{protocololdbt.pdf}\label{fig:btips_od}}
-\caption[Traditional Indoor Positioning Systems applied for occupancy monitoring.]{Traditional Indoor Positioning Systems applied for occupancy monitoring. \protect\subref{fig:wfips_od} Refers to common WiFi based IPS, \protect\subref{fig:btips_od} refers to common Bluetooth based IPS used for real-time monitoring.}
-\label{fig:wfips_btips}
+     \centering
+     \subfloat[]{\includegraphics[scale=0.32]{protocololdwf.pdf}\label{fig:wfips_od}}\\[-2ex]
+     \subfloat[]{\includegraphics[scale=0.32]{protocololdbt.pdf}\label{fig:btips_od}}
+     \caption[Traditional Indoor Positioning Systems applied for occupancy monitoring.]{Traditional Indoor Positioning Systems applied for occupancy monitoring. \protect\subref{fig:wfips_od} Refers to common WiFi based IPS, \protect\subref{fig:btips_od} refers to common Bluetooth based IPS used for real-time monitoring.}
+	\label{fig:wfips_btips}
 \end{figure}
+
+
+% \floatsetup[figure]{style=plain, subcapbesideposition=center}
+% \begin{figure}
+% \centering
+% \sidesubfloat[]{\includegraphics[scale=0.33]{protocololdwf.pdf}\label{fig:wfips_od}}
+% \newline
+% \sidesubfloat[]{\includegraphics[scale=0.33]{protocololdbt.pdf}\label{fig:btips_od}}
+% \caption[Traditional Indoor Positioning Systems applied for occupancy monitoring.]{Traditional Indoor Positioning Systems applied for occupancy monitoring. \protect\subref{fig:wfips_od} Refers to common WiFi based IPS, \protect\subref{fig:btips_od} refers to common Bluetooth based IPS used for real-time monitoring.}
+% \label{fig:wfips_btips}
+% \end{figure}
 
 In case of Bluetooth Low Energy, the employment of reference nodes such as beacons enable to provide users with their location using a low power communication. The wide popularity of the Apple iBeacon or the Estimote in commercial contexts have proved that BLE beacons are a suitable technology for providing users ranging applications and location aware services. However, in the context of location monitoring, they show the same limitations of WiFi based systems, as reported in figure \ref{fig:btips_od}. In order to retrieve position in real-time at the BMS level, the device needs to send its current position continuously through mobile connectivity, generating a long connection characterized by high energy consumptions.
 
